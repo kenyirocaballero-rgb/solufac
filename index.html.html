@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLUTION FAC - Soluciones Agroindustriales & Agroexportación</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            950: '#031911',
+                            900: '#06281a',
+                            800: '#0d4232',
+                            700: '#145c46',
+                            600: '#1c7a5e',
+                            500: '#2b9d7b',
+                            400: '#42c29c',
+                            300: '#6de0be',
+                            100: '#d5f7ec',
+                            50: '#f0fcf7',
+                        },
+                        amberGold: {
+                            500: '#f59e0b',
+                            400: '#fbbf24',
+                            300: '#fcd34d',
+                        },
+                        techCyan: {
+                            600: '#0891b2',
+                            500: '#06b6d4',
+                            100: '#cffafe',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .backdrop-blur-nav {
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .hero-glow {
+            background: radial-gradient(circle at 50% 20%, rgba(43, 157, 123, 0.25) 0%, rgba(6, 40, 26, 0.95) 70%);
+        }
+        .glow-card:hover {
+            box-shadow: 0 10px 30px -10px rgba(43, 157, 123, 0.3);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #06281a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2b9d7b;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- WhatsApp Floating Action Button -->
+    <a href="https://wa.me/51901742151?text=Hola%20SOLUTION%20FAC,%20deseo%20mayor%20información%20sobre%20sus%20productos%20y%20servicios." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-400 text-white p-4 rounded-full shadow-2xl shadow-emerald-500/50 transition-all transform hover:scale-110 flex items-center justify-center group" aria-label="Contacto por WhatsApp">
+        <i class="ph-bold ph-whatsapp-logo text-3xl"></i>
+        <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 ease-in-out font-bold text-xs uppercase tracking-wider pl-0 group-hover:pl-2">Atención WhatsApp</span>
+    </a>
+
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 backdrop-blur-nav bg-brand-950/80 border-b border-brand-800/50 shadow-lg" id="main-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo SOLUTION FAC -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-700 via-brand-500 to-amberGold-400 p-0.5 shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform">
+                        <div class="w-full h-full bg-brand-950 rounded-[10px] flex items-center justify-center">
+                            <i class="ph-bold ph-tree-structure text-2xl text-amberGold-400"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="font-heading font-extrabold text-2xl tracking-tight text-white block leading-none">SOLUTION <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 to-amberGold-400">FAC</span></span>
+                        <span class="text-[9px] uppercase font-bold text-brand-300 tracking-wider block mt-1">Soluciones Agroindustriales & Exportación</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center space-x-8 font-heading font-medium text-xs uppercase tracking-wider text-gray-300">
+                    <a href="#inicio" class="hover:text-brand-300 transition-colors py-1 border-b-2 border-brand-400 text-white">Inicio</a>
+                    <a href="#nosotros" class="hover:text-brand-300 transition-colors py-1 border-b-2 border-transparent hover:border-brand-400">Nosotros</a>
+                    <a href="#productos" class="hover:text-brand-300 transition-colors py-1 border-b-2 border-transparent hover:border-brand-400">Productos & Servicios</a>
+                    <a href="#blog" class="hover:text-brand-300 transition-colors py-1 border-b-2 border-transparent hover:border-brand-400">Blog Agronómico</a>
+                    <a href="#contacto" class="hover:text-brand-300 transition-colors py-1 border-b-2 border-transparent hover:border-brand-400">Contacto</a>
+                </nav>
+
+                <!-- WhatsApp Call to Action -->
+                <div class="hidden lg:flex items-center">
+                    <a href="https://wa.me/51901742151?text=Hola%20SOLUTION%20FAC,%20quisiera%20solicitar%20una%20cotización." target="_blank" class="bg-gradient-to-r from-brand-600 via-brand-500 to-techCyan-600 hover:from-brand-500 hover:to-techCyan-500 text-white font-heading font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-full shadow-lg shadow-brand-500/20 transition-all hover:shadow-brand-500/40 hover:-translate-y-0.5 flex items-center gap-2">
+                        <i class="ph-bold ph-whatsapp-logo text-base text-amberGold-400"></i>
+                        <span>+51 901 742 151</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden text-gray-300 hover:text-white p-2">
+                    <i class="ph-bold ph-list text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-brand-950 border-b border-brand-800 px-4 pt-3 pb-6 space-y-3">
+            <a href="#inicio" class="block py-2 text-white font-bold">Inicio</a>
+            <a href="#nosotros" class="block py-2 text-gray-300 hover:text-brand-300">Nosotros</a>
+            <a href="#productos" class="block py-2 text-gray-300 hover:text-brand-300">Productos & Servicios</a>
+            <a href="#blog" class="block py-2 text-gray-300 hover:text-brand-300">Blog Agronómico</a>
+            <a href="#contacto" class="block py-2 text-gray-300 hover:text-brand-300">Contacto</a>
+            <a href="https://wa.me/51901742151" target="_blank" class="block text-center bg-emerald-600 text-white font-bold text-xs uppercase py-3 rounded-xl mt-2">WhatsApp Directo: +51 901 742 151</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative pt-28 min-h-[95vh] flex items-center bg-brand-950 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&q=80&w=1920" alt="Campos Agrícolas SOLUTION FAC" class="w-full h-full object-cover opacity-20">
+            <div class="absolute inset-0 hero-glow"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 text-white">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 bg-brand-900/80 border border-brand-700/60 px-4 py-1.5 rounded-full text-brand-300 text-xs font-semibold uppercase tracking-wider mb-6 backdrop-blur-md">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                    <span>Líderes en Tecnología Agronómica & Agroexportación</span>
+                </div>
+                <h1 class="font-heading font-extrabold text-4xl sm:text-6xl leading-tight tracking-tight mb-6">
+                    Tecnología de Campo & <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 via-emerald-300 to-amberGold-400">Soluciones de Exportación</span>
+                </h1>
+                <p class="text-gray-300 text-base sm:text-lg font-normal leading-relaxed mb-10 max-w-2xl">
+                    En <strong class="text-white">SOLUTION FAC</strong> impulsamos el rendimiento de los cultivos mediante la integración de sistemas de riego de precisión, nutrición foliar/edáfica especializada, fitosanidad y producción agrícola con estándares internacionales.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://wa.me/51901742151?text=Hola,%20deseo%20solicitar%20asesoría%20técnica%20o%20cotización." target="_blank" class="inline-flex items-center justify-center bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-400 hover:to-brand-500 text-brand-950 font-heading font-extrabold px-8 py-4 rounded-xl shadow-lg shadow-brand-500/20 transition-all hover:scale-[1.02] gap-2 text-base">
+                        <i class="ph-bold ph-whatsapp-logo text-xl"></i>
+                        <span>Contactar por WhatsApp (+51 901 742 151)</span>
+                    </a>
+                    <a href="#blog" class="inline-flex items-center justify-center bg-white/5 hover:bg-white/10 text-white font-medium border border-white/10 backdrop-blur-sm px-8 py-4 rounded-xl transition-all gap-2 text-base">
+                        <i class="ph-bold ph-book-open"></i>
+                        <span>Ver Blog Técnico</span>
+                    </a>
+                </div>
+
+                <div class="mt-14 pt-8 border-t border-brand-800/80 grid grid-cols-3 gap-4 text-center sm:text-left">
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-heading font-bold text-amberGold-400">100%</div>
+                        <div class="text-xs text-gray-400 mt-1">Trazabilidad en Campo</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-heading font-bold text-amberGold-400">La Libertad</div>
+                        <div class="text-xs text-gray-400 mt-1">Trujillo - Virú - Chao</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-heading font-bold text-amberGold-400">GlobalGAP</div>
+                        <div class="text-xs text-gray-400 mt-1">Estándares Internacionales</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros / Información Institucional -->
+    <section id="nosotros" class="py-24 bg-brand-950 border-t border-brand-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-300 font-heading font-bold uppercase tracking-wider text-xs bg-brand-900/80 border border-brand-800 px-4 py-1.5 rounded-full inline-block mb-3">Información Institucional</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Compromiso Agronómico SOLUTION FAC</h2>
+                <p class="text-gray-400 mt-3 text-sm sm:text-base">Brindamos soporte integral a fundos, productores y agroexportadoras con un enfoque centrado en la maximización del rendimiento por hectárea.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                <div class="space-y-6">
+                    <div class="bg-brand-900/40 border border-brand-800/80 p-6 rounded-2xl">
+                        <h3 class="font-heading font-bold text-xl text-white mb-2 flex items-center gap-2">
+                            <i class="ph-bold ph-target text-brand-400 text-2xl"></i> Nuestra Misión
+                        </h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            Proveer productos de agroexportación de calidad premium e implementar soluciones tecnológicas en nutrición vegetal, protección de cultivos y sistemas de riego para impulsar la rentabilidad agrícola sostenida.
+                        </p>
+                    </div>
+
+                    <div class="bg-brand-900/40 border border-brand-800/80 p-6 rounded-2xl">
+                        <h3 class="font-heading font-bold text-xl text-white mb-2 flex items-center gap-2">
+                            <i class="ph-bold ph-eye text-techCyan-500 text-2xl"></i> Nuestra Visión
+                        </h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            Ser el aliado estratégico de referencia en la región La Libertad y el norte del Perú, reconocidos por la innovación agronómica, la seriedad comercial y el impacto positivo en los cultivos.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-brand-900/30 p-6 rounded-2xl border border-brand-800/50 hover:border-brand-500/50 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-brand-800/80 text-brand-300 flex items-center justify-center text-2xl font-bold mb-4">
+                            <i class="ph-bold ph-drop"></i>
+                        </div>
+                        <h4 class="font-heading font-bold text-base text-white mb-1">Riego Tecnificado</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed">Diseño y optimización de fertirriego por goteo para condiciones de alta demanda.</p>
+                    </div>
+
+                    <div class="bg-brand-900/30 p-6 rounded-2xl border border-brand-800/50 hover:border-brand-500/50 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-amberGold-500/20 text-amberGold-400 flex items-center justify-center text-2xl font-bold mb-4">
+                            <i class="ph-bold ph-plant"></i>
+                        </div>
+                        <h4 class="font-heading font-bold text-base text-white mb-1">Nutrición Vegetal</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed">Formulaciones de precisión foliar y edáfica adaptadas al tipo de suelo.</p>
+                    </div>
+
+                    <div class="bg-brand-900/30 p-6 rounded-2xl border border-brand-800/50 hover:border-brand-500/50 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl font-bold mb-4">
+                            <i class="ph-bold ph-shield-check"></i>
+                        </div>
+                        <h4 class="font-heading font-bold text-base text-white mb-1">Fitosanidad MIP</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed">Control integrado de plagas garantizando inocuidad y cumplimiento de LMR.</p>
+                    </div>
+
+                    <div class="bg-brand-900/30 p-6 rounded-2xl border border-brand-800/50 hover:border-brand-500/50 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-techCyan-500/20 text-techCyan-500 flex items-center justify-center text-2xl font-bold mb-4">
+                            <i class="ph-bold ph-truck"></i>
+                        </div>
+                        <h4 class="font-heading font-bold text-base text-white mb-1">Agroexportación</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed">Gestión de calidad y cadena de frío para productos de valor agroindustrial.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catálogo de Productos y Servicios -->
+    <section id="productos" class="py-24 bg-gray-950 border-t border-brand-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-brand-300 font-heading font-bold uppercase tracking-wider text-xs bg-brand-900/80 border border-brand-800 px-4 py-1.5 rounded-full inline-block mb-3">Portafolio Especializado</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Productos & Soluciones Técnicas</h2>
+                <p class="text-gray-400 mt-3 text-sm sm:text-base">Selección de cultivos frescos de exportación e ingeniería agronómica aplicada.</p>
+            </div>
+
+            <!-- Filtros de Productos -->
+            <div class="flex flex-wrap justify-center gap-2 mb-12" id="productFilterContainer">
+                <button data-filter="all" class="product-filter-btn active bg-brand-500 text-brand-950 font-heading font-bold px-5 py-2.5 rounded-full text-xs uppercase tracking-wider transition-all shadow-lg shadow-brand-500/20">Todos</button>
+                <button data-filter="exportacion" class="product-filter-btn bg-brand-900/60 text-gray-300 border border-brand-800 px-5 py-2.5 rounded-full text-xs font-heading font-bold uppercase tracking-wider transition-all hover:bg-brand-800">Agroexportación</button>
+                <button data-filter="tecnologia" class="product-filter-btn bg-brand-900/60 text-gray-300 border border-brand-800 px-5 py-2.5 rounded-full text-xs font-heading font-bold uppercase tracking-wider transition-all hover:bg-brand-800">Ingeniería & Riego</button>
+                <button data-filter="nutricion" class="product-filter-btn bg-brand-900/60 text-gray-300 border border-brand-800 px-5 py-2.5 rounded-full text-xs font-heading font-bold uppercase tracking-wider transition-all hover:bg-brand-800">Nutrición Vegetal</button>
+            </div>
+
+            <!-- Grid de Productos -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="productsGrid">
+                
+                <!-- Producto 1: Espárrago Verde -->
+                <div class="product-card glow-card bg-brand-900/30 rounded-2xl overflow-hidden border border-brand-800/80 hover:border-brand-500/80 transition-all duration-300 flex flex-col" data-category="exportacion">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1515471209610-e3f1705877c5?auto=format&fit=crop&q=80&w=800" alt="Espárrago Verde Exportación" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <span class="absolute top-3 right-3 bg-brand-950/90 text-brand-300 border border-brand-700 text-[10px] font-bold px-2.5 py-1 rounded-md uppercase">Agroexportación</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-heading font-bold text-xl text-white mb-1">Espárrago Verde Fresh</h3>
+                            <p class="text-xs text-brand-300 font-bold mb-3">UC-157 / Turiones Seleccionados</p>
+                            <p class="text-xs text-gray-400 leading-relaxed mb-4">Cosechado en valles de La Libertad con procesamiento postcosecha inmediato para asegurar rigidez y frescura.</p>
+                        </div>
+                        <a href="https://wa.me/51901742151?text=Deseo%20cotizar%20Espárrago%20Verde%20Fresh" target="_blank" class="w-full bg-brand-800/80 hover:bg-brand-500 text-white hover:text-brand-950 font-heading font-bold text-xs py-3 rounded-xl transition-all flex items-center justify-center gap-2">
+                            <i class="ph-bold ph-whatsapp-logo text-lg"></i>
+                            <span>Cotizar por WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Producto 2: Palta Hass -->
+                <div class="product-card glow-card bg-brand-900/30 rounded-2xl overflow-hidden border border-brand-800/80 hover:border-brand-500/80 transition-all duration-300 flex flex-col" data-category="exportacion">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&q=80&w=800" alt="Palta Hass Export" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <span class="absolute top-3 right-3 bg-brand-950/90 text-brand-300 border border-brand-700 text-[10px] font-bold px-2.5 py-1 rounded-md uppercase">Agroexportación</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-heading font-bold text-xl text-white mb-1">Palta Hass de Calidad</h3>
+                            <p class="text-xs text-brand-300 font-bold mb-3">Materia Seca Garantizada (&gt;22%)</p>
+                            <p class="text-xs text-gray-400 leading-relaxed mb-4">Calibres uniformes de exportación con control riguroso de condición foliar y sanitaria.</p>
+                        </div>
+                        <a href="https://wa.me/51901742151?text=Deseo%20cotizar%20Palta%20Hass" target="_blank" class="w-full bg-brand-800/80 hover:bg-brand-500 text-white hover:text-brand-950 font-heading font-bold text-xs py-3 rounded-xl transition-all flex items-center justify-center gap-2">
+                            <i class="ph-bold ph-whatsapp-logo text-lg"></i>
+                            <span>Cotizar por WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Producto 3: Arándanos Azules -->
+                <div class="product-card glow-card bg-brand-900/30 rounded-2xl overflow-hidden border border-brand-800/80 hover:border-brand-500/80 transition-all duration-300 flex flex-col" data-category="exportacion">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1498557850523-fd3d118b962e?auto=format&fit=crop&q=80&w=800" alt="Arándanos Azules Fresh" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <span class="absolute top-3 right-3 bg-brand-950/90 text-brand-300 border border-brand-700 text-[10px] font-bold px-2.5 py-1 rounded-md uppercase">Agroexportación</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-heading font-bold text-xl text-white mb-1">Arándanos Azules Premium</h3>
+                            <p class="text-xs text-brand-300 font-bold mb-3">Bloom Intacto / Alta Firmeza</p>
+                            <p class="text-xs text-gray-400 leading-relaxed mb-4">Cosecha seleccionada para travesías marítimas extensas con cadena de frío continua.</p>
+                        </div>
+                        <a href="https://wa.me/51901742151?text=Deseo%20cotizar%20Arándanos%20Azules" target="_blank" class="w-full bg-brand-800/80 hover:bg-brand-500 text-white hover:text-brand-950 font-heading font-bold text-xs py-3 rounded-xl transition-all flex items-center justify-center gap-2">
+                            <i class="ph-bold ph-whatsapp-logo text-lg"></i>
+                            <span>Cotizar por WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 4: Sistemas de Riego -->
+                <div class="product-card glow-card bg-brand-900/30 rounded-2xl overflow-hidden border border-brand-800/80 hover:border-brand-500/80 transition-all duration-300 flex flex-col" data-category="tecnologia">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?auto=format&fit=crop&q=80&w=800" alt="Sistemas de Riego Tecnificado" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <span class="absolute top-3 right-3 bg-techCyan-600/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-md uppercase">Ingeniería</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-heading font-bold text-xl text-white mb-1">Sistemas de Riego Tecnificado</h3>
+                            <p class="text-xs text-brand-300 font-bold mb-3">Diseño de Cabezales de Fertirriego</p>
+                            <p class="text-xs text-gray-400 leading-relaxed mb-4">Automatización de pulsos hídricos y monitoreo de bulbo húmedo para ahorro efectivo de agua.</p>
+                        </div>
+                        <a href="https://wa.me/51901742151?text=Deseo%20asesoría%20en%20Sistemas%20de%20Riego" target="_blank" class="w-full bg-brand-800/80 hover:bg-brand-500 text-white hover:text-brand-950 font-heading font-bold text-xs py-3 rounded-xl transition-all flex items-center justify-center gap-2">
+                            <i class="ph-bold ph-whatsapp-logo text-lg"></i>
+                            <span>Consultar por WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 5: Nutrición Vegetal -->
+                <div class="product-card glow-card bg-brand-900/30 rounded-2xl overflow-hidden border border-brand-800/80 hover:border-brand-500/80 transition-all duration-300 flex flex-col" data-category="nutricion">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?auto=format&fit=crop&q=80&w=800" alt="Nutrición Vegetal de Precisión" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <span class="absolute top-3 right-3 bg-amberGold-500/90 text-brand-950 text-[10px] font-bold px-2.5 py-1 rounded-md uppercase">Nutrición</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-heading font-bold text-xl text-white mb-1">Nutrición Vegetal & Suelos</h3>
+                            <p class="text-xs text-brand-300 font-bold mb-3">Planes de Fertilización a Medida</p>
+                            <p class="text-xs text-gray-400 leading-relaxed mb-4">Análisis de solución del suelo y foliar para desbloquear micronutrientes y potenciar cuaja.</p>
+                        </div>
+                        <a href="https://wa.me/51901742151?text=Deseo%20un%20plan%20de%20Nutrición%20Vegetal" target="_blank" class="w-full bg-brand-800/80 hover:bg-brand-500 text-white hover:text-brand-950 font-heading font-bold text-xs py-3 rounded-xl transition-all flex items-center justify-center gap-2">
+                            <i class="ph-bold ph-whatsapp-logo text-lg"></i>
+                            <span>Consultar por WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 6: Fitosanidad MIP -->
+                <div class="product-card glow-card bg-brand-900/30 rounded-2xl overflow-hidden border border-brand-800/80 hover:border-brand-500/80 transition-all duration-300 flex flex-col" data-category="tecnologia">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1628352081506-83c43123ed6d?auto=format&fit=crop&q=80&w=800" alt="Asesoría Fitosanitaria" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <span class="absolute top-3 right-3 bg-techCyan-600/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-md uppercase">Fitosanidad</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-heading font-bold text-xl text-white mb-1">Manejo Fitosanitario (MIP)</h3>
+                            <p class="text-xs text-brand-300 font-bold mb-3">Auditoría & Control Biológico</p>
+                            <p class="text-xs text-gray-400 leading-relaxed mb-4">Programas integrados de monitoreo de plagas sin sobrepasar los límites de residuos exigidos.</p>
+                        </div>
+                        <a href="https://wa.me/51901742151?text=Deseo%20asesoría%20Fitosanitaria%20MIP" target="_blank" class="w-full bg-brand-800/80 hover:bg-brand-500 text-white hover:text-brand-950 font-heading font-bold text-xs py-3 rounded-xl transition-all flex items-center justify-center gap-2">
+                            <i class="ph-bold ph-whatsapp-logo text-lg"></i>
+                            <span>Consultar por WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Agronómico Dinámico (Conectado a Google Sheets / SheetDB) -->
+    <section id="blog" class="py-24 bg-brand-950 border-t border-brand-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-brand-300 font-heading font-bold uppercase tracking-wider text-xs bg-brand-900/80 border border-brand-800 px-4 py-1.5 rounded-full inline-block mb-3">Actualizaciones & Artículos</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Blog Agronómico SOLUTION FAC</h2>
+                    <p class="text-gray-400 mt-2 text-sm">Publicaciones técnicas e informes de campo en tiempo real.</p>
+                </div>
+                
+                <!-- Blog Category Filter -->
+                <div class="mt-6 md:mt-0 flex flex-wrap gap-2" id="blogFilterContainer">
+                    <button data-blog-filter="all" class="blog-filter-btn active bg-brand-500 text-brand-950 font-heading font-bold px-4 py-2 rounded-xl text-xs transition-all">Todos</button>
+                    <button data-blog-filter="Suelos" class="blog-filter-btn bg-brand-900/60 text-gray-300 border border-brand-800 hover:bg-brand-800 px-4 py-2 rounded-xl text-xs font-heading font-bold transition-all">Suelos & Riego</button>
+                    <button data-blog-filter="Fitosanidad" class="blog-filter-btn bg-brand-900/60 text-gray-300 border border-brand-800 hover:bg-brand-800 px-4 py-2 rounded-xl text-xs font-heading font-bold transition-all">Fitosanidad</button>
+                    <button data-blog-filter="Nutricion" class="blog-filter-btn bg-brand-900/60 text-gray-300 border border-brand-800 hover:bg-brand-800 px-4 py-2 rounded-xl text-xs font-heading font-bold transition-all">Nutrición</button>
+                </div>
+            </div>
+
+            <!-- Dynamic Blog Grid Container -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="blogGrid">
+                <!-- Dynamic Content or Fallback Cards Will Render Here via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="py-24 bg-gray-950 text-white relative border-t border-brand-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                
+                <div>
+                    <span class="text-amberGold-400 font-heading font-bold uppercase tracking-wider text-xs bg-brand-900/80 border border-brand-800 px-4 py-1.5 rounded-full inline-block mb-4">Contacto Directo</span>
+                    <h2 class="font-heading text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-6">Comuníquese con SOLUTION FAC</h2>
+                    <p class="text-gray-300 text-sm sm:text-base mb-8 leading-relaxed">
+                        Atendemos consultas técnicas, cotizaciones de productos de exportación e instalación de soluciones tecnológicas para el campo en la región La Libertad.
+                    </p>
+
+                    <div class="space-y-6">
+                        <a href="https://wa.me/51901742151" target="_blank" class="flex items-start space-x-4 p-4 rounded-2xl bg-brand-900/30 border border-brand-800/60 hover:border-emerald-500/80 transition-colors">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl shrink-0">
+                                <i class="ph-bold ph-whatsapp-logo"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs text-gray-400 font-bold uppercase">WhatsApp Directo</h4>
+                                <p class="text-lg font-heading font-bold text-white mt-0.5">+51 901 742 151</p>
+                                <span class="text-[11px] text-emerald-400">Respuesta inmediata</span>
+                            </div>
+                        </a>
+
+                        <div class="flex items-start space-x-4 p-4 rounded-2xl bg-brand-900/30 border border-brand-800/60">
+                            <div class="w-12 h-12 rounded-xl bg-brand-800 text-brand-300 flex items-center justify-center text-2xl shrink-0">
+                                <i class="ph-bold ph-map-pin"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs text-gray-400 font-bold uppercase">Ubicación</h4>
+                                <p class="text-sm font-medium text-white mt-0.5">Sede La Libertad (Trujillo, Virú, Chao - Perú)</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 p-4 rounded-2xl bg-brand-900/30 border border-brand-800/60">
+                            <div class="w-12 h-12 rounded-xl bg-techCyan-500/20 text-techCyan-500 flex items-center justify-center text-2xl shrink-0">
+                                <i class="ph-bold ph-envelope-simple"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs text-gray-400 font-bold uppercase">Correo Electrónico</h4>
+                                <p class="text-sm font-medium text-white mt-0.5">contacto@solutionfac.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fast WhatsApp Interactive Form -->
+                <div class="bg-brand-900/40 p-8 sm:p-10 rounded-3xl border border-brand-800 shadow-2xl">
+                    <h3 class="font-heading font-extrabold text-2xl text-white mb-2">Enviar Consulta Rápida</h3>
+                    <p class="text-xs text-gray-400 mb-6">Complete sus datos y el mensaje se abrirá en su WhatsApp listo para enviar.</p>
+
+                    <form onsubmit="handleDirectWhatsApp(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Nombre y Apellidos *</label>
+                            <input type="text" id="formName" required placeholder="Ej. Ing. Juan Pérez" class="w-full bg-brand-950 border border-brand-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-400">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Empresa / Fundo Agrícola</label>
+                            <input type="text" id="formCompany" placeholder="Nombre de su fundo o empresa" class="w-full bg-brand-950 border border-brand-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-400">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Servicio o Producto de Interés *</label>
+                            <select id="formService" required class="w-full bg-brand-950 border border-brand-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-400">
+                                <option value="Cotización de Productos Agroexportación">Cotización de Productos (Espárrago, Palta, Arándano)</option>
+                                <option value="Sistemas de Riego Tecnificado">Sistemas de Riego Tecnificado</option>
+                                <option value="Plan de Nutrición Vegetal">Plan de Nutrición Vegetal & Suelos</option>
+                                <option value="Asesoría Fitosanitaria MIP">Asesoría Fitosanitaria (MIP)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-gray-300 uppercase mb-1">Detalles de la Consulta *</label>
+                            <textarea id="formMessage" required rows="3" placeholder="Indique hectáreas, volumen o requerimiento específico..." class="w-full bg-brand-950 border border-brand-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-400"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-gradient-to-r from-emerald-500 to-brand-500 hover:from-emerald-400 hover:to-brand-400 text-brand-950 font-heading font-extrabold py-4 rounded-xl transition-all shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2 text-sm uppercase tracking-wider">
+                            <i class="ph-bold ph-whatsapp-logo text-xl"></i>
+                            <span>Enviar por WhatsApp</span>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-950 border-t border-brand-900 text-gray-400 text-xs py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-6">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-lg bg-brand-800 flex items-center justify-center text-amberGold-400 font-bold">
+                        <i class="ph-bold ph-tree-structure text-lg"></i>
+                    </div>
+                    <span class="font-heading font-extrabold text-lg text-white tracking-tight">SOLUTION FAC</span>
+                </div>
+                <p>&copy; 2026 SOLUTION FAC. Todos los derechos reservados. La Libertad, Perú.</p>
+                <div class="flex space-x-4 text-base text-gray-400">
+                    <a href="https://wa.me/51901742151" target="_blank" class="hover:text-emerald-400"><i class="ph-bold ph-whatsapp-logo"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Lectura de Blog -->
+    <div id="blogModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-brand-950 border border-brand-800 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-10 relative shadow-2xl text-gray-200">
+            <button onclick="closeBlogModal()" class="absolute top-5 right-5 bg-brand-900 hover:bg-brand-800 text-gray-300 rounded-full w-9 h-9 flex items-center justify-center text-xl">
+                <i class="ph-bold ph-x"></i>
+            </button>
+            <div id="blogModalContent"></div>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // CONFIGURACIÓN DE SHEETDB API (Reemplazar la URL cuando crees tu cuenta en SheetDB.io)
+        const SHEETDB_API_URL = "https://sheetdb.io/api/v1/TU_SHEETDB_API_ID";
+
+        // Artículos Locales de Resguardo
+        const defaultArticles = [
+            {
+                id: 1,
+                titulo: "Estrategias de mitigación de estrés hídrico en Espárragos de La Libertad",
+                categoria: "Suelos",
+                fecha: "12 Oct 2026",
+                autor: "Ing. Agrónomo SOLUTION FAC",
+                resumen: "Uso de sondas capacitivas y pulsos cortos de riego por goteo en suelos arenosos de Virú y Chao.",
+                contenido: "<p class='mb-4'>El manejo del agua en valles costeros requiere pasar de riegos prolongados a pulsos fraccionados para evitar la percolación profunda de nitratos.</p><p>La medición constante del volumen de agua disponible previene la deshidratación del turión y mejora el rendimiento por hectárea.</p>",
+                imagen_url: "https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?auto=format&fit=crop&q=80&w=800"
+            },
+            {
+                id: 2,
+                titulo: "Manejo de salinidad y conductividad en suelos con cultivo de Frijol (Phaseolus vulgaris)",
+                categoria: "Suelos",
+                fecha: "08 Oct 2026",
+                autor: "Ing. Agrónomo SOLUTION FAC",
+                resumen: "Desplazamiento del Sodio intercambiable mediante aportes de Calcio soluble y materia orgánica.",
+                contenido: "<p class='mb-4'>El cultivo de <em>Phaseolus vulgaris</em> es altamente sensible a la salinidad. Aplicaciones de ácidos carboxílicos y Nitrato de Calcio restauran el equilibrio radicular.</p>",
+                imagen_url: "https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?auto=format&fit=crop&q=80&w=800"
+            },
+            {
+                id: 3,
+                titulo: "Prevención de Phytophthora cinnamomi en huertos de Palta Hass",
+                categoria: "Fitosanidad",
+                date: "01 Oct 2026",
+                autor: "Ing. Agrónomo SOLUTION FAC",
+                resumen: "Diagnóstico oportuno mediante bioestimulantes de defensas foliares y control del bulbo húmedo.",
+                contenido: "<p class='mb-4'>La pudrición de radicelas por <em>Phytophthora</em> es la causa principal de muerte de brazos en palto. La ventilación de suelos e inducción de fitoalexinas frena el avance fúngico.</p>",
+                imagen_url: "https://images.unsplash.com/photo-1628352081506-83c43123ed6d?auto=format&fit=crop&q=80&w=800"
+            }
+        ];
+
+        let loadedArticles = [];
+
+        // Load Blog Articles (From SheetDB or Local)
+        async function fetchBlogArticles() {
+            const grid = document.getElementById('blogGrid');
+            try {
+                if (!SHEETDB_API_URL.includes("TU_SHEETDB_API_ID")) {
+                    const response = await fetch(SHEETDB_API_URL);
+                    const data = await response.json();
+                    if (data && data.length > 0) {
+                        loadedArticles = data;
+                    } else {
+                        loadedArticles = defaultArticles;
+                    }
+                } else {
+                    loadedArticles = defaultArticles;
+                }
+            } catch (error) {
+                console.log("Cargando artículos de respaldo...");
+                loadedArticles = defaultArticles;
+            }
+            renderBlogCards('all');
+        }
+
+        function renderBlogCards(filterCategory) {
+            const grid = document.getElementById('blogGrid');
+            grid.innerHTML = '';
+
+            const filtered = filterCategory === 'all' 
+                ? loadedArticles 
+                : loadedArticles.filter(item => (item.categoria || '').toLowerCase().includes(filterCategory.toLowerCase()));
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `<p class="text-gray-400 text-xs">No hay publicaciones disponibles en esta categoría.</p>`;
+                return;
+            }
+
+            filtered.forEach(item => {
+                const card = document.createElement('article');
+                card.className = "blog-card glow-card bg-brand-900/30 rounded-2xl overflow-hidden border border-brand-800/80 hover:border-brand-500/80 transition-all duration-300 flex flex-col";
+                card.innerHTML = `
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="${item.imagen_url || 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&q=80&w=800'}" alt="${item.titulo}" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-brand-950/90 text-brand-300 border border-brand-700 text-[10px] font-bold uppercase px-2.5 py-1 rounded-md">${item.categoria || 'Agronomía'}</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="text-[11px] text-gray-400 mb-2">${item.fecha || '2026'} • ${item.autor || 'SOLUTION FAC'}</div>
+                            <h3 class="font-heading font-bold text-lg text-white mb-2 hover:text-brand-300 transition-colors cursor-pointer" onclick="openBlogModal(${item.id})">${item.titulo}</h3>
+                            <p class="text-xs text-gray-400 leading-relaxed mb-4 line-clamp-3">${item.resumen}</p>
+                        </div>
+                        <button onclick="openBlogModal(${item.id})" class="inline-flex items-center gap-1 text-xs font-bold text-brand-300 hover:text-white transition-colors">
+                            <span>Leer artículo</span>
+                            <i class="ph-bold ph-arrow-right"></i>
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Open Modal Article
+        function openBlogModal(id) {
+            const article = loadedArticles.find(a => Number(a.id) === Number(id)) || defaultArticles[0];
+            const content = document.getElementById('blogModalContent');
+            content.innerHTML = `
+                <span class="bg-brand-800 text-brand-300 text-xs font-bold px-3 py-1 rounded-full uppercase inline-block mb-3">${article.categoria}</span>
+                <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-white mb-3">${article.titulo}</h2>
+                <div class="text-xs text-gray-400 mb-6">${article.fecha} | Redactado por ${article.autor}</div>
+                <div class="rounded-2xl overflow-hidden mb-6 h-60">
+                    <img src="${article.imagen_url}" class="w-full h-full object-cover">
+                </div>
+                <div class="text-gray-300 text-sm leading-relaxed mb-6">
+                    ${article.contenido}
+                </div>
+                <a href="https://wa.me/51901742151?text=Deseo%20consultar%20sobre:%20${encodeURIComponent(article.titulo)}" target="_blank" class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-brand-950 font-bold px-6 py-3 rounded-xl text-xs uppercase">
+                    <i class="ph-bold ph-whatsapp-logo text-base"></i>
+                    <span>Consultar a un Ingeniero en WhatsApp</span>
+                </a>
+            `;
+            document.getElementById('blogModal').classList.remove('hidden');
+        }
+
+        function closeBlogModal() {
+            document.getElementById('blogModal').classList.add('hidden');
+        }
+
+        // Direct WhatsApp Form Handler
+        function handleDirectWhatsApp(e) {
+            e.preventDefault();
+            const name = document.getElementById('formName').value;
+            const company = document.getElementById('formCompany').value;
+            const service = document.getElementById('formService').value;
+            const message = document.getElementById('formMessage').value;
+
+            const text = `Hola SOLUTION FAC, mi nombre es *${name}*${company ? ' de ' + company : ''}.\n\n*Servicio/Producto:* ${service}\n*Detalle:* ${message}`;
+            const whatsappUrl = `https://wa.me/51901742151?text=${encodeURIComponent(text)}`;
+            
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Mobile Menu Toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        });
+
+        // Product Filter Logic
+        document.querySelectorAll('.product-filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.product-filter-btn').forEach(b => {
+                    b.classList.remove('bg-brand-500', 'text-brand-950');
+                    b.classList.add('bg-brand-900/60', 'text-gray-300');
+                });
+                btn.classList.add('bg-brand-500', 'text-brand-950');
+                btn.classList.remove('bg-brand-900/60', 'text-gray-300');
+
+                const filter = btn.getAttribute('data-filter');
+                document.querySelectorAll('.product-card').forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Blog Filter Buttons
+        document.querySelectorAll('.blog-filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.blog-filter-btn').forEach(b => {
+                    b.classList.remove('bg-brand-500', 'text-brand-950');
+                    b.classList.add('bg-brand-900/60', 'text-gray-300');
+                });
+                btn.classList.add('bg-brand-500', 'text-brand-950');
+                btn.classList.remove('bg-brand-900/60', 'text-gray-300');
+
+                const filter = btn.getAttribute('data-blog-filter');
+                renderBlogCards(filter);
+            });
+        });
+
+        // Initialize Blog Loading
+        fetchBlogArticles();
+    </script>
+</body>
+</html>
