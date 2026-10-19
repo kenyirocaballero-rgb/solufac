@@ -933,7 +933,7 @@
                     categoria_key: "BIOESTIMULANTES",
                     categoria: "Fitoalexínico",
                     ingrediente_activo: "Fosfitos de Potasio (P2O5 40% + K2O 20%)",
-                    modo_accion: "Estimula la síntesis de fitoalexinas y engrosa las paredes vasculares.",
+                    modo_accion: "Estimulante de la síntesis de fitoalexinas y engrosa las paredes vasculares.",
                     descripcion: "Foliar y radicular para prevención de patógenos del cuello como Phytophthora.",
                     precio: 62.00,
                     variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
@@ -1066,7 +1066,7 @@
             grid.innerHTML = filteredProducts.map(prod => `
                 <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
                     <div>
-                        <!-- Cabecera de Producto con Fondo Blanco y Tipografía Negra Estilo "Controller" -->
+                        <!-- Cabecera de Producto con Fondo Blanco y Tipografía Normal (No Cursiva) -->
                         <div class="relative aspect-4/3 overflow-hidden bg-white flex flex-col justify-between p-5 border-b border-slate-200">
                             <div class="flex justify-between items-start">
                                 <span class="bg-brand-600 text-white text-[10px] font-extrabold px-2.5 py-1 rounded-md tracking-wider uppercase">
@@ -1076,7 +1076,7 @@
                             </div>
                             
                             <div class="my-auto py-2">
-                                <h3 class="font-extrabold italic uppercase text-slate-900 text-3xl sm:text-4xl tracking-tighter leading-none font-heading">
+                                <h3 class="font-extrabold uppercase text-slate-900 text-3xl sm:text-4xl tracking-tighter leading-none font-heading">
                                     ${prod.nombre}
                                 </h3>
                             </div>
