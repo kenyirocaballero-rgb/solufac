@@ -82,7 +82,7 @@
             <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-700">
                 <a href="#inicio" class="hover:text-brand-600 transition-colors">Inicio</a>
                 <a href="#catalogo" class="hover:text-brand-600 transition-colors">Catálogo</a>
-                <a href="#calculadora" class="hover:text-brand-600 transition-colors">Calculadora Dosis</a>
+                <a href="#herramientas" class="hover:text-brand-600 transition-colors">Herramientas Campo</a>
                 <a href="#mezclas" class="hover:text-brand-600 transition-colors">Mezclas</a>
                 <a href="#servicios" class="hover:text-brand-600 transition-colors">Servicios</a>
             </nav>
@@ -106,20 +106,20 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid md:grid-cols-2 gap-12 items-center">
             <div class="space-y-6 text-center md:text-left">
                 <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-400 text-xs font-semibold">
-                    <i class="ph ph-shield-check text-sm"></i> Catálogo Fitosanitario SENASA 2026
+                    <i class="ph ph-shield-check text-sm"></i> Catálogo SENASA & Biocontrol 2026
                 </div>
                 <h1 class="text-4xl sm:text-5xl font-extrabold font-heading leading-tight tracking-tight">
-                    Protección de Cultivos & <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-emerald-200">Bioestimulación Agrícola</span>
+                    Protección Fitosanitaria & <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-emerald-200">Control Biológico</span>
                 </h1>
                 <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-xl mx-auto md:mx-0">
-                    Proveemos soluciones fitosanitarias divididas en 4 especialidades con registro vigente para agricultura de precisión y exportación en La Libertad.
+                    Catálogo especializado de 50 insumos para agroexportación y mercado nacional en La Libertad. Incluye biocontrol, agroquímicos y herramientas de cálculo agronómico.
                 </p>
                 <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-2">
                     <a href="#catalogo" class="bg-brand-600 hover:bg-brand-500 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-brand-600/30 transition-all flex items-center gap-2 text-sm">
-                        Explorar Productos <i class="ph ph-arrow-down"></i>
+                        Explorar los 50 Insumos <i class="ph ph-arrow-down"></i>
                     </a>
-                    <a href="#calculadora" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold px-6 py-3.5 rounded-xl backdrop-blur-sm transition-all flex items-center gap-2 text-sm">
-                        <i class="ph ph-calculator text-brand-400 text-lg"></i> Calculadora de Dosis
+                    <a href="#herramientas" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold px-6 py-3.5 rounded-xl backdrop-blur-sm transition-all flex items-center gap-2 text-sm">
+                        <i class="ph ph-wrench text-brand-400 text-lg"></i> Herramientas de Campo
                     </a>
                 </div>
             </div>
@@ -129,33 +129,36 @@
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
                     <div class="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20">
                         <p class="text-xs font-semibold text-brand-300 uppercase tracking-wider">Normativa SENASA 2026</p>
-                        <p class="text-sm font-bold text-white mt-0.5">Control fitosanitario de alta efectividad con cumplimiento LMR</p>
+                        <p class="text-sm font-bold text-white mt-0.5">Manejo Integrado de Plagas con Bioinsumos Regulados y Residuo Cero</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CATALOGO DE PRODUCTOS CON BUSCADOR Y PESTAÑAS -->
+    <!-- CATALOGO DE PRODUCTOS -->
     <section id="catalogo" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-10">
-                <h2 class="text-3xl sm:text-4xl font-bold font-heading text-slate-900 tracking-tight">Catálogo Fitosanitario 2026</h2>
-                <p class="text-slate-600 mt-3 text-base">Seleccione una categoría o busque por plaga, patógeno o ingrediente activo para encontrar el insumo ideal.</p>
+                <h2 class="text-3xl sm:text-4xl font-bold font-heading text-slate-900 tracking-tight">Catálogo Fitosanitario & Biológico 2026</h2>
+                <p class="text-slate-600 mt-3 text-base">Explore las 5 categorías técnicas de productos con sus respectivas especificaciones, modos de acción e imágenes de referencia.</p>
             </div>
 
             <!-- BUSCADOR EN TIEMPO REAL -->
             <div class="max-w-2xl mx-auto mb-10">
                 <div class="relative">
                     <i class="ph ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-xl"></i>
-                    <input type="text" id="searchInput" onkeyup="searchProducts()" placeholder="Buscar por plaga (ej. Trips, Prodiplosis), activo o producto..." class="w-full pl-12 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-600 font-medium">
+                    <input type="text" id="searchInput" onkeyup="searchProducts()" placeholder="Buscar por plaga (ej. Trips, Nematodos), activo o bioinsumo..." class="w-full pl-12 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-600 font-medium">
                 </div>
             </div>
 
             <!-- BOTONES DE CATEGORÍA (PESTAÑAS) -->
             <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12">
                 <button onclick="filterCategory('TODOS')" class="cat-btn bg-brand-600 text-white px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold shadow-sm transition-all" data-cat="TODOS">
-                    Todos (40)
+                    Todos (50)
+                </button>
+                <button onclick="filterCategory('BIOLOGICOS')" class="cat-btn bg-slate-100 text-slate-700 hover:bg-slate-200 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all" data-cat="BIOLOGICOS">
+                    Insumos Biológicos (10)
                 </button>
                 <button onclick="filterCategory('INSECTICIDAS')" class="cat-btn bg-slate-100 text-slate-700 hover:bg-slate-200 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all" data-cat="INSECTICIDAS">
                     Insecticidas & Acaricidas (10)
@@ -178,32 +181,108 @@
         </div>
     </section>
 
-    <!-- CALCULADORA DE DOSIS DE CAMPO -->
-    <section id="calculadora" class="py-20 bg-slate-900 text-white relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="space-y-4">
-                    <span class="text-xs font-bold text-brand-400 uppercase tracking-widest">Herramienta Agronómica de Campo</span>
-                    <h2 class="text-3xl sm:text-4xl font-bold font-heading">Calculadora de Dosis y Mezcla</h2>
-                    <p class="text-slate-300 text-sm leading-relaxed">
-                        Calcule la cantidad exacta de producto fitosanitario o foliar que necesita disolver en su tanque de fumigación o cilíndrico según el volumen de agua de aplicación.
-                    </p>
-                </div>
+    <!-- SECCIÓN DE HERRAMIENTAS TÉCNICAS DE CAMPO -->
+    <section id="herramientas" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
+            
+            <div class="text-center max-w-3xl mx-auto">
+                <span class="text-xs font-bold text-brand-400 uppercase tracking-widest">Módulos Interactivos</span>
+                <h2 class="text-3xl sm:text-4xl font-bold font-heading mt-1">Herramientas Agronómicas de Campo</h2>
+                <p class="text-slate-300 text-sm mt-3">Calculadoras de dosificación, acondicionamiento de agua, calibración de boquillas y diseño de esquemas de rotación antirresistencia.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- HERRAMIENTA 1: CALCULADORA DE DOSIS -->
                 <div class="bg-white/5 border border-white/10 backdrop-blur-md p-6 sm:p-8 rounded-3xl space-y-5">
-                    <div>
-                        <label class="block text-xs font-bold text-brand-300 uppercase mb-2">Volumen de Tanque/Parihuela (Litros Agua):</label>
-                        <input type="number" id="calcVolume" value="200" min="1" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white font-bold focus:outline-none focus:ring-2 focus:ring-brand-500">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-brand-500/20 text-brand-400 rounded-xl flex items-center justify-center text-xl font-bold"><i class="ph ph-calculator"></i></div>
+                        <div>
+                            <h3 class="text-lg font-bold font-heading text-white">Calculadora de Dosis de Mezcla</h3>
+                            <p class="text-xs text-slate-400">Volumen necesario por tanque o parihuela</p>
+                        </div>
                     </div>
-                    <div>
-                        <label class="block text-xs font-bold text-brand-300 uppercase mb-2">Dosis Recomendada (ml o g por Cilindro 200 L):</label>
-                        <input type="number" id="calcDose" value="250" min="1" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white font-bold focus:outline-none focus:ring-2 focus:ring-brand-500">
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-brand-300 uppercase mb-2">Volumen Tanque (Litros):</label>
+                            <input type="number" id="calcVolume" value="200" min="1" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-white font-bold text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-brand-300 uppercase mb-2">Dosis Ref. (ml o g / 200 L):</label>
+                            <input type="number" id="calcDose" value="250" min="1" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-white font-bold text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+                        </div>
                     </div>
-                    <button onclick="calculateDose()" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-brand-600/30 transition-all flex items-center justify-center gap-2">
-                        <i class="ph ph-calculator text-lg"></i> Calcular Cantidad a Mezclar
+                    <button onclick="calculateDose()" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-bold py-3 rounded-xl shadow-lg shadow-brand-600/30 transition-all text-xs flex items-center justify-center gap-2">
+                        Calcular Dosis Requerida
                     </button>
                     <div id="calcResult" class="hidden p-4 rounded-xl bg-brand-500/20 border border-brand-500/40 text-center">
-                        <p class="text-xs text-brand-300 font-semibold uppercase">Requerimiento de Producto Comercial:</p>
-                        <p id="calcValue" class="text-2xl font-bold text-white font-heading mt-1">0 ml / g</p>
+                        <p class="text-[11px] text-brand-300 font-semibold uppercase">Insumo Comercial a Añadir:</p>
+                        <p id="calcValue" class="text-2xl font-bold text-white font-heading mt-0.5">0 ml / g</p>
+                    </div>
+                </div>
+
+                <!-- HERRAMIENTA 2: ACONDICIONADOR DE pH Y DUREZA -->
+                <div class="bg-white/5 border border-white/10 backdrop-blur-md p-6 sm:p-8 rounded-3xl space-y-5">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-tech-500/20 text-tech-400 rounded-xl flex items-center justify-center text-xl font-bold"><i class="ph ph-drop"></i></div>
+                        <div>
+                            <h3 class="text-lg font-bold font-heading text-white">Corrector de pH de Agua</h3>
+                            <p class="text-xs text-slate-400">Previene hidrólisis en la costa</p>
+                        </div>
+                    </div>
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-tech-300 uppercase mb-2">pH Actual del Agua:</label>
+                            <select id="phCurrent" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-white font-bold text-sm focus:outline-none focus:ring-2 focus:ring-tech-500">
+                                <option value="7.5">7.5 (Ligeramente Alcalina)</option>
+                                <option value="8.0" selected>8.0 (Alcalina - Costa)</option>
+                                <option value="8.5">8.5 (Muy Alcalina)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-tech-300 uppercase mb-2">Tipo de Plaguicida:</label>
+                            <select id="phPesticide" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-white font-bold text-sm focus:outline-none focus:ring-2 focus:ring-tech-500">
+                                <option value="5.5">Piretroides / Diamidas (pH 5.5)</option>
+                                <option value="6.0">Organofosforados / Triazoles (pH 6.0)</option>
+                                <option value="6.5">Bioinsumos / Cúpricos (pH 6.5)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button onclick="calculatePH()" class="w-full bg-tech-600 hover:bg-tech-500 text-white font-bold py-3 rounded-xl shadow-lg shadow-tech-600/30 transition-all text-xs flex items-center justify-center gap-2">
+                        Calcular Regulador de pH
+                    </button>
+                    <div id="phResult" class="hidden p-4 rounded-xl bg-tech-500/20 border border-tech-500/40 text-center">
+                        <p class="text-[11px] text-tech-300 font-semibold uppercase">Dosis Estimada Acidificante por 200 L:</p>
+                        <p id="phValue" class="text-xl font-bold text-white font-heading mt-0.5">0 ml / 200 L</p>
+                    </div>
+                </div>
+
+                <!-- HERRAMIENTA 3: ROTACIÓN ANTIRRESISTENCIA -->
+                <div class="bg-white/5 border border-white/10 backdrop-blur-md p-6 sm:p-8 rounded-3xl space-y-5 lg:col-span-2">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-amber-500/20 text-amber-400 rounded-xl flex items-center justify-center text-xl font-bold"><i class="ph ph-arrows-clockwise"></i></div>
+                        <div>
+                            <h3 class="text-lg font-bold font-heading text-white">Generador de Rotación Antirresistencia (IRAC / FRAC)</h3>
+                            <p class="text-xs text-slate-400">Esquema preventivo alternado de grupos químicos para auditorías GlobalG.A.P.</p>
+                        </div>
+                    </div>
+                    <div class="grid sm:grid-cols-3 gap-4">
+                        <div class="sm:col-span-2">
+                            <label class="block text-xs font-bold text-amber-300 uppercase mb-2">Plaga / Enfermedad Objetivo:</label>
+                            <select id="rotTarget" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-white font-bold text-sm focus:outline-none focus:ring-2 focus:ring-amber-500">
+                                <option value="PRODIPLOSIS">Prodiplosis longifila (Espárrago / Palto / Tomate)</option>
+                                <option value="TRIPS">Trips - Frankliniella occidentalis (Vid / Palto)</option>
+                                <option value="OIDIUM">Oídium / Cenicilla (Vid / Capsicum)</option>
+                                <option value="SPODOPTERA">Spodoptera frugiperda (Maíz / Hortalizas)</option>
+                            </select>
+                        </div>
+                        <div class="flex items-end">
+                            <button onclick="generateRotation()" class="w-full bg-amber-600 hover:bg-amber-500 text-white font-bold py-2.5 rounded-xl shadow-lg shadow-amber-600/30 transition-all text-xs">
+                                Generar Programa 3 Bloques
+                            </button>
+                        </div>
+                    </div>
+                    <div id="rotResult" class="hidden grid sm:grid-cols-3 gap-3 pt-2">
+                        <!-- Generado por JavaScript -->
                     </div>
                 </div>
             </div>
@@ -215,7 +294,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12">
                 <h2 class="text-3xl font-bold font-heading text-slate-900">Compatibilidad de Mezclas en Tanque</h2>
-                <p class="text-slate-600 mt-2 text-sm">Consulte las recomendaciones físicas y químicas antes de preparar mezclas de tanque.</p>
+                <p class="text-slate-600 mt-2 text-sm">Consulte las recomendaciones físicas y químicas antes de preparar caldos de fumigación en el cilindro.</p>
             </div>
             <div class="overflow-x-auto rounded-2xl border border-slate-200">
                 <table class="w-full text-xs text-left text-slate-600">
@@ -242,6 +321,11 @@
                             <td class="px-6 py-4"><span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2.5 py-1 rounded-full">Prueba Previa</span></td>
                             <td class="px-6 py-4">Verificar pH de la mezcla (óptimo 5.5 - 6.5) antes de llenar el cilindro.</td>
                         </tr>
+                        <tr class="hover:bg-slate-50">
+                            <td class="px-6 py-4 font-bold text-slate-900">Inoculantes Biológicos (Bacillus) + Bactericidas Cúpricos</td>
+                            <td class="px-6 py-4"><span class="bg-red-100 text-red-800 text-[10px] font-bold px-2.5 py-1 rounded-full">Incompatible</span></td>
+                            <td class="px-6 py-4">El cobre inhibe o destruye la viabilidad de las esporas bacterianas o conidias. Respetar 7 días de diferencia.</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -261,14 +345,14 @@
                     <div class="w-12 h-12 bg-brand-100 text-brand-700 rounded-xl flex items-center justify-center text-2xl font-bold mb-6">
                         <i class="ph ph-drop"></i>
                     </div>
-                    <h3 class="text-xl font-bold font-heading text-slate-900 mb-3">Diagnóstico Fitosanitario de Campo</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Identificación de plagas y patógenos con recomendación de rotación de activos.</p>
+                    <h3 class="text-xl font-bold font-heading text-slate-900 mb-3">Diagnóstico Fitosanitario y Biológico</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Identificación de plagas y patógenos con recomendación de rotación de activos y biocontroladores.</p>
                 </div>
                 <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
                     <div class="w-12 h-12 bg-tech-500/10 text-tech-600 rounded-xl flex items-center justify-center text-2xl font-bold mb-6">
                         <i class="ph ph-bug"></i>
                     </div>
-                    <h3 class="text-xl font-bold font-heading text-slate-900 mb-3">Calibración de Equipos de Pulverización</h3>
+                    <h3 class="text-xl font-bold font-heading text-slate-900 mb-3">Calibración de Equipos y Boquillas</h3>
                     <p class="text-slate-600 text-sm leading-relaxed">Selección de boquillas, presión y tamaño de gota para evitar deriva e ineficiencia en la aplicación.</p>
                 </div>
                 <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
@@ -322,7 +406,7 @@
                     <div class="p-6 bg-slate-900 text-white flex items-center justify-between">
                         <div class="flex items-center gap-2">
                             <i class="ph ph-shopping-cart text-xl text-brand-400"></i>
-                            <h2 class="text-lg font-bold font-heading">Su Cotización de Fitosanitarios</h2>
+                            <h2 class="text-lg font-bold font-heading">Su Cotización de Insumos</h2>
                         </div>
                         <button id="closeCartBtn" class="text-slate-400 hover:text-white"><i class="ph ph-x text-2xl"></i></button>
                     </div>
@@ -345,14 +429,136 @@
         </div>
     </div>
 
-    <!-- SCRIPT CON LOS 40 PRODUCTOS Y LÓGICA INTERACTIVA -->
+    <!-- SCRIPT CON LOS 50 PRODUCTOS Y LÓGICA INTERACTIVA -->
     <script>
         const defaultData = {
             whatsapp: "51901742151",
             productos: [
-                // --- CATEGORÍA 1: INSECTICIDAS & ACARICIDAS (10 PRODUCTOS) ---
+                // --- CATEGORÍA 1: INSUMOS BIOLÓGICOS (10 PRODUCTOS CON IMÁGENES REPRESENTATIVAS) ---
                 {
                     id: 1,
+                    nombre: "Bacillus thuringiensis var. kurstaki",
+                    categoria_key: "BIOLOGICOS",
+                    categoria: "Insecticida Biológico",
+                    ingrediente_activo: "Bacillus thuringiensis (32,000 UI/mg)",
+                    modo_accion: "Toxinas Cry por ingestión. Provoca la parálisis intestinal y lisis celular en larvas de lepidópteros.",
+                    descripcion: "Insumo biológico para el control de Spodoptera frugiperda, Helicoverpa zea y gusanos perforadores sin dejar residuos químicos.",
+                    precio: 82.00,
+                    imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwu8BSM95jlzCNqrKNSECMos1eF3b8-eIqNunSc64z4ZWegFZ89meODH5q&s=10",
+                    variantes: ["Bolsa 500 g", "Pote 1 kg"]
+                },
+                {
+                    id: 2,
+                    nombre: "Trichoderma harzianum (Cepa K)",
+                    categoria_key: "BIOLOGICOS",
+                    categoria: "Fungicida Biológico",
+                    ingrediente_activo: "Trichoderma harzianum (1x10^9 UFC/g)",
+                    modo_accion: "Micoparasitismo activo, competencia directa por nutrientes en la rizosfera e inducción de defensas (SAR).",
+                    descripcion: "Protección biológica radicular preventiva frente a Phytophthora, Fusarium, Rhizoctonia y Pythium.",
+                    precio: 90.00,
+                    imagen: "watermarked_img_14236881771431847898.jpg",
+                    variantes: ["Bolsa 500 g", "Pote 1 kg"]
+                },
+                {
+                    id: 3,
+                    nombre: "Beauveria bassiana",
+                    categoria_key: "BIOLOGICOS",
+                    categoria: "Bio-Insecticida Entomopatógeno",
+                    ingrediente_activo: "Beauveria bassiana (1x10^9 conidias/g)",
+                    modo_accion: "Adhesión, germinación de tubo germinativo y penetración mecánica/enzimática sobre la cutícula de insectos plaga.",
+                    descripcion: "Control biológico especializado de mosca blanca, picudo, trips y queresas blandas en hortalizas y frutales.",
+                    precio: 95.00,
+                    imagen: "watermarked_img_9947343092059852210.jpg",
+                    variantes: ["Bolsa 500 g", "Pote 1 kg"]
+                },
+                {
+                    id: 4,
+                    nombre: "Metarhizium anisopliae",
+                    categoria_key: "BIOLOGICOS",
+                    categoria: "Bio-Insecticida de Suelo y Follaje",
+                    ingrediente_activo: "Metarhizium anisopliae (1x10^9 conidias/g)",
+                    modo_accion: "Germinación sobre epicutícula produciendo toxinas (destruxinas) que disuelven el tejido interno del insecto.",
+                    descripcion: "Eficaz sobre gusanos blancos, chinches, gusanos aradores y gusanos cortadores de raíz.",
+                    precio: 92.00,
+                    imagen: "watermarked_img_6818971304139090440.jpg",
+                    variantes: ["Bolsa 500 g", "Pote 1 kg"]
+                },
+                {
+                    id: 5,
+                    nombre: "Purpureocillium lilacinum (Paecilomyces)",
+                    categoria_key: "BIOLOGICOS",
+                    categoria: "Nematicida Biológico",
+                    ingrediente_activo: "Purpureocillium lilacinum (1x10^9 UFC/g)",
+                    modo_accion: "Infección y parasitismo directo sobre masas de huevos, juveniles (J2) y hembras fitoparásitas de nematodos.",
+                    descripcion: "Control biológico de nematodos de nódulo radicular (Meloidogyne spp., Pratylenchus) en suelos agrícolas.",
+                    precio: 105.00,
+                    imagen: "watermarked_img_11487935613477000266.jpg",
+                    variantes: ["Bolsa 500 g", "Pote 1 kg"]
+                },
+                {
+                    id: 6,
+                    nombre: "Bacillus subtilis (Cepa QST 713)",
+                    categoria_key: "BIOLOGICOS",
+                    categoria: "Bactericida y Fungicida Biológico",
+                    ingrediente_activo: "Bacillus subtilis (1x10^9 UFC/g)",
+                    modo_accion: "Producción de lipopéptidos surfactantes que perforan la membrana celular de hifas y esporas fúngicas.",
+                    descripcion: "Bio-fungicida foliar para prevención y frenado de Oídium, Botrytis cinerea y bacteriosis foliares.",
+                    precio: 98.00,
+                    imagen: "watermarked_img_14635046327539772004.jpg",
+                    variantes: ["Frasco 1 Litro", "Pote 1 kg"]
+                },
+                {
+                    id: 7,
+                    nombre: "Lecanicillium lecanii (Verticillium)",
+                    categoria_key: "BIOLOGICOS",
+                    categoria: "Bio-Insecticida Entomopatógeno",
+                    ingrediente_activo: "Lecanicillium lecanii (1x10^9 conidias/g)",
+                    modo_accion: "Microparásito de insectos chupadores que germina en la cutícula en condiciones de humedad media-alta.",
+                    descripcion: "Insumo biológico de alta selectividad contra pulgones, áfidos y trips en cultivos protegidos y de campo abierto.",
+                    precio: 88.00,
+                    imagen: "watermarked_img_9947343092059852210.jpg",
+                    variantes: ["Bolsa 500 g", "Pote 1 kg"]
+                },
+                {
+                    id: 8,
+                    nombre: "Bacillus amyloliquefaciens",
+                    categoria_key: "BIOLOGICOS",
+                    categoria: "Inoculante Fitosanitario",
+                    ingrediente_activo: "Bacillus amyloliquefaciens (1x10^9 UFC/g)",
+                    modo_accion: "Colonización rápida del sistema radicular y secreción de iturinas que activan la SAR vegetal.",
+                    descripcion: "Protección biológica y bioestimulación del root-system contra agentes patógenos de suelo.",
+                    precio: 110.00,
+                    imagen: "watermarked_img_14635046327539772004.jpg",
+                    variantes: ["Frasco 1 Litro", "Pote 1 kg"]
+                },
+                {
+                    id: 9,
+                    nombre: "Pochonia chlamydosporia",
+                    categoria_key: "BIOLOGICOS",
+                    categoria: "Nematicida Biológico de Suelo",
+                    ingrediente_activo: "Pochonia chlamydosporia (1x10^9 esporas/g)",
+                    modo_accion: "Endófito de raíz que destruye la cubierta proteica de huevos y quistes de nematodos noduladores.",
+                    descripcion: "Bio-controlador de ciclo largo en el suelo para mantener bajas poblaciones de nematodos agalladores.",
+                    precio: 115.00,
+                    imagen: "watermarked_img_11487935613477000266.jpg",
+                    variantes: ["Bolsa 500 g", "Pote 1 kg"]
+                },
+                {
+                    id: 10,
+                    nombre: "Extracto de Neem (Azadiractina 1.2%)",
+                    categoria_key: "BIOLOGICOS",
+                    categoria: "Bio-Insecticida Botánico",
+                    ingrediente_activo: "Azadiractina (12,000 ppm)",
+                    modo_accion: "Regulador de la ecdisona (muda de larvas) con potente efecto antifeedant (repelente e inhibidor de la alimentación).",
+                    descripcion: "Extracto vegetal orgánico ideal para rotación de control de minadores de hojas, Trips y larvas tiernas.",
+                    precio: 78.00,
+                    imagen: "watermarked_img_18328569093883666576.jpg",
+                    variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
+                },
+
+                // --- CATEGORÍA 2: INSECTICIDAS & ACARICIDAS (10 PRODUCTOS) ---
+                {
+                    id: 11,
                     nombre: "Abamectina",
                     categoria_key: "INSECTICIDAS",
                     categoria: "Insecticida / Acaricida",
@@ -364,7 +570,7 @@
                     variantes: ["Frasco 250 ml", "Frasco 1 Litro", "Galón 5 Litros"]
                 },
                 {
-                    id: 2,
+                    id: 12,
                     nombre: "Emamectin Benzoate",
                     categoria_key: "INSECTICIDAS",
                     categoria: "Insecticida",
@@ -376,7 +582,7 @@
                     variantes: ["Bolsa 100 g", "Bolsa 500 g", "Pote 1 kg"]
                 },
                 {
-                    id: 3,
+                    id: 13,
                     nombre: "Spirofet",
                     categoria_key: "INSECTICIDAS",
                     categoria: "Acaricida",
@@ -388,7 +594,7 @@
                     variantes: ["Frasco 250 ml", "Frasco 1 Litro"]
                 },
                 {
-                    id: 4,
+                    id: 14,
                     nombre: "Cypermethrin",
                     categoria_key: "INSECTICIDAS",
                     categoria: "Insecticida Piretroide",
@@ -400,7 +606,7 @@
                     variantes: ["Frasco 250 ml", "Frasco 1 Litro", "Galón 5 Litros"]
                 },
                 {
-                    id: 5,
+                    id: 15,
                     nombre: "Teflubenzuron",
                     categoria_key: "INSECTICIDAS",
                     categoria: "Regulador de Crecimiento (IGR)",
@@ -412,7 +618,7 @@
                     variantes: ["Frasco 250 ml", "Frasco 1 Litro"]
                 },
                 {
-                    id: 6,
+                    id: 16,
                     nombre: "Spinetoram",
                     categoria_key: "INSECTICIDAS",
                     categoria: "Insecticida Espinosina",
@@ -424,7 +630,7 @@
                     variantes: ["Frasco 250 ml", "Frasco 1 Litro"]
                 },
                 {
-                    id: 7,
+                    id: 17,
                     nombre: "Acetamiprid",
                     categoria_key: "INSECTICIDAS",
                     categoria: "Insecticida Sistémico",
@@ -436,11 +642,11 @@
                     variantes: ["Bolsa 100 g", "Bolsa 500 g", "Pote 1 kg"]
                 },
                 {
-                    id: 8,
+                    id: 18,
                     nombre: "Alpha-cypermethrin",
                     categoria_key: "INSECTICIDAS",
                     categoria: "Insecticida Piretroide",
-                    ingrediente_activo: "Alpha-cypermethrin",
+                    ingrediente_activo: "Alpha-cypermethrin (100 g/L)",
                     modo_accion: "Actúa por contacto e ingestión. Interfiere en los canales de sodio provocando parálisis.",
                     descripcion: "Control de choque para larvas de lepidópteros y trips en cultivos de alta densidad.",
                     precio: 88.00,
@@ -448,7 +654,7 @@
                     variantes: ["Bolsa 100 g", "Pote 1 kg"]
                 },
                 {
-                    id: 9,
+                    id: 19,
                     nombre: "Chlorantraniliprole",
                     categoria_key: "INSECTICIDAS",
                     categoria: "Insecticida Diamida",
@@ -460,21 +666,21 @@
                     variantes: ["Frasco 100 ml", "Frasco 500 ml"]
                 },
                 {
-                    id: 10,
-                    nombre: "Bacillus thuringiensis",
+                    id: 20,
+                    nombre: "Methomyl 90 SP",
                     categoria_key: "INSECTICIDAS",
-                    categoria: "Insecticida Biológico",
-                    ingrediente_activo: "Bacillus thuringiensis var. kurstaki",
-                    modo_accion: "Toxinas Cry por ingestión. Lisis celular del intestino de larvas.",
-                    descripcion: "Control biológico de gusanos sin residuos químicos, ideal para agroexportación.",
-                    precio: 82.00,
-                    imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwu8BSM95jlzCNqrKNSECMos1eF3b8-eIqNunSc64z4ZWegFZ89meODH5q&s=10",
-                    variantes: ["Bolsa 500 g", "Pote 1 kg"]
+                    categoria: "Insecticida Carbamato",
+                    ingrediente_activo: "Metomilo (900 g/kg)",
+                    modo_accion: "Inhibidor de la acetilcolinesterasa (IRAC 1A) con alto efecto de derribo de contacto.",
+                    descripcion: "Choque inmediato contra adultos y larvas de gusano cogollero y trips.",
+                    precio: 88.00,
+                    imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0gFFnMTGPU5t5u7ijN_0wpJ2LOr1v7NvTbJCdyEnKiNMDq9XbXjxQRopZ&s=10",
+                    variantes: ["Bolsa 100 g", "Pote 1 kg"]
                 },
 
-                // --- CATEGORÍA 2: FUNGICIDAS & BACTERICIDAS (10 PRODUCTOS) ---
+                // --- CATEGORÍA 3: FUNGICIDAS & BACTERICIDAS (10 PRODUCTOS) ---
                 {
-                    id: 11,
+                    id: 21,
                     nombre: "Azoxystrobin",
                     categoria_key: "FUNGICIDAS",
                     categoria: "Fungicida Sistémico",
@@ -486,7 +692,7 @@
                     variantes: ["Frasco 250 ml", "Frasco 1 Litro"]
                 },
                 {
-                    id: 12,
+                    id: 22,
                     nombre: "Difenoconazole",
                     categoria_key: "FUNGICIDAS",
                     categoria: "Fungicida Curativo",
@@ -498,7 +704,7 @@
                     variantes: ["Frasco 250 ml", "Frasco 1 Litro"]
                 },
                 {
-                    id: 13,
+                    id: 23,
                     nombre: "Mancozeb",
                     categoria_key: "FUNGICIDAS",
                     categoria: "Fungicida Preventivo",
@@ -510,7 +716,7 @@
                     variantes: ["Bolsa 1 kg", "Saco 25 kg"]
                 },
                 {
-                    id: 14,
+                    id: 24,
                     nombre: "Tebuconazole",
                     categoria_key: "FUNGICIDAS",
                     categoria: "Fungicida Erradicante",
@@ -522,7 +728,7 @@
                     variantes: ["Frasco 250 ml", "Frasco 1 Litro"]
                 },
                 {
-                    id: 15,
+                    id: 25,
                     nombre: "Metalaxyl + Mancozeb",
                     categoria_key: "FUNGICIDAS",
                     categoria: "Fungicida Oomiceticida",
@@ -534,7 +740,7 @@
                     variantes: ["Bolsa 1 kg", "Caja 10 kg"]
                 },
                 {
-                    id: 16,
+                    id: 26,
                     nombre: "Hidróxido de Cobre",
                     categoria_key: "FUNGICIDAS",
                     categoria: "Cúprico / Bactericidida",
@@ -546,7 +752,7 @@
                     variantes: ["Bolsa 1 kg", "Saco 15 kg"]
                 },
                 {
-                    id: 17,
+                    id: 27,
                     nombre: "Propamocarb",
                     categoria_key: "FUNGICIDAS",
                     categoria: "Fungicida de Suelo",
@@ -558,7 +764,7 @@
                     variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
                 },
                 {
-                    id: 18,
+                    id: 28,
                     nombre: "Chlorothalonil",
                     categoria_key: "FUNGICIDAS",
                     categoria: "Fungicida Multisitio",
@@ -570,7 +776,7 @@
                     variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
                 },
                 {
-                    id: 19,
+                    id: 29,
                     nombre: "Cymoxanil + Mancozeb",
                     categoria_key: "FUNGICIDAS",
                     categoria: "Fungicida Curativo Mildiu",
@@ -582,21 +788,21 @@
                     variantes: ["Bolsa 1 kg"]
                 },
                 {
-                    id: 20,
-                    nombre: "Trichoderma harzianum",
+                    id: 30,
+                    nombre: "Fosfito de Potasio K-40",
                     categoria_key: "FUNGICIDAS",
-                    categoria: "Fungicida Biológico",
-                    ingrediente_activo: "Trichoderma harzianum Cepa K",
-                    modo_accion: "Micoparasitismo, competencia por nutrientes y activación de defensas.",
-                    descripcion: "Inoculante biológico contra patógenos de raíz (Fusarium, Rhizoctonia, Pythium).",
-                    precio: 90.00,
-                    imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0A-VU1Ml-15GyhdnD3MmzQhXA9jC4R51uHYY019m_2g&s=10",
-                    variantes: ["Bolsa 500 g", "Pote 1 kg"]
+                    categoria: "Fungicida Inductor",
+                    ingrediente_activo: "Fosfitos de Potasio (P2O5 40% + K2O 20%)",
+                    modo_accion: "Estimulante de la ruta metabólica de la ácido shikímico (fitoalexinas).",
+                    descripcion: "Refuerza la pared celular y previene pudriciones del cuello por Phytophthora.",
+                    precio: 62.00,
+                    imagen: "https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?auto=format&fit=crop&w=600",
+                    variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
                 },
 
-                // --- CATEGORÍA 3: HERBICIDAS (10 PRODUCTOS) ---
+                // --- CATEGORÍA 4: HERBICIDAS (10 PRODUCTOS) ---
                 {
-                    id: 21,
+                    id: 31,
                     nombre: "Glufosinato de Amonio 200 SL",
                     categoria_key: "HERBICIDAS",
                     categoria: "Herbicida de Contacto",
@@ -608,7 +814,7 @@
                     variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
                 },
                 {
-                    id: 22,
+                    id: 32,
                     nombre: "Pendimethalin 400 EC",
                     categoria_key: "HERBICIDAS",
                     categoria: "Herbicida Pre-emergente",
@@ -620,7 +826,7 @@
                     variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
                 },
                 {
-                    id: 23,
+                    id: 33,
                     nombre: "Oxifluorfen 240 EC",
                     categoria_key: "HERBICIDAS",
                     categoria: "Herbicida de Sello",
@@ -632,7 +838,7 @@
                     variantes: ["Frasco 250 ml", "Frasco 1 Litro"]
                 },
                 {
-                    id: 24,
+                    id: 34,
                     nombre: "Haloxyfop-P-Methyl 108 EC",
                     categoria_key: "HERBICIDAS",
                     categoria: "Graminicida Selectivo",
@@ -644,7 +850,7 @@
                     variantes: ["Frasco 250 ml", "Frasco 1 Litro"]
                 },
                 {
-                    id: 25,
+                    id: 35,
                     nombre: "Clethodim 240 EC",
                     categoria_key: "HERBICIDAS",
                     categoria: "Graminicida Post-emergente",
@@ -656,7 +862,7 @@
                     variantes: ["Frasco 250 ml", "Frasco 1 Litro"]
                 },
                 {
-                    id: 26,
+                    id: 36,
                     nombre: "Metribuzin 480 SC",
                     categoria_key: "HERBICIDAS",
                     categoria: "Herbicida Selectivo",
@@ -668,7 +874,7 @@
                     variantes: ["Frasco 500 ml", "Frasco 1 Litro"]
                 },
                 {
-                    id: 27,
+                    id: 37,
                     nombre: "2,4-D Amina 600 SL",
                     categoria_key: "HERBICIDAS",
                     categoria: "Herbicida Hormonal",
@@ -680,7 +886,7 @@
                     variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
                 },
                 {
-                    id: 28,
+                    id: 38,
                     nombre: "Fluroxypyr 200 EC",
                     categoria_key: "HERBICIDAS",
                     categoria: "Herbicida Sistémico",
@@ -692,7 +898,7 @@
                     variantes: ["Frasco 250 ml", "Frasco 1 Litro"]
                 },
                 {
-                    id: 29,
+                    id: 39,
                     nombre: "Quizalofop-P-Tefuril 120 EC",
                     categoria_key: "HERBICIDAS",
                     categoria: "Graminicida Filiar",
@@ -704,7 +910,7 @@
                     variantes: ["Frasco 250 ml", "Frasco 1 Litro"]
                 },
                 {
-                    id: 30,
+                    id: 40,
                     nombre: "Atrazina 500 SC",
                     categoria_key: "HERBICIDAS",
                     categoria: "Herbicida Pre/Post Temprano",
@@ -716,9 +922,9 @@
                     variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
                 },
 
-                // --- CATEGORÍA 4: BIOESTIMULANTES & NUTRICIÓN (10 PRODUCTOS) ---
+                // --- CATEGORÍA 5: BIOESTIMULANTES & NUTRICIÓN (10 PRODUCTOS) ---
                 {
-                    id: 31,
+                    id: 41,
                     nombre: "Extracto de Algas Marinas",
                     categoria_key: "BIOESTIMULANTES",
                     categoria: "Bioestimulante Orgánico",
@@ -730,7 +936,7 @@
                     variantes: ["Frasco 1 Litro", "Galón 5 Litros", "Bidón 20 Litros"]
                 },
                 {
-                    id: 32,
+                    id: 42,
                     nombre: "Aminoácidos Libres 24% + NPK",
                     categoria_key: "BIOESTIMULANTES",
                     categoria: "Activador Fisiológico",
@@ -742,7 +948,7 @@
                     variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
                 },
                 {
-                    id: 33,
+                    id: 43,
                     nombre: "Calcio Boro Quelatado",
                     categoria_key: "BIOESTIMULANTES",
                     categoria: "Nutrición Estructural",
@@ -754,7 +960,7 @@
                     variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
                 },
                 {
-                    id: 34,
+                    id: 44,
                     nombre: "Potasio de Alta Absorción (K-50)",
                     categoria_key: "BIOESTIMULANTES",
                     categoria: "Madurante y Llenado",
@@ -766,7 +972,7 @@
                     variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
                 },
                 {
-                    id: 35,
+                    id: 45,
                     nombre: "Inductor de Defensas (Fosfito K)",
                     categoria_key: "BIOESTIMULANTES",
                     categoria: "Fitoalexínico",
@@ -778,7 +984,7 @@
                     variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
                 },
                 {
-                    id: 36,
+                    id: 46,
                     nombre: "Enraizante Biológico Radicular",
                     categoria_key: "BIOESTIMULANTES",
                     categoria: "Enraizante Concentrado",
@@ -790,7 +996,7 @@
                     variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
                 },
                 {
-                    id: 37,
+                    id: 47,
                     nombre: "Cinc Quelatado (Zn-EDTA 15%)",
                     categoria_key: "BIOESTIMULANTES",
                     categoria: "Microelemento Foliar",
@@ -802,7 +1008,7 @@
                     variantes: ["Pote 1 kg"]
                 },
                 {
-                    id: 38,
+                    id: 48,
                     nombre: "Anti-Estrés Térmico (Glicina)",
                     categoria_key: "BIOESTIMULANTES",
                     categoria: "Osmoprotector",
@@ -814,7 +1020,7 @@
                     variantes: ["Pote 1 kg"]
                 },
                 {
-                    id: 39,
+                    id: 49,
                     nombre: "Hierro Quelatado (Fe-EDDHA 6%)",
                     categoria_key: "BIOESTIMULANTES",
                     categoria: "Corrector de Clorosis",
@@ -826,7 +1032,7 @@
                     variantes: ["Bolsa 1 kg", "Caja 5 kg"]
                 },
                 {
-                    id: 40,
+                    id: 50,
                     nombre: "Boro Etanolamina 10%",
                     categoria_key: "BIOESTIMULANTES",
                     categoria: "Nutrición de Floración",
@@ -918,7 +1124,7 @@
                         </div>
                         <div class="p-5">
                             <h3 class="font-bold font-heading text-slate-900 text-lg mb-1">${prod.nombre}</h3>
-                            ${prod.ingrediente_activo ? `<p class="text-xs font-semibold text-brand-700 mb-2">I.A.: ${prod.ingrediente_activo}</p>` : ''}
+                            ${prod.ingrediente_activo ? `<p class="text-xs font-semibold text-brand-700 mb-2">I.A. / Conc.: ${prod.ingrediente_activo}</p>` : ''}
                             <p class="text-slate-600 text-xs mb-3 line-clamp-2">${prod.descripcion}</p>
                             ${prod.modo_accion ? `
                                 <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-100 mb-4">
@@ -966,8 +1172,59 @@
             document.getElementById('calcResult').classList.remove('hidden');
         }
 
+        function calculatePH() {
+            const current = parseFloat(document.getElementById('phCurrent').value);
+            const target = parseFloat(document.getElementById('phPesticide').value);
+            const diff = current - target;
+            
+            let recommendedMl = Math.max(0, Math.round(diff * 60));
+            document.getElementById('phValue').innerText = `${recommendedMl} ml de Acidificante / 200 L`;
+            document.getElementById('phResult').classList.remove('hidden');
+        }
+
+        function generateRotation() {
+            const target = document.getElementById('rotTarget').value;
+            const resDiv = document.getElementById('rotResult');
+            resDiv.classList.remove('hidden');
+
+            let blocks = [];
+            if (target === 'PRODIPLOSIS') {
+                blocks = [
+                    { b: "Bloque 1 (Inicio)", p: "Teflubenzuron 150 SC", m: "IRAC Grupo 15 (Inhibidor de Muda)" },
+                    { b: "Bloque 2 (Control)", p: "Spinetoram 120 SC", m: "IRAC Grupo 5 (Espinocinas)" },
+                    { b: "Bloque 3 (Limpieza)", p: "Beauveria bassiana", m: "Bio-Controlador Cuticular" }
+                ];
+            } else if (target === 'TRIPS') {
+                blocks = [
+                    { b: "Bloque 1 (Inicio)", p: "Spinetoram 120 SC", m: "IRAC Grupo 5 (Acción Nicotínica)" },
+                    { b: "Bloque 2 (Control)", p: "Abamectina 1.8% EC", m: "IRAC Grupo 6 (Modulador de Cloro)" },
+                    { b: "Bloque 3 (Limpieza)", p: "Lecanicillium lecanii", m: "Bio-Insecticida Entomopatógeno" }
+                ];
+            } else if (target === 'OIDIUM') {
+                blocks = [
+                    { b: "Bloque 1 (Preventivo)", p: "Azoxystrobin 250 SC", m: "FRAC Grupo 11 (Estrobirulina)" },
+                    { b: "Bloque 2 (Curativo)", p: "Difenoconazole 250 EC", m: "FRAC Grupo 3 (Triazol DMI)" },
+                    { b: "Bloque 3 (Bio-Stop)", p: "Bacillus subtilis (QST 713)", m: "Bio-Lisis de Paredes Fúngicas" }
+                ];
+            } else {
+                blocks = [
+                    { b: "Bloque 1 (Eclosión)", p: "Bacillus thuringiensis (Bt)", m: "Toxinas Cry Intestinales" },
+                    { b: "Bloque 2 (Larvas 1-3)", p: "Emamectin Benzoate 5% SG", m: "IRAC Grupo 6 (Parálisis Rápida)" },
+                    { b: "Bloque 3 (Residual)", p: "Chlorantraniliprole 200 SC", m: "IRAC Grupo 28 (Diamida Ryanodina)" }
+                ];
+            }
+
+            resDiv.innerHTML = blocks.map(bk => `
+                <div class="bg-slate-800 p-3.5 rounded-xl border border-slate-700">
+                    <span class="text-[10px] font-bold text-amber-400 block uppercase">${bk.b}</span>
+                    <h4 class="font-bold text-xs text-white mt-1">${bk.p}</h4>
+                    <p class="text-[10px] text-slate-400 mt-0.5">${bk.m}</p>
+                </div>
+            `).join('');
+        }
+
         function requestSpecSheet(productName) {
-            const msg = `Hola SOLUTION FACS (+51 901 742 151), solicito la Ficha Técnica / Hoja MSDS del producto: *${productName}*`;
+            const msg = `Hola SOLUTION FACS (+51 901 742 151), solicito la Ficha Técnica / Hoja MSDS SENASA del producto: *${productName}*`;
             const url = `https://wa.me/51901742151?text=${encodeURIComponent(msg)}`;
             window.open(url, '_blank');
         }
@@ -1056,7 +1313,7 @@
                     return;
                 }
 
-                let msg = "Hola SOLUTION FACS (+51 901 742 151), deseo solicitar la siguiente cotización fitosanitaria:\n\n";
+                let msg = "Hola SOLUTION FACS (+51 901 742 151), deseo solicitar la siguiente cotización fitosanitaria/biológica:\n\n";
                 currentCart.forEach(item => {
                     msg += `• *${item.nombre}* (${item.variante}) x${item.cantidad} - S/ ${(item.precio * item.cantidad).toFixed(2)}\n`;
                 });
