@@ -82,8 +82,9 @@
             <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-700">
                 <a href="#inicio" class="hover:text-brand-600 transition-colors">Inicio</a>
                 <a href="#catalogo" class="hover:text-brand-600 transition-colors">Catálogo</a>
-                <a href="#servicios" class="hover:text-brand-600 transition-colors">Servicios Técnicos</a>
-                <a href="#blog" class="hover:text-brand-600 transition-colors">Boletín Fitosanitario</a>
+                <a href="#calculadora" class="hover:text-brand-600 transition-colors">Calculadora Dosis</a>
+                <a href="#mezclas" class="hover:text-brand-600 transition-colors">Mezclas</a>
+                <a href="#servicios" class="hover:text-brand-600 transition-colors">Servicios</a>
             </nav>
 
             <div class="flex items-center gap-3">
@@ -105,17 +106,20 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid md:grid-cols-2 gap-12 items-center">
             <div class="space-y-6 text-center md:text-left">
                 <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-400 text-xs font-semibold">
-                    <i class="ph ph-shield-check text-sm"></i> Catálogo Fitosanitario
+                    <i class="ph ph-shield-check text-sm"></i> Catálogo Fitosanitario SENASA 2026
                 </div>
                 <h1 class="text-4xl sm:text-5xl font-extrabold font-heading leading-tight tracking-tight">
                     Protección de Cultivos & <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-emerald-200">Bioestimulación Agrícola</span>
                 </h1>
                 <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-xl mx-auto md:mx-0">
-                    Proveemos soluciones fitosanitarias divididas en 4 especialidades con registro vigente para agricultura de precisión y exportación.
+                    Proveemos soluciones fitosanitarias divididas en 4 especialidades con registro vigente para agricultura de precisión y exportación en La Libertad.
                 </p>
                 <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-2">
                     <a href="#catalogo" class="bg-brand-600 hover:bg-brand-500 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-brand-600/30 transition-all flex items-center gap-2 text-sm">
-                        Explorar los Productos <i class="ph ph-arrow-down"></i>
+                        Explorar Productos <i class="ph ph-arrow-down"></i>
+                    </a>
+                    <a href="#calculadora" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold px-6 py-3.5 rounded-xl backdrop-blur-sm transition-all flex items-center gap-2 text-sm">
+                        <i class="ph ph-calculator text-brand-400 text-lg"></i> Calculadora de Dosis
                     </a>
                 </div>
             </div>
@@ -124,7 +128,7 @@
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmZVPzWkX1KYPMU8mG6MVxBXEYGwE_2l4AXXFm4BFY9g&s=10" alt="SOLUTION FACS" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
                     <div class="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20">
-                        <p class="text-xs font-semibold text-brand-300 uppercase tracking-wider">Normativa SENASA</p>
+                        <p class="text-xs font-semibold text-brand-300 uppercase tracking-wider">Normativa SENASA 2026</p>
                         <p class="text-sm font-bold text-white mt-0.5">Control fitosanitario de alta efectividad con cumplimiento LMR</p>
                     </div>
                 </div>
@@ -132,12 +136,20 @@
         </div>
     </section>
 
-    <!-- CATALOGO DE PRODUCTOS CON PESTAÑAS (40 PRODUCTOS) -->
+    <!-- CATALOGO DE PRODUCTOS CON BUSCADOR Y PESTAÑAS -->
     <section id="catalogo" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-3xl sm:text-4xl font-bold font-heading text-slate-900 tracking-tight">Catálogo Fitosanitario</h2>
-                <p class="text-slate-600 mt-3 text-base">Seleccione una categoría para explorar los productos especializados con su respectiva ficha técnica e ingrediente activo.</p>
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <h2 class="text-3xl sm:text-4xl font-bold font-heading text-slate-900 tracking-tight">Catálogo Fitosanitario 2026</h2>
+                <p class="text-slate-600 mt-3 text-base">Seleccione una categoría o busque por plaga, patógeno o ingrediente activo para encontrar el insumo ideal.</p>
+            </div>
+
+            <!-- BUSCADOR EN TIEMPO REAL -->
+            <div class="max-w-2xl mx-auto mb-10">
+                <div class="relative">
+                    <i class="ph ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-xl"></i>
+                    <input type="text" id="searchInput" onkeyup="searchProducts()" placeholder="Buscar por plaga (ej. Trips, Prodiplosis), activo o producto..." class="w-full pl-12 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-600 font-medium">
+                </div>
             </div>
 
             <!-- BOTONES DE CATEGORÍA (PESTAÑAS) -->
@@ -161,7 +173,77 @@
 
             <!-- GRID DE PRODUCTOS -->
             <div id="productsGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                <!-- Se puebla dinámicamente con JavaScript -->
+                <!-- Se puebla dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CALCULADORA DE DOSIS DE CAMPO -->
+    <section id="calculadora" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-4">
+                    <span class="text-xs font-bold text-brand-400 uppercase tracking-widest">Herramienta Agronómica de Campo</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold font-heading">Calculadora de Dosis y Mezcla</h2>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Calcule la cantidad exacta de producto fitosanitario o foliar que necesita disolver en su tanque de fumigación o cilíndrico según el volumen de agua de aplicación.
+                    </p>
+                </div>
+                <div class="bg-white/5 border border-white/10 backdrop-blur-md p-6 sm:p-8 rounded-3xl space-y-5">
+                    <div>
+                        <label class="block text-xs font-bold text-brand-300 uppercase mb-2">Volumen de Tanque/Parihuela (Litros Agua):</label>
+                        <input type="number" id="calcVolume" value="200" min="1" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white font-bold focus:outline-none focus:ring-2 focus:ring-brand-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-brand-300 uppercase mb-2">Dosis Recomendada (ml o g por Cilindro 200 L):</label>
+                        <input type="number" id="calcDose" value="250" min="1" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white font-bold focus:outline-none focus:ring-2 focus:ring-brand-500">
+                    </div>
+                    <button onclick="calculateDose()" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-brand-600/30 transition-all flex items-center justify-center gap-2">
+                        <i class="ph ph-calculator text-lg"></i> Calcular Cantidad a Mezclar
+                    </button>
+                    <div id="calcResult" class="hidden p-4 rounded-xl bg-brand-500/20 border border-brand-500/40 text-center">
+                        <p class="text-xs text-brand-300 font-semibold uppercase">Requerimiento de Producto Comercial:</p>
+                        <p id="calcValue" class="text-2xl font-bold text-white font-heading mt-1">0 ml / g</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GUÍA DE COMPATIBILIDAD DE MEZCLAS -->
+    <section id="mezclas" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl font-bold font-heading text-slate-900">Compatibilidad de Mezclas en Tanque</h2>
+                <p class="text-slate-600 mt-2 text-sm">Consulte las recomendaciones físicas y químicas antes de preparar mezclas de tanque.</p>
+            </div>
+            <div class="overflow-x-auto rounded-2xl border border-slate-200">
+                <table class="w-full text-xs text-left text-slate-600">
+                    <thead class="text-xs font-bold text-slate-900 uppercase bg-slate-100 border-b border-slate-200">
+                        <tr>
+                            <th class="px-6 py-4">Combinación de Productos</th>
+                            <th class="px-6 py-4">Compatibilidad</th>
+                            <th class="px-6 py-4">Recomendación Técnica de Campo</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 font-medium">
+                        <tr class="hover:bg-slate-50">
+                            <td class="px-6 py-4 font-bold text-slate-900">Insecticidas EC + Bioestimulantes A.A.</td>
+                            <td class="px-6 py-4"><span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2.5 py-1 rounded-full">Compatible</span></td>
+                            <td class="px-6 py-4">Mezcla segura. Favorece la penetración foliar y rápida asimilación.</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50">
+                            <td class="px-6 py-4 font-bold text-slate-900">Fungicidas Cúpricos + Aceites Agrícolas</td>
+                            <td class="px-6 py-4"><span class="bg-red-100 text-red-800 text-[10px] font-bold px-2.5 py-1 rounded-full">Incompatible</span></td>
+                            <td class="px-6 py-4">Riesgo severo de fitotoxicidad en brotes tiernos. Aplicar por separado.</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50">
+                            <td class="px-6 py-4 font-bold text-slate-900">Fosfitos de Potasio + Fungicidas Triazoles</td>
+                            <td class="px-6 py-4"><span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2.5 py-1 rounded-full">Prueba Previa</span></td>
+                            <td class="px-6 py-4">Verificar pH de la mezcla (óptimo 5.5 - 6.5) antes de llenar el cilindro.</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
@@ -359,8 +441,8 @@
                     categoria_key: "INSECTICIDAS",
                     categoria: "Insecticida Piretroide",
                     ingrediente_activo: "Alpha-cypermethrin",
-                    modo_accion: "Actúa por contacto e ingestión. Interfiere en los canales de sodio dependientes de voltaje en las membranas de las células nerviosas del insecto, provocando parálisis (efecto knockdown) y muerte.",
-                    descripcion: "Controle de choque para larvas de lepidópteros y trips en cultivos de alta densidad.",
+                    modo_accion: "Actúa por contacto e ingestión. Interfiere en los canales de sodio provocando parálisis.",
+                    descripcion: "Control de choque para larvas de lepidópteros y trips en cultivos de alta densidad.",
                     precio: 88.00,
                     imagen: "https://file.medchemexpress.com/product_pic/hy-b0874.gif",
                     variantes: ["Bolsa 100 g", "Pote 1 kg"]
@@ -783,7 +865,6 @@
         function filterCategory(categoryKey) {
             activeCategory = categoryKey;
             
-            // Actualizar botones UI
             document.querySelectorAll('.cat-btn').forEach(btn => {
                 if (btn.getAttribute('data-cat') === categoryKey) {
                     btn.className = "cat-btn bg-brand-600 text-white px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold shadow-sm transition-all";
@@ -795,12 +876,36 @@
             renderProducts();
         }
 
+        function searchProducts() {
+            renderProducts();
+        }
+
         function renderProducts() {
             const grid = document.getElementById('productsGrid');
-            
-            const filteredProducts = activeCategory === 'TODOS' 
+            const query = document.getElementById('searchInput') ? document.getElementById('searchInput').value.toLowerCase().trim() : '';
+
+            let filteredProducts = activeCategory === 'TODOS' 
                 ? catalogProducts 
                 : catalogProducts.filter(p => p.categoria_key === activeCategory);
+
+            if (query !== '') {
+                filteredProducts = filteredProducts.filter(p => 
+                    p.nombre.toLowerCase().includes(query) || 
+                    (p.ingrediente_activo && p.ingrediente_activo.toLowerCase().includes(query)) ||
+                    (p.descripcion && p.descripcion.toLowerCase().includes(query)) ||
+                    (p.modo_accion && p.modo_accion.toLowerCase().includes(query))
+                );
+            }
+
+            if (filteredProducts.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-12">
+                        <i class="ph ph-magnifying-glass text-4xl text-slate-300 block mb-2"></i>
+                        <p class="text-slate-500 font-semibold text-sm">No se encontraron productos coincidentes con "${query}".</p>
+                    </div>
+                `;
+                return;
+            }
 
             grid.innerHTML = filteredProducts.map(prod => `
                 <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
@@ -829,17 +934,42 @@
                             </div>
                         </div>
                     </div>
-                    <div class="p-5 pt-0 border-t border-slate-100 mt-auto flex items-center justify-between gap-2">
-                        <div>
-                            <span class="text-[10px] text-slate-400 block font-semibold">Precio ref.</span>
-                            <span class="text-lg font-bold font-heading text-slate-900">S/ ${prod.precio.toFixed(2)}</span>
+                    <div class="p-5 pt-0 border-t border-slate-100 mt-auto space-y-3">
+                        <div class="flex items-center justify-between gap-2">
+                            <div>
+                                <span class="text-[10px] text-slate-400 block font-semibold">Precio ref.</span>
+                                <span class="text-lg font-bold font-heading text-slate-900">S/ ${prod.precio.toFixed(2)}</span>
+                            </div>
+                            <button onclick="addToCart(${prod.id})" class="bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs px-3.5 py-2.5 rounded-xl transition-all flex items-center gap-1.5 shadow-sm">
+                                <i class="ph ph-shopping-cart-simple text-base"></i> Agregar
+                            </button>
                         </div>
-                        <button onclick="addToCart(${prod.id})" class="bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs px-3.5 py-2.5 rounded-xl transition-all flex items-center gap-1.5 shadow-sm">
-                            <i class="ph ph-shopping-cart-simple text-base"></i> Agregar
+                        <button onclick="requestSpecSheet('${prod.nombre}')" class="w-full text-center text-[11px] font-bold text-slate-500 hover:text-brand-700 transition-colors flex items-center justify-center gap-1">
+                            <i class="ph ph-file-pdf text-sm"></i> Solicitar Ficha Técnica SENASA
                         </button>
                     </div>
                 </div>
             `).join('');
+        }
+
+        function calculateDose() {
+            const vol = parseFloat(document.getElementById('calcVolume').value) || 0;
+            const dose = parseFloat(document.getElementById('calcDose').value) || 0;
+            
+            if (vol <= 0 || dose <= 0) {
+                alert("Ingrese valores mayores a cero.");
+                return;
+            }
+
+            const totalNeeded = (vol / 200) * dose;
+            document.getElementById('calcValue').innerText = `${totalNeeded.toFixed(1)} ml / g`;
+            document.getElementById('calcResult').classList.remove('hidden');
+        }
+
+        function requestSpecSheet(productName) {
+            const msg = `Hola SOLUTION FACS (+51 901 742 151), solicito la Ficha Técnica / Hoja MSDS del producto: *${productName}*`;
+            const url = `https://wa.me/51901742151?text=${encodeURIComponent(msg)}`;
+            window.open(url, '_blank');
         }
 
         function addToCart(productId) {
