@@ -9,7 +9,7 @@
     <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     
@@ -141,7 +141,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-10">
                 <h2 class="text-3xl sm:text-4xl font-bold font-heading text-slate-900 tracking-tight">Catálogo Fitosanitario & Biológico 2026</h2>
-                <p class="text-slate-600 mt-3 text-base">Explore las 5 categorías técnicas de productos con sus respectivas especificaciones, modos de acción e imágenes de referencia.</p>
+                <p class="text-slate-600 mt-3 text-base">Explore las 5 categorías técnicas de productos con sus respectivas especificaciones, modos de acción y etiquetas de diseño exclusivo.</p>
             </div>
 
             <!-- BUSCADOR EN TIEMPO REAL -->
@@ -434,29 +434,27 @@
         const defaultData = {
             whatsapp: "51901742151",
             productos: [
-                // --- CATEGORÍA 1: INSUMOS BIOLÓGICOS (10 PRODUCTOS CON IMÁGENES REPRESENTATIVAS) ---
+                // --- CATEGORÍA 1: INSUMOS BIOLÓGICOS (10 PRODUCTOS) ---
                 {
                     id: 1,
-                    nombre: "Bacillus thuringiensis var. kurstaki",
+                    nombre: "Bacillus thuringiensis",
                     categoria_key: "BIOLOGICOS",
                     categoria: "Insecticida Biológico",
                     ingrediente_activo: "Bacillus thuringiensis (32,000 UI/mg)",
                     modo_accion: "Toxinas Cry por ingestión. Provoca la parálisis intestinal y lisis celular en larvas de lepidópteros.",
                     descripcion: "Insumo biológico para el control de Spodoptera frugiperda, Helicoverpa zea y gusanos perforadores sin dejar residuos químicos.",
                     precio: 82.00,
-                    imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwu8BSM95jlzCNqrKNSECMos1eF3b8-eIqNunSc64z4ZWegFZ89meODH5q&s=10",
                     variantes: ["Bolsa 500 g", "Pote 1 kg"]
                 },
                 {
                     id: 2,
-                    nombre: "Trichoderma harzianum (Cepa K)",
+                    nombre: "Trichoderma harzianum",
                     categoria_key: "BIOLOGICOS",
                     categoria: "Fungicida Biológico",
                     ingrediente_activo: "Trichoderma harzianum (1x10^9 UFC/g)",
                     modo_accion: "Micoparasitismo activo, competencia directa por nutrientes en la rizosfera e inducción de defensas (SAR).",
                     descripcion: "Protección biológica radicular preventiva frente a Phytophthora, Fusarium, Rhizoctonia y Pythium.",
                     precio: 90.00,
-                    imagen: "watermarked_img_14236881771431847898.jpg",
                     variantes: ["Bolsa 500 g", "Pote 1 kg"]
                 },
                 {
@@ -468,7 +466,6 @@
                     modo_accion: "Adhesión, germinación de tubo germinativo y penetración mecánica/enzimática sobre la cutícula de insectos plaga.",
                     descripcion: "Control biológico especializado de mosca blanca, picudo, trips y queresas blandas en hortalizas y frutales.",
                     precio: 95.00,
-                    imagen: "watermarked_img_9947343092059852210.jpg",
                     variantes: ["Bolsa 500 g", "Pote 1 kg"]
                 },
                 {
@@ -480,43 +477,39 @@
                     modo_accion: "Germinación sobre epicutícula produciendo toxinas (destruxinas) que disuelven el tejido interno del insecto.",
                     descripcion: "Eficaz sobre gusanos blancos, chinches, gusanos aradores y gusanos cortadores de raíz.",
                     precio: 92.00,
-                    imagen: "watermarked_img_6818971304139090440.jpg",
                     variantes: ["Bolsa 500 g", "Pote 1 kg"]
                 },
                 {
                     id: 5,
-                    nombre: "Purpureocillium lilacinum (Paecilomyces)",
+                    nombre: "Paecilomyces lilacinus",
                     categoria_key: "BIOLOGICOS",
                     categoria: "Nematicida Biológico",
                     ingrediente_activo: "Purpureocillium lilacinum (1x10^9 UFC/g)",
                     modo_accion: "Infección y parasitismo directo sobre masas de huevos, juveniles (J2) y hembras fitoparásitas de nematodos.",
                     descripcion: "Control biológico de nematodos de nódulo radicular (Meloidogyne spp., Pratylenchus) en suelos agrícolas.",
                     precio: 105.00,
-                    imagen: "watermarked_img_11487935613477000266.jpg",
                     variantes: ["Bolsa 500 g", "Pote 1 kg"]
                 },
                 {
                     id: 6,
-                    nombre: "Bacillus subtilis (Cepa QST 713)",
+                    nombre: "Bacillus subtilis",
                     categoria_key: "BIOLOGICOS",
                     categoria: "Bactericida y Fungicida Biológico",
                     ingrediente_activo: "Bacillus subtilis (1x10^9 UFC/g)",
                     modo_accion: "Producción de lipopéptidos surfactantes que perforan la membrana celular de hifas y esporas fúngicas.",
                     descripcion: "Bio-fungicida foliar para prevención y frenado de Oídium, Botrytis cinerea y bacteriosis foliares.",
                     precio: 98.00,
-                    imagen: "watermarked_img_14635046327539772004.jpg",
                     variantes: ["Frasco 1 Litro", "Pote 1 kg"]
                 },
                 {
                     id: 7,
-                    nombre: "Lecanicillium lecanii (Verticillium)",
+                    nombre: "Lecanicillium lecanii",
                     categoria_key: "BIOLOGICOS",
                     categoria: "Bio-Insecticida Entomopatógeno",
                     ingrediente_activo: "Lecanicillium lecanii (1x10^9 conidias/g)",
                     modo_accion: "Microparásito de insectos chupadores que germina en la cutícula en condiciones de humedad media-alta.",
                     descripcion: "Insumo biológico de alta selectividad contra pulgones, áfidos y trips en cultivos protegidos y de campo abierto.",
                     precio: 88.00,
-                    imagen: "watermarked_img_9947343092059852210.jpg",
                     variantes: ["Bolsa 500 g", "Pote 1 kg"]
                 },
                 {
@@ -528,7 +521,6 @@
                     modo_accion: "Colonización rápida del sistema radicular y secreción de iturinas que activan la SAR vegetal.",
                     descripcion: "Protección biológica y bioestimulación del root-system contra agentes patógenos de suelo.",
                     precio: 110.00,
-                    imagen: "watermarked_img_14635046327539772004.jpg",
                     variantes: ["Frasco 1 Litro", "Pote 1 kg"]
                 },
                 {
@@ -540,19 +532,17 @@
                     modo_accion: "Endófito de raíz que destruye la cubierta proteica de huevos y quistes de nematodos noduladores.",
                     descripcion: "Bio-controlador de ciclo largo en el suelo para mantener bajas poblaciones de nematodos agalladores.",
                     precio: 115.00,
-                    imagen: "watermarked_img_11487935613477000266.jpg",
                     variantes: ["Bolsa 500 g", "Pote 1 kg"]
                 },
                 {
                     id: 10,
-                    nombre: "Extracto de Neem (Azadiractina 1.2%)",
+                    nombre: "Extracto de Neem",
                     categoria_key: "BIOLOGICOS",
                     categoria: "Bio-Insecticida Botánico",
                     ingrediente_activo: "Azadiractina (12,000 ppm)",
                     modo_accion: "Regulador de la ecdisona (muda de larvas) con potente efecto antifeedant (repelente e inhibidor de la alimentación).",
                     descripcion: "Extracto vegetal orgánico ideal para rotación de control de minadores de hojas, Trips y larvas tiernas.",
                     precio: 78.00,
-                    imagen: "watermarked_img_18328569093883666576.jpg",
                     variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
                 },
 
@@ -566,7 +556,6 @@
                     modo_accion: "Contacto e ingestión translaminar. Agonista del GABA (IRAC Grupo 6).",
                     descripcion: "Inhibe impulsos nerviosos. Excelente control de ácaros y Liriomyza en hortalizas y frutales.",
                     precio: 85.00,
-                    imagen: "https://www.chemicalbook.com/CAS/20180713/GIF/65195-55-3.gif",
                     variantes: ["Frasco 250 ml", "Frasco 1 Litro", "Galón 5 Litros"]
                 },
                 {
@@ -578,7 +567,6 @@
                     modo_accion: "Translaminar por ingestión (IRAC Grupo 6). Parálisis rápida en larvas.",
                     descripcion: "Control en Spodoptera frugiperda y Helicoverpa zea en maíz, espárrago y hortalizas.",
                     precio: 95.00,
-                    imagen: "https://www.chemicalbook.com/CAS/GIF/137512-74-4.gif",
                     variantes: ["Bolsa 100 g", "Bolsa 500 g", "Pote 1 kg"]
                 },
                 {
@@ -590,7 +578,6 @@
                     modo_accion: "Inhibidor de la síntesis de lípidos (IRAC Grupo 23). Ovicida y ninficida.",
                     descripcion: "Control prolongado de ácaro hialino y Panonychus citri en palto y cítricos.",
                     precio: 140.00,
-                    imagen: "https://www.researchgate.net/profile/Lourdes-Aldana/publication/300005238/figure/fig1/AS:348654708772873@1460137168912/Molecular-structure-of-spirotetramat.png",
                     variantes: ["Frasco 250 ml", "Frasco 1 Litro"]
                 },
                 {
@@ -602,7 +589,6 @@
                     modo_accion: "Modulador del canal de sodio (IRAC Grupo 3A). Efecto de derribo de contacto.",
                     descripcion: "Acción inmediata sobre gusanos cortadores, mosquita blanca y masticadores de follaje.",
                     precio: 52.00,
-                    imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0gFFnMTGPU5t5u7ijN_0wpJ2LOr1v7NvTbJCdyEnKiNMDq9XbXjxQRopZ&s=10",
                     variantes: ["Frasco 250 ml", "Frasco 1 Litro", "Galón 5 Litros"]
                 },
                 {
@@ -614,7 +600,6 @@
                     modo_accion: "Inhibidor de la biosíntesis de quitina (IRAC Grupo 15). Impide la muda de larvas.",
                     descripcion: "Inhibidor de muda selectivo para Prodiplosis longifila y lepidópteros sin afectar benéficos.",
                     precio: 115.00,
-                    imagen: "https://www.chemicalbook.com/CAS/GIF/83121-18-0.gif",
                     variantes: ["Frasco 250 ml", "Frasco 1 Litro"]
                 },
                 {
@@ -626,7 +611,6 @@
                     modo_accion: "Modulador alostérico de receptores nicotínicos (IRAC Grupo 5).",
                     descripcion: "Máxima eficacia en el control de Trips (Frankliniella occidentalis) y Prodiplosis.",
                     precio: 210.00,
-                    imagen: "https://www.chemicalbook.com/CAS/GIF/187166-40-1.gif",
                     variantes: ["Frasco 250 ml", "Frasco 1 Litro"]
                 },
                 {
@@ -638,7 +622,6 @@
                     modo_accion: "Neonicotinoide sistémico acrópeto y translaminar (IRAC Grupo 4A).",
                     descripcion: "Control efectivo de afidos, pulgones, mosca blanca y queresas blandas.",
                     precio: 78.00,
-                    imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbo-GT1Xy6kKPOhFu0Cy_09afMAxldVd__h5H0umFomA&s=10",
                     variantes: ["Bolsa 100 g", "Bolsa 500 g", "Pote 1 kg"]
                 },
                 {
@@ -650,7 +633,6 @@
                     modo_accion: "Actúa por contacto e ingestión. Interfiere en los canales de sodio provocando parálisis.",
                     descripcion: "Control de choque para larvas de lepidópteros y trips en cultivos de alta densidad.",
                     precio: 88.00,
-                    imagen: "https://file.medchemexpress.com/product_pic/hy-b0874.gif",
                     variantes: ["Bolsa 100 g", "Pote 1 kg"]
                 },
                 {
@@ -662,7 +644,6 @@
                     modo_accion: "Activador de receptores de ryanodina (IRAC Grupo 28). Parálisis muscular.",
                     descripcion: "Larga residualidad contra polilla del tomate, Heliothis y barrenadores.",
                     precio: 245.00,
-                    imagen: "https://file.medchemexpress.com/product_pic/hy-112820.gif",
                     variantes: ["Frasco 100 ml", "Frasco 500 ml"]
                 },
                 {
@@ -674,7 +655,6 @@
                     modo_accion: "Inhibidor de la acetilcolinesterasa (IRAC 1A) con alto efecto de derribo de contacto.",
                     descripcion: "Choque inmediato contra adultos y larvas de gusano cogollero y trips.",
                     precio: 88.00,
-                    imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0gFFnMTGPU5t5u7ijN_0wpJ2LOr1v7NvTbJCdyEnKiNMDq9XbXjxQRopZ&s=10",
                     variantes: ["Bolsa 100 g", "Pote 1 kg"]
                 },
 
@@ -688,7 +668,6 @@
                     modo_accion: "Inhibidor del complejo III mitocondrial (FRAC Grupo 11 - Estrobirulina).",
                     descripcion: "Protección preventiva y curativa contra oídium, roya y antravnosis.",
                     precio: 135.00,
-                    imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGJ4SWcSlO9mMRQP-g3BxqnUk7MDoMDhx7AX_5Xwkltg&s=10",
                     variantes: ["Frasco 250 ml", "Frasco 1 Litro"]
                 },
                 {
@@ -700,7 +679,6 @@
                     modo_accion: "Inhibidor de la C14-desmetilasa (FRAC Grupo 3 - Triazol).",
                     descripcion: "Excelente detención del desarrollo de Alternaria solani y Cercospora.",
                     precio: 110.00,
-                    imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKKtljkcTWtS8WlwLvRnecQReMVG7rTdVAiV86hOf_kQ&s=10",
                     variantes: ["Frasco 250 ml", "Frasco 1 Litro"]
                 },
                 {
@@ -712,7 +690,6 @@
                     modo_accion: "Contacto de acción multisitio (FRAC Grupo M01 - Ditiocarbamato).",
                     descripcion: "Insumo básico de protección foliar contra mildiu, alternariosis y lancha.",
                     precio: 42.00,
-                    imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFIY_9hEbDaFGis_0EFA7p4m2j9wZLpmFzsA7xpeRqcg&s=10",
                     variantes: ["Bolsa 1 kg", "Saco 25 kg"]
                 },
                 {
@@ -724,7 +701,6 @@
                     modo_accion: "Sistémico triazol con acción de traslocación acrópeta (FRAC Grupo 3).",
                     descripcion: "Especial para control de Botrytis cinerea y pudriciones en espárrago y vid.",
                     precio: 118.00,
-                    imagen: "https://www.sielc.com/wp-content/uploads/compounds/Tebuconazole.png",
                     variantes: ["Frasco 250 ml", "Frasco 1 Litro"]
                 },
                 {
@@ -736,7 +712,6 @@
                     modo_accion: "Acción combinada sistémica y de contacto (FRAC A1 + M01).",
                     descripcion: "Fórmula de ataque contra Phytophthora infestans y mildius en hortalizas.",
                     precio: 75.00,
-                    imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4SOcUdWSo0OwrYrTlnHXJQXb1IT4dJFs2XsZggTV8Hg&s=10",
                     variantes: ["Bolsa 1 kg", "Caja 10 kg"]
                 },
                 {
@@ -748,7 +723,6 @@
                     modo_accion: "Liberación de iones Cu++ con destrucción proteica (FRAC Grupo M01).",
                     descripcion: "Prevención de manchas bacterianas (Xanthomonas) y pudriciones ácidas.",
                     precio: 58.00,
-                    imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPyOs4LbFXF3HvcTcZUzq9nZWrYFwR6Oy9tvV872Fxrg&s=10",
                     variantes: ["Bolsa 1 kg", "Saco 15 kg"]
                 },
                 {
@@ -760,7 +734,6 @@
                     modo_accion: "Sistémico radicular. Altera la permeabilidad de la membrana (FRAC F4).",
                     descripcion: "Prevención de Pythium y Phytophthora mediante aplicación en fertirriego.",
                     precio: 125.00,
-                    imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFAbIHx4pPla5LSn61OKdqRC-npxhQYh3Mls5c55UkeE3L_c07Y2R3dV9n&s=10",
                     variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
                 },
                 {
@@ -772,7 +745,6 @@
                     modo_accion: "Inactivación de grupos sulfhidrilo (FRAC Grupo M05). Contacto puro.",
                     descripcion: "Sólida barrera protectora de amplio espectro para oídium y Septoria.",
                     precio: 68.00,
-                    imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2V3ExpVFr8CQQe0SDtlgwPEZNKBbuDVsh4sNmMgl2tQ&s=10",
                     variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
                 },
                 {
@@ -784,263 +756,241 @@
                     modo_accion: "Penetrante con acción curativa temprana y barrera protectora.",
                     descripcion: "Control de rescate para atajar ataques de Mildiu (Peronospora spp.).",
                     precio: 72.00,
-                    imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7ECnLSHhz-DfZaZNoNF1UtGylBUe20CfYSaP4jZYRcTyr84Pwbd_5-vo&s=10",
                     variantes: ["Bolsa 1 kg"]
                 },
                 {
                     id: 30,
-                    nombre: "Fosfito de Potasio K-40",
+                    nombre: "Fosfito de Potasio",
                     categoria_key: "FUNGICIDAS",
                     categoria: "Fungicida Inductor",
                     ingrediente_activo: "Fosfitos de Potasio (P2O5 40% + K2O 20%)",
                     modo_accion: "Estimulante de la ruta metabólica de la ácido shikímico (fitoalexinas).",
                     descripcion: "Refuerza la pared celular y previene pudriciones del cuello por Phytophthora.",
                     precio: 62.00,
-                    imagen: "https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?auto=format&fit=crop&w=600",
                     variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
                 },
 
                 // --- CATEGORÍA 4: HERBICIDAS (10 PRODUCTOS) ---
                 {
                     id: 31,
-                    nombre: "Glufosinato de Amonio 200 SL",
+                    nombre: "Glufosinato de Amonio",
                     categoria_key: "HERBICIDAS",
                     categoria: "Herbicida de Contacto",
                     ingrediente_activo: "Glufosinato de Amonio (200 g/L)",
                     modo_accion: "Inhibidor de la glutamina sintetasa (HRAC Grupo 10). Desecación foliar.",
                     descripcion: "Control rápido de malezas hoja ancha y gramíneas entre hileras de cultivo.",
                     precio: 78.00,
-                    imagen: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600",
                     variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
                 },
                 {
                     id: 32,
-                    nombre: "Pendimethalin 400 EC",
+                    nombre: "Pendimethalin",
                     categoria_key: "HERBICIDAS",
                     categoria: "Herbicida Pre-emergente",
                     ingrediente_activo: "Pendimetalina (400 g/L)",
                     modo_accion: "Inhibidor de la formación de microtúbulos (HRAC Grupo 3 - Dinitroanilina).",
                     descripcion: "Impide la germinación de malezas gramíneas y de hoja ancha en suelos limpios.",
                     precio: 62.00,
-                    imagen: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=600",
                     variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
                 },
                 {
                     id: 33,
-                    nombre: "Oxifluorfen 240 EC",
+                    nombre: "Oxifluorfen",
                     categoria_key: "HERBICIDAS",
                     categoria: "Herbicida de Sello",
                     ingrediente_activo: "Oxifluorfen (240 g/L)",
                     modo_accion: "Inhibidor de la PPO (HRAC Grupo 14). Forma película en la superficie del suelo.",
                     descripcion: "Control pre y post-emergente temprano en trasplantes de cebolla, ajo y frutales.",
                     precio: 92.00,
-                    imagen: "https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?auto=format&fit=crop&w=600",
                     variantes: ["Frasco 250 ml", "Frasco 1 Litro"]
                 },
                 {
                     id: 34,
-                    nombre: "Haloxyfop-P-Methyl 108 EC",
+                    nombre: "Haloxyfop-P-Methyl",
                     categoria_key: "HERBICIDAS",
                     categoria: "Graminicida Selectivo",
                     ingrediente_activo: "Haloxifop-P-metil (108 g/L)",
                     modo_accion: "Inhibidor de la ACCasa (HRAC Grupo 1). Sistémico contra gramíneas.",
                     descripcion: "Elimina gramíneas (Echinochloa, Sorghum) sin dañar cultivos de hoja ancha.",
                     precio: 105.00,
-                    imagen: "https://images.unsplash.com/photo-1628352081506-83c43123ed6d?auto=format&fit=crop&w=600",
                     variantes: ["Frasco 250 ml", "Frasco 1 Litro"]
                 },
                 {
                     id: 35,
-                    nombre: "Clethodim 240 EC",
+                    nombre: "Clethodim",
                     categoria_key: "HERBICIDAS",
                     categoria: "Graminicida Post-emergente",
                     ingrediente_activo: "Cletodim (240 g/L)",
                     modo_accion: "Inhibidor de la síntesis de lípidos ACCasa (HRAC Grupo 1 - Ciclohexanodiona).",
                     descripcion: "Altamente selectivo para erradicar malezas gramíneas perennes y anuales.",
                     precio: 98.00,
-                    imagen: "https://images.unsplash.com/photo-1592417817098-8f3d6eb231fc?auto=format&fit=crop&w=600",
                     variantes: ["Frasco 250 ml", "Frasco 1 Litro"]
                 },
                 {
                     id: 36,
-                    nombre: "Metribuzin 480 SC",
+                    nombre: "Metribuzin",
                     categoria_key: "HERBICIDAS",
                     categoria: "Herbicida Selectivo",
                     ingrediente_activo: "Metribuzina (480 g/L)",
                     modo_accion: "Inhibidor del Fotosistema II (HRAC Grupo 5 - Triazinona).",
                     descripcion: "Control de malezas en siembras de papa, tomate y espárrago establecido.",
                     precio: 112.00,
-                    imagen: "https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?auto=format&fit=crop&w=600",
                     variantes: ["Frasco 500 ml", "Frasco 1 Litro"]
                 },
                 {
                     id: 37,
-                    nombre: "2,4-D Amina 600 SL",
+                    nombre: "2,4-D Amina",
                     categoria_key: "HERBICIDAS",
                     categoria: "Herbicida Hormonal",
                     ingrediente_activo: "2,4-D Sal Amina (600 g/L)",
                     modo_accion: "Mimetizador de auxinas (HRAC Grupo 4). Deforma malezas de hoja ancha.",
                     descripcion: "Selectivo para caña de azúcar, maíz y arroz contra malezas dicotiledóneas.",
                     precio: 45.00,
-                    imagen: "https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?auto=format&fit=crop&w=600",
                     variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
                 },
                 {
                     id: 38,
-                    nombre: "Fluroxypyr 200 EC",
+                    nombre: "Fluroxypyr",
                     categoria_key: "HERBICIDAS",
                     categoria: "Herbicida Sistémico",
                     ingrediente_activo: "Fluroxipir-meptil (200 g/L)",
                     modo_accion: "Auxina sintética (HRAC Grupo 4). Penetra por hojas y trasloca a la raíz.",
                     descripcion: "Especialista para malezas difícil control como picos y verdolaga entre surcos.",
                     precio: 85.00,
-                    imagen: "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=600",
                     variantes: ["Frasco 250 ml", "Frasco 1 Litro"]
                 },
                 {
                     id: 39,
-                    nombre: "Quizalofop-P-Tefuril 120 EC",
+                    nombre: "Quizalofop-P-Tefuril",
                     categoria_key: "HERBICIDAS",
-                    categoria: "Graminicida Filiar",
+                    categoria: "Graminicida Foliar",
                     ingrediente_activo: "Quizalofop-P-tefuril (120 g/L)",
                     modo_accion: "Inhibición rápida del crecimiento meristemático en gramíneas.",
                     descripcion: "Acción traslocadora a rizomas de malezas como caminadora y grama dulce.",
                     precio: 102.00,
-                    imagen: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600",
                     variantes: ["Frasco 250 ml", "Frasco 1 Litro"]
                 },
                 {
                     id: 40,
-                    nombre: "Atrazina 500 SC",
+                    nombre: "Atrazina",
                     categoria_key: "HERBICIDAS",
                     categoria: "Herbicida Pre/Post Temprano",
                     ingrediente_activo: "Atrazina (500 g/L)",
                     modo_accion: "Inhibidor de la fotosíntesis (HRAC Grupo 5). Absorbido por raíces y hojas.",
                     descripcion: "Control prolongado de malezas en cultivos de maíz y sorgo.",
                     precio: 48.00,
-                    imagen: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=600",
                     variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
                 },
 
                 // --- CATEGORÍA 5: BIOESTIMULANTES & NUTRICIÓN (10 PRODUCTOS) ---
                 {
                     id: 41,
-                    nombre: "Extracto de Algas Marinas",
+                    nombre: "Extracto de Algas",
                     categoria_key: "BIOESTIMULANTES",
                     categoria: "Bioestimulante Orgánico",
                     ingrediente_activo: "Ascophyllum nodosum + Fitohormonas",
                     modo_accion: "Induce síntesis endógena de citoquininas y auxinas frente a estrés.",
                     descripcion: "Maximiza la floración, el cuajado y la retención de frutos en cultivos de exportación.",
                     precio: 65.00,
-                    imagen: "https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?auto=format&fit=crop&w=600",
                     variantes: ["Frasco 1 Litro", "Galón 5 Litros", "Bidón 20 Litros"]
                 },
                 {
                     id: 42,
-                    nombre: "Aminoácidos Libres 24% + NPK",
+                    nombre: "Aminoácidos Libres",
                     categoria_key: "BIOESTIMULANTES",
                     categoria: "Activador Fisiológico",
-                    ingrediente_activo: "Aminoácidos de Hidrólisis Enzymática 240 g/L",
+                    ingrediente_activo: "Aminoácidos de Hidrólisis Enzimática 240 g/L",
                     modo_accion: "Ahorro energético vegetal directo para asimilación inmediata en brotación.",
                     descripcion: "Acelera la recuperación tras heladas, sequías o fitotoxicidad por plaguicidas.",
                     precio: 58.00,
-                    imagen: "https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?auto=format&fit=crop&w=600",
                     variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
                 },
                 {
                     id: 43,
-                    nombre: "Calcio Boro Quelatado",
+                    nombre: "Calcio Boro",
                     categoria_key: "BIOESTIMULANTES",
                     categoria: "Nutrición Estructural",
                     ingrediente_activo: "CaO 15% + Boro 2% Quelatado",
                     modo_accion: "Fortalece paredes celulares mediante pectatos de calcio en cuajado.",
                     descripcion: "Prevención de 'tip burn' en hortalizas y rajado de fruto en palto y frutales.",
                     precio: 48.00,
-                    imagen: "https://images.unsplash.com/photo-1628352081506-83c43123ed6d?auto=format&fit=crop&w=600",
                     variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
                 },
                 {
                     id: 44,
-                    nombre: "Potasio de Alta Absorción (K-50)",
+                    nombre: "Potasio Foliar",
                     categoria_key: "BIOESTIMULANTES",
                     categoria: "Madurante y Llenado",
                     ingrediente_activo: "K2O 50% p/v en solución neutra",
                     modo_accion: "Translocación acelerada de azúcares y almidones hacia los órganos de reserva.",
                     descripcion: "Promueve el calibre, peso, color y grado Brix en la fase de llenado de fruto.",
                     precio: 72.00,
-                    imagen: "https://images.unsplash.com/photo-1592417817098-8f3d6eb231fc?auto=format&fit=crop&w=600",
                     variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
                 },
                 {
                     id: 45,
-                    nombre: "Inductor de Defensas (Fosfito K)",
+                    nombre: "Fosfito K",
                     categoria_key: "BIOESTIMULANTES",
                     categoria: "Fitoalexínico",
                     ingrediente_activo: "Fosfitos de Potasio (P2O5 40% + K2O 20%)",
                     modo_accion: "Estimula la síntesis de fitoalexinas y engrosa las paredes vasculares.",
                     descripcion: "Foliar y radicular para prevención de patógenos del cuello como Phytophthora.",
                     precio: 62.00,
-                    imagen: "https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?auto=format&fit=crop&w=600",
                     variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
                 },
                 {
                     id: 46,
-                    nombre: "Enraizante Biológico Radicular",
+                    nombre: "Enraizante Radicular",
                     categoria_key: "BIOESTIMULANTES",
                     categoria: "Enraizante Concentrado",
                     ingrediente_activo: "Auxinas + Ácidos Húmicos y Fúlvicos",
                     modo_accion: "Inducción de división celular para emisión de cabellera radicular nueva.",
                     descripcion: "Consigue un rápido establecimiento en plántulas recién trasplantadas.",
                     precio: 85.00,
-                    imagen: "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=600",
                     variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
                 },
                 {
                     id: 47,
-                    nombre: "Cinc Quelatado (Zn-EDTA 15%)",
+                    nombre: "Cinc Quelatado",
                     categoria_key: "BIOESTIMULANTES",
                     categoria: "Microelemento Foliar",
                     ingrediente_activo: "Cinc Soluble 15% Quelatado EDTA",
                     modo_accion: "Precursor fundamental de la síntesis del aminoácido Triptófano (Auxinas).",
                     descripcion: "Corrige el arrosetamiento y hojas pequeñas en brotes jóvenes de frutales.",
                     precio: 54.00,
-                    imagen: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600",
                     variantes: ["Pote 1 kg"]
                 },
                 {
                     id: 48,
-                    nombre: "Anti-Estrés Térmico (Glicina)",
+                    nombre: "Anti-Estrés Térmico",
                     categoria_key: "BIOESTIMULANTES",
                     categoria: "Osmoprotector",
                     ingrediente_activo: "Glicina Betaina 97% WP",
                     modo_accion: "Mantiene el turgor celular regulando el balance osmótico interno.",
                     descripcion: "Protege el aparato fotosintético en picos de alta radiación y golpe de calor.",
                     precio: 110.00,
-                    imagen: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=600",
                     variantes: ["Pote 1 kg"]
                 },
                 {
                     id: 49,
-                    nombre: "Hierro Quelatado (Fe-EDDHA 6%)",
+                    nombre: "Hierro Quelatado",
                     categoria_key: "BIOESTIMULANTES",
                     categoria: "Corrector de Clorosis",
                     ingrediente_activo: "Hierro Quelatado en isómero Ortho-Ortho 4.8%",
                     modo_accion: "Hierro de alta estabilidad en suelos alcalinos o calcáreos de la costa.",
                     descripcion: "Cura inmediata de la clorosis férrica (amarillamiento de hojas jóvenes).",
                     precio: 95.00,
-                    imagen: "https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?auto=format&fit=crop&w=600",
                     variantes: ["Bolsa 1 kg", "Caja 5 kg"]
                 },
                 {
                     id: 50,
-                    nombre: "Boro Etanolamina 10%",
+                    nombre: "Boro Etanolamina",
                     categoria_key: "BIOESTIMULANTES",
                     categoria: "Nutrición de Floración",
                     ingrediente_activo: "Boro complejo en poliol etanolamina 100 g/L",
                     modo_accion: "Movilidad foliar superior para viabilidad de granos de polen y tubo polínico.",
                     descripcion: "Aplicación pre-floración obligatoria para asegurar un cuajado homogéneo.",
                     precio: 46.00,
-                    imagen: "https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?auto=format&fit=crop&w=600",
                     variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
                 }
             ]
@@ -1116,15 +1066,28 @@
             grid.innerHTML = filteredProducts.map(prod => `
                 <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
                     <div>
-                        <div class="relative aspect-4/3 overflow-hidden bg-slate-100">
-                            <img src="${prod.imagen}" alt="${prod.nombre}" class="w-full h-full object-cover">
-                            <span class="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-sm text-white text-[10px] font-bold px-2.5 py-1 rounded-md">
-                                ${prod.categoria}
-                            </span>
+                        <!-- Cabecera de Producto con Fondo Blanco y Tipografía Negra Estilo "Controller" -->
+                        <div class="relative aspect-4/3 overflow-hidden bg-white flex flex-col justify-between p-5 border-b border-slate-200">
+                            <div class="flex justify-between items-start">
+                                <span class="bg-brand-600 text-white text-[10px] font-extrabold px-2.5 py-1 rounded-md tracking-wider uppercase">
+                                    ${prod.categoria}
+                                </span>
+                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">FACS-2026</span>
+                            </div>
+                            
+                            <div class="my-auto py-2">
+                                <h3 class="font-extrabold italic uppercase text-slate-900 text-3xl sm:text-4xl tracking-tighter leading-none font-heading">
+                                    ${prod.nombre}
+                                </h3>
+                            </div>
+
+                            <div class="border-t border-slate-100 pt-2 flex items-center justify-between">
+                                <span class="text-[11px] font-bold text-brand-700 truncate max-w-[200px]">I.A: ${prod.ingrediente_activo}</span>
+                                <span class="w-2 h-2 rounded-full bg-brand-500"></span>
+                            </div>
                         </div>
+
                         <div class="p-5">
-                            <h3 class="font-bold font-heading text-slate-900 text-lg mb-1">${prod.nombre}</h3>
-                            ${prod.ingrediente_activo ? `<p class="text-xs font-semibold text-brand-700 mb-2">I.A. / Conc.: ${prod.ingrediente_activo}</p>` : ''}
                             <p class="text-slate-600 text-xs mb-3 line-clamp-2">${prod.descripcion}</p>
                             ${prod.modo_accion ? `
                                 <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-100 mb-4">
