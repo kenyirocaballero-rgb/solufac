@@ -716,3 +716,9 @@
     </script>
 </body>
 </html>
+fetch('./data.json')
+  .then(response => response.json())
+  .then(data => {
+    console.log("Datos cargados correctamente desde GitHub:", data);
+    // Actualiza el número de WhatsApp y datos dinámicamente
+  });
