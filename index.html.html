@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOLUTION FACS & AGROTOOLS - Soluciones Agrícolas y Fitosanitarias</title>
+    <title>SOLUTION FACS & AGROTOOLS - Command Center Agrícola</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
@@ -26,6 +26,7 @@
                             700: '#15803d',
                             800: '#166534',
                             900: '#14532d',
+                            950: '#0b2918',
                         },
                         accent: {
                             500: '#d97706',
@@ -45,132 +46,166 @@
         }
     </script>
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b1310; color: #e2e8f0; }
         h1, h2, h3, h4, .font-heading { font-family: 'Outfit', sans-serif; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased relative">
+<body class="antialiased relative selection:bg-brand-500 selection:text-white">
 
-    <!-- BARRA SUPERIOR DE CONTACTO -->
-    <div class="bg-brand-900 text-white text-xs py-2 px-4">
+    <!-- BARRA SUPERIOR DE TELEMETRÍA Y CONTACTO -->
+    <div class="bg-brand-950 border-b border-brand-900/50 text-slate-300 text-xs py-2 px-4">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
             <div class="flex items-center gap-4">
-                <span class="flex items-center gap-1"><i class="ph ph-map-pin text-brand-500 text-sm"></i> Trujillo, La Libertad - Perú</span>
-                <span class="hidden sm:flex items-center gap-1"><i class="ph ph-clock text-brand-500 text-sm"></i> Atención: Lun - Sáb 8:00 AM - 4:00 PM</span>
+                <span class="flex items-center gap-1"><i class="ph ph-cpu text-brand-400"></i> Command Center v3.2</span>
+                <span class="flex items-center gap-1"><i class="ph ph-map-pin text-brand-500"></i> Trujillo / Valle Virú, La Libertad - Perú</span>
+                <span class="hidden sm:flex items-center gap-1 text-emerald-400 font-mono"><span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Telemetría Activa</span>
             </div>
             <div class="flex items-center gap-4">
-                <a href="https://wa.me/51901742151" target="_blank" class="flex items-center gap-1 hover:text-brand-500 transition-colors font-semibold">
-                    <i class="ph ph-whatsapp-logo text-emerald-400 text-base"></i> Consulta Técnica Directa: +51 901 742 151
+                <a href="https://wa.me/51901742151" target="_blank" class="flex items-center gap-1 hover:text-brand-400 transition-colors font-semibold">
+                    <i class="ph ph-whatsapp-logo text-emerald-400 text-base"></i> Soporte Técnico Directo: +51 901 742 151
                 </a>
             </div>
         </div>
     </div>
 
     <!-- NAVEGACIÓN PRINCIPAL -->
-    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+    <header class="sticky top-0 z-40 bg-slate-950/90 backdrop-blur-md border-b border-slate-800 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <a href="#" class="flex items-center gap-3">
-                <div class="w-12 h-12 bg-gradient-to-br from-brand-600 to-brand-900 rounded-xl flex items-center justify-center text-white shadow-md shadow-brand-900/20">
-                    <i class="ph ph-plant text-2xl"></i>
+                <div class="w-12 h-12 bg-gradient-to-br from-brand-600 to-brand-950 rounded-xl flex items-center justify-center text-white shadow-md shadow-brand-950/50 border border-brand-500/30">
+                    <i class="ph ph-plant text-2xl text-brand-400"></i>
                 </div>
                 <div>
-                    <span class="text-xl font-bold tracking-tight text-slate-900 font-heading block leading-none">SOLUTION <span class="text-brand-600">FACS</span></span>
-                    <span class="text-[10px] tracking-wider text-slate-500 font-semibold uppercase block mt-1">Soluciones Agrícolas y Fitosanitarias</span>
+                    <span class="text-xl font-bold tracking-tight text-white font-heading block leading-none">SOLUTION <span class="text-brand-500">FACS</span></span>
+                    <span class="text-[10px] tracking-widest text-slate-400 font-semibold uppercase block mt-1">Command Center & Agrotools</span>
                 </div>
             </a>
 
-            <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-700">
-                <a href="#inicio" class="hover:text-brand-600 transition-colors">Inicio</a>
-                <a href="#catalogo" class="hover:text-brand-600 transition-colors">Catálogo</a>
-                <a href="#herramientas" class="hover:text-brand-600 transition-colors">Herramientas</a>
-                <a href="#agrotools" class="text-brand-700 font-bold hover:text-brand-800 transition-colors flex items-center gap-1"><i class="ph ph-cpu text-base"></i> AGROTOOLS</a>
-                <a href="#mezclas" class="hover:text-brand-600 transition-colors">Mezclas</a>
-                <a href="#servicios" class="hover:text-brand-600 transition-colors">Servicios</a>
+            <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-300">
+                <a href="#dashboard" class="hover:text-brand-400 transition-colors flex items-center gap-1"><i class="ph ph-squares-four"></i> Dashboard</a>
+                <a href="#catalogo" class="hover:text-brand-400 transition-colors flex items-center gap-1"><i class="ph ph-package"></i> Catálogo (50)</a>
+                <a href="#simulador" class="hover:text-brand-400 transition-colors flex items-center gap-1"><i class="ph ph-flask"></i> Simulador Mezclas</a>
+                <a href="#agrotools" class="hover:text-brand-400 transition-colors flex items-center gap-1"><i class="ph ph-cpu"></i> AgroTools</a>
+                <a href="#servicios" class="hover:text-brand-400 transition-colors">Servicios</a>
             </nav>
 
             <div class="flex items-center gap-3">
-                <button id="openCartBtn" class="relative p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 transition-colors flex items-center gap-2">
-                    <i class="ph ph-shopping-cart text-xl text-brand-700"></i>
+                <button id="openCartBtn" class="relative p-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 transition-colors flex items-center gap-2">
+                    <i class="ph ph-shopping-cart text-xl text-brand-400"></i>
                     <span class="hidden sm:inline text-xs font-bold">Cotización</span>
                     <span id="cartBadge" class="absolute -top-1 -right-1 bg-accent-500 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center hidden">0</span>
                 </button>
-                <a href="https://wa.me/51901742151" target="_blank" class="bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-all shadow-md shadow-brand-600/20 flex items-center gap-2">
+                <a href="https://wa.me/51901742151" target="_blank" class="bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-all shadow-md shadow-brand-600/30 flex items-center gap-2 border border-brand-500">
                     <i class="ph ph-whatsapp-logo text-base"></i> <span class="hidden sm:inline">WhatsApp</span>
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section id="inicio" class="relative bg-gradient-to-b from-slate-900 to-brand-950 text-white py-20 lg:py-24 overflow-hidden">
-        <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#22c55e_1px,transparent_1px)] [background-size:16px_16px]"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-6 text-center md:text-left">
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-400 text-xs font-semibold">
-                    <i class="ph ph-shield-check text-sm"></i> Catálogo SENASA & Biocontrol 2026
+    <!-- HERO / COMMAND CENTER DASHBOARD -->
+    <section id="dashboard" class="relative bg-gradient-to-b from-slate-950 via-slate-900 to-brand-950 text-white py-12 lg:py-16 overflow-hidden border-b border-slate-800">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#22c55e_1px,transparent_1px)] [background-size:20px_20px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-8">
+            
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-slate-900/60 border border-slate-800 p-6 rounded-3xl backdrop-blur-md">
+                <div class="space-y-1">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-400 text-xs font-semibold">
+                        <i class="ph ph-shield-check text-sm"></i> Normativa SENASA 2026 • Manejo Integrado
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl font-extrabold font-heading tracking-tight text-white">
+                        Centro de Control Fitosanitario & Biológico
+                    </h1>
+                    <p class="text-slate-400 text-sm max-w-2xl">
+                        Plataforma de alta precisión para la gestión de insumos de agroexportación, simulación de caldos de aplicación y monitoreo en valles de La Libertad.
+                    </p>
                 </div>
-                <h1 class="text-4xl sm:text-5xl font-extrabold font-heading leading-tight tracking-tight">
-                    Protección Fitosanitaria & <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-emerald-200">Control Biológico</span>
-                </h1>
-                <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-xl mx-auto md:mx-0">
-                    Catálogo especializado de 50 insumos para agroexportación y mercado nacional en La Libertad. Incluye biocontrol, agroquímicos y herramientas de cálculo agronómico.
-                </p>
-                <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-2">
-                    <a href="#catalogo" class="bg-brand-600 hover:bg-brand-500 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-brand-600/30 transition-all flex items-center gap-2 text-sm">
-                        Explorar los 50 Insumos <i class="ph ph-arrow-down"></i>
+                <div class="flex gap-3">
+                    <a href="#catalogo" class="bg-brand-600 hover:bg-brand-500 text-white font-bold px-5 py-3 rounded-xl shadow-lg transition-all text-xs flex items-center gap-2">
+                        Ver Insumos <i class="ph ph-arrow-down"></i>
                     </a>
-                    <a href="#agrotools" class="bg-brand-500/20 hover:bg-brand-500/30 text-brand-300 border border-brand-500/40 font-bold px-6 py-3.5 rounded-xl backdrop-blur-sm transition-all flex items-center gap-2 text-sm">
-                        <i class="ph ph-cpu text-lg"></i> Ir a AGROTOOLS
+                    <a href="#simulador" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-bold px-5 py-3 rounded-xl transition-all text-xs flex items-center gap-2">
+                        Simulador 3D <i class="ph ph-flask"></i>
                     </a>
                 </div>
             </div>
-            <div class="relative">
-                <div class="aspect-4/3 rounded-2xl overflow-hidden shadow-2xl border border-white/10 relative">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmZVPzWkX1KYPMU8mG6MVxBXEYGwE_2l4AXXFm4BFY9g&s=10" alt="SOLUTION FACS" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
-                    <div class="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20">
-                        <p class="text-xs font-semibold text-brand-300 uppercase tracking-wider">Normativa SENASA 2026</p>
-                        <p class="text-sm font-bold text-white mt-0.5">Manejo Integrado de Plagas con Bioinsumos Regulados y Residuo Cero</p>
+
+            <!-- WIDGETS DE TELEMETRÍA / CLIMA Y ALERTAS -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Widget 1: Clima Local -->
+                <div class="bg-slate-900/80 border border-slate-800 p-5 rounded-2xl flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-2xl font-bold">
+                        <i class="ph ph-sun"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs text-slate-400 font-semibold uppercase">Clima Valle Virú / Moche</span>
+                        <h4 class="text-lg font-bold text-white font-heading">24°C • Humedad 74%</h4>
+                        <p class="text-[11px] text-emerald-400">Condiciones óptimas para aplicación foliar</p>
+                    </div>
+                </div>
+
+                <!-- Widget 2: Alerta Fitosanitaria -->
+                <div class="bg-slate-900/80 border border-slate-800 p-5 rounded-2xl flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-accent-500/20 text-accent-500 flex items-center justify-center text-2xl font-bold">
+                        <i class="ph ph-warning"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs text-slate-400 font-semibold uppercase">Alerta Regional Activa</span>
+                        <h4 class="text-lg font-bold text-white font-heading">Prodiplosis (Nivel Alto)</h4>
+                        <p class="text-[11px] text-amber-400">Se recomienda rotación Bloque 2 (IGR)</p>
+                    </div>
+                </div>
+
+                <!-- Widget 3: pH Promedio Agua -->
+                <div class="bg-slate-900/80 border border-slate-800 p-5 rounded-2xl flex items-center gap-4 sm:col-span-2 lg:col-span-1">
+                    <div class="w-12 h-12 rounded-xl bg-tech-500/20 text-tech-400 flex items-center justify-center text-2xl font-bold">
+                        <i class="ph ph-drop"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs text-slate-400 font-semibold uppercase">Calidad de Agua Costa</span>
+                        <h4 class="text-lg font-bold text-white font-heading">pH Promedio: 8.0 (Alcalino)</h4>
+                        <p class="text-[11px] text-tech-400">Uso obligatorio de corrector recomendado</p>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
     <!-- CATALOGO DE PRODUCTOS -->
-    <section id="catalogo" class="py-20 bg-white">
+    <section id="catalogo" class="py-20 bg-slate-900 border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-10">
-                <h2 class="text-3xl sm:text-4xl font-bold font-heading text-slate-900 tracking-tight">Catálogo Fitosanitario & Biológico 2026</h2>
-                <p class="text-slate-600 mt-3 text-base">Explore las 5 categorías técnicas de productos con sus respectivas especificaciones, modos de acción y etiquetas de diseño exclusivo.</p>
+                <span class="text-xs font-bold text-brand-400 uppercase tracking-widest">Inventario Certificado</span>
+                <h2 class="text-3xl sm:text-4xl font-bold font-heading text-white tracking-tight mt-1">Catálogo Fitosanitario & Biológico 2026</h2>
+                <p class="text-slate-400 mt-2 text-sm">Explore los 50 insumos técnicos con especificaciones de modo de acción, ingredientes activos y fichas SENASA.</p>
             </div>
 
             <!-- BUSCADOR EN TIEMPO REAL -->
             <div class="max-w-2xl mx-auto mb-10">
                 <div class="relative">
                     <i class="ph ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-xl"></i>
-                    <input type="text" id="searchInput" onkeyup="searchProducts()" placeholder="Buscar por plaga (ej. Trips, Nematodos), activo o bioinsumo..." class="w-full pl-12 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-600 font-medium">
+                    <input type="text" id="searchInput" onkeyup="searchProducts()" placeholder="Buscar por plaga (ej. Trips, Nematodos), activo o bioinsumo..." class="w-full pl-12 pr-4 py-3.5 bg-slate-950 border border-slate-800 rounded-2xl text-sm text-white focus:outline-none focus:ring-2 focus:ring-brand-500 font-medium">
                 </div>
             </div>
 
             <!-- BOTONES DE CATEGORÍA (PESTAÑAS) -->
             <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12">
-                <button onclick="filterCategory('TODOS')" class="cat-btn bg-brand-600 text-white px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold shadow-sm transition-all" data-cat="TODOS">
+                <button onclick="filterCategory('TODOS')" class="cat-btn bg-brand-600 text-white px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold shadow-sm transition-all border border-brand-500" data-cat="TODOS">
                     Todos (50)
                 </button>
-                <button onclick="filterCategory('BIOLOGICOS')" class="cat-btn bg-slate-100 text-slate-700 hover:bg-slate-200 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all" data-cat="BIOLOGICOS">
+                <button onclick="filterCategory('BIOLOGICOS')" class="cat-btn bg-slate-950 text-slate-300 hover:bg-slate-800 border border-slate-800 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all" data-cat="BIOLOGICOS">
                     Insumos Biológicos (10)
                 </button>
-                <button onclick="filterCategory('INSECTICIDAS')" class="cat-btn bg-slate-100 text-slate-700 hover:bg-slate-200 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all" data-cat="INSECTICIDAS">
+                <button onclick="filterCategory('INSECTICIDAS')" class="cat-btn bg-slate-950 text-slate-300 hover:bg-slate-800 border border-slate-800 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all" data-cat="INSECTICIDAS">
                     Insecticidas & Acaricidas (10)
                 </button>
-                <button onclick="filterCategory('FUNGICIDAS')" class="cat-btn bg-slate-100 text-slate-700 hover:bg-slate-200 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all" data-cat="FUNGICIDAS">
+                <button onclick="filterCategory('FUNGICIDAS')" class="cat-btn bg-slate-950 text-slate-300 hover:bg-slate-800 border border-slate-800 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all" data-cat="FUNGICIDAS">
                     Fungicidas & Bactericidas (10)
                 </button>
-                <button onclick="filterCategory('HERBICIDAS')" class="cat-btn bg-slate-100 text-slate-700 hover:bg-slate-200 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all" data-cat="HERBICIDAS">
+                <button onclick="filterCategory('HERBICIDAS')" class="cat-btn bg-slate-950 text-slate-300 hover:bg-slate-800 border border-slate-800 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all" data-cat="HERBICIDAS">
                     Herbicidas (10)
                 </button>
-                <button onclick="filterCategory('BIOESTIMULANTES')" class="cat-btn bg-slate-100 text-slate-700 hover:bg-slate-200 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all" data-cat="BIOESTIMULANTES">
+                <button onclick="filterCategory('BIOESTIMULANTES')" class="cat-btn bg-slate-950 text-slate-300 hover:bg-slate-800 border border-slate-800 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all" data-cat="BIOESTIMULANTES">
                     Bioestimulantes & Nutrición (10)
                 </button>
             </div>
@@ -182,280 +217,186 @@
         </div>
     </section>
 
-    <!-- SECCIÓN DE HERRAMIENTAS TÉCNICAS DE CAMPO -->
-    <section id="herramientas" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+    <!-- SECCIÓN DE SIMULADOR DE MEZCLAS Y HERRAMIENTAS TÉCNICAS -->
+    <section id="simulador" class="py-20 bg-slate-950 text-white relative overflow-hidden border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
             
             <div class="text-center max-w-3xl mx-auto">
-                <span class="text-xs font-bold text-brand-400 uppercase tracking-widest">Módulos Interactivos</span>
-                <h2 class="text-3xl sm:text-4xl font-bold font-heading mt-1">Herramientas Agronómicas de Campo</h2>
-                <p class="text-slate-300 text-sm mt-3">Calculadoras de dosificación, acondicionamiento de agua, calibración de boquillas y diseño de esquemas de rotación antirresistencia.</p>
+                <span class="text-xs font-bold text-brand-400 uppercase tracking-widest">Laboratorio Virtual</span>
+                <h2 class="text-3xl sm:text-4xl font-bold font-heading mt-1">Simulador de Mezclas & Herramientas de Campo</h2>
+                <p class="text-slate-400 text-sm mt-3">Evalúe compatibilidades en tanque, calcule dosis precisas y genere esquemas de rotación antirresistencia IRAC/FRAC.</p>
             </div>
 
             <div class="grid lg:grid-cols-2 gap-8">
-                <!-- HERRAMIENTA 1: CALCULADORA DE DOSIS -->
-                <div class="bg-white/5 border border-white/10 backdrop-blur-md p-6 sm:p-8 rounded-3xl space-y-5">
+                
+                <!-- HERRAMIENTA 1: SIMULADOR DE CILINDRO VIRTUAL (NUEVO) -->
+                <div class="bg-slate-900 border border-slate-800 p-6 sm:p-8 rounded-3xl space-y-6 shadow-xl">
                     <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-brand-500/20 text-brand-400 rounded-xl flex items-center justify-center text-xl font-bold"><i class="ph ph-calculator"></i></div>
+                        <div class="w-10 h-10 bg-brand-500/20 text-brand-400 rounded-xl flex items-center justify-center text-xl font-bold border border-brand-500/30"><i class="ph ph-flask"></i></div>
                         <div>
-                            <h3 class="text-lg font-bold font-heading text-white">Calculadora de Dosis de Mezcla</h3>
-                            <p class="text-xs text-slate-400">Volumen necesario por tanque o parihuela</p>
+                            <h3 class="text-lg font-bold font-heading text-white">Simulador de Cilindro Virtual 3D</h3>
+                            <p class="text-xs text-slate-400">Verificador de reacción física y pH</p>
                         </div>
                     </div>
-                    <div class="grid sm:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-bold text-brand-300 uppercase mb-2">Volumen Tanque (Litros):</label>
-                            <input type="number" id="calcVolume" value="200" min="1" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-white font-bold text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+
+                    <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800 space-y-4 text-center">
+                        <div class="inline-flex items-center justify-center w-24 h-32 bg-slate-900 border-2 border-dashed border-brand-500/50 rounded-xl relative mx-auto">
+                            <i class="ph ph-cylinder text-4xl text-brand-400 animate-pulse"></i>
+                            <span class="absolute bottom-2 text-[10px] font-mono text-brand-300 font-bold">200 LITROS</span>
                         </div>
-                        <div>
-                            <label class="block text-xs font-bold text-brand-300 uppercase mb-2">Dosis Ref. (ml o g / 200 L):</label>
-                            <input type="number" id="calcDose" value="250" min="1" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-white font-bold text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+                        <p class="text-xs text-slate-300">Seleccione los insumos a combinar en el cilindro para evaluar su compatibilidad en tiempo real:</p>
+                        
+                        <div class="grid grid-cols-2 gap-3 text-left">
+                            <label class="flex items-center gap-2 text-xs bg-slate-900 p-2.5 rounded-xl border border-slate-800 cursor-pointer hover:border-brand-500">
+                                <input type="checkbox" id="simCuprico" onchange="runSimulation()" class="accent-brand-500"> Fungicida Cúprico
+                            </label>
+                            <label class="flex items-center gap-2 text-xs bg-slate-900 p-2.5 rounded-xl border border-slate-800 cursor-pointer hover:border-brand-500">
+                                <input type="checkbox" id="simAceite" onchange="runSimulation()" class="accent-brand-500"> Aceite Agrícola
+                            </label>
+                            <label class="flex items-center gap-2 text-xs bg-slate-900 p-2.5 rounded-xl border border-slate-800 cursor-pointer hover:border-brand-500">
+                                <input type="checkbox" id="simAmino" onchange="runSimulation()" class="accent-brand-500"> Aminoácidos
+                            </label>
+                            <label class="flex items-center gap-2 text-xs bg-slate-900 p-2.5 rounded-xl border border-slate-800 cursor-pointer hover:border-brand-500">
+                                <input type="checkbox" id="simTriazol" onchange="runSimulation()" class="accent-brand-500"> Triazol Sistémico
+                            </label>
                         </div>
-                    </div>
-                    <button onclick="calculateDose()" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-bold py-3 rounded-xl shadow-lg shadow-brand-600/30 transition-all text-xs flex items-center justify-center gap-2">
-                        Calcular Dosis Requerida
-                    </button>
-                    <div id="calcResult" class="hidden p-4 rounded-xl bg-brand-500/20 border border-brand-500/40 text-center">
-                        <p class="text-[11px] text-brand-300 font-semibold uppercase">Insumo Comercial a Añadir:</p>
-                        <p id="calcValue" class="text-2xl font-bold text-white font-heading mt-0.5">0 ml / g</p>
+
+                        <div id="simAlert" class="hidden p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-semibold">
+                            ⚠️ Advertencia: Incompatibilidad Física Severa (Riesgo de fitotoxicidad en brotes).
+                        </div>
+                        <div id="simSuccess" class="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
+                            ✅ Mezcla estable y segura para aplicación foliar.
+                        </div>
                     </div>
                 </div>
 
-                <!-- HERRAMIENTA 2: ACONDICIONADOR DE pH Y DUREZA -->
-                <div class="bg-white/5 border border-white/10 backdrop-blur-md p-6 sm:p-8 rounded-3xl space-y-5">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-tech-500/20 text-tech-400 rounded-xl flex items-center justify-center text-xl font-bold"><i class="ph ph-drop"></i></div>
-                        <div>
-                            <h3 class="text-lg font-bold font-heading text-white">Corrector de pH de Agua</h3>
-                            <p class="text-xs text-slate-400">Previene hidrólisis en la costa</p>
+                <!-- HERRAMIENTA 2: CALCULADORA DE DOSIS Y pH -->
+                <div class="space-y-8">
+                    <!-- Calculadora Dosis -->
+                    <div class="bg-slate-900 border border-slate-800 p-6 sm:p-8 rounded-3xl space-y-4 shadow-xl">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-tech-500/20 text-tech-400 rounded-xl flex items-center justify-center text-xl font-bold border border-tech-500/30"><i class="ph ph-calculator"></i></div>
+                            <div>
+                                <h3 class="text-lg font-bold font-heading text-white">Calculadora de Dosis de Mezcla</h3>
+                                <p class="text-xs text-slate-400">Volumen necesario por tanque</p>
+                            </div>
+                        </div>
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-300 uppercase mb-2">Tanque (Litros):</label>
+                                <input type="number" id="calcVolume" value="200" min="1" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2 text-white font-bold text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-300 uppercase mb-2">Dosis Ref (g/ml en 200 L):</label>
+                                <input type="number" id="calcDose" value="250" min="1" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2 text-white font-bold text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+                            </div>
+                        </div>
+                        <button onclick="calculateDose()" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-bold py-2.5 rounded-xl transition-all text-xs flex items-center justify-center gap-2">
+                            Calcular Insumo Requerido
+                        </button>
+                        <div id="calcResult" class="hidden p-3 rounded-xl bg-brand-500/20 border border-brand-500/40 text-center">
+                            <span id="calcValue" class="text-lg font-bold text-white font-heading">0 ml / g</span>
                         </div>
                     </div>
-                    <div class="grid sm:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-bold text-tech-300 uppercase mb-2">pH Actual del Agua:</label>
-                            <select id="phCurrent" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-white font-bold text-sm focus:outline-none focus:ring-2 focus:ring-tech-500">
-                                <option value="7.5">7.5 (Ligeramente Alcalina)</option>
-                                <option value="8.0" selected>8.0 (Alcalina - Costa)</option>
-                                <option value="8.5">8.5 (Muy Alcalina)</option>
-                            </select>
+
+                    <!-- Rotación Antirresistencia -->
+                    <div class="bg-slate-900 border border-slate-800 p-6 sm:p-8 rounded-3xl space-y-4 shadow-xl">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-amber-500/20 text-amber-400 rounded-xl flex items-center justify-center text-xl font-bold border border-amber-500/30"><i class="ph ph-arrows-clockwise"></i></div>
+                            <div>
+                                <h3 class="text-lg font-bold font-heading text-white">Rotación Antirresistencia (IRAC / FRAC)</h3>
+                                <p class="text-xs text-slate-400">Esquema para auditorías GlobalG.A.P.</p>
+                            </div>
                         </div>
-                        <div>
-                            <label class="block text-xs font-bold text-tech-300 uppercase mb-2">Tipo de Plaguicida:</label>
-                            <select id="phPesticide" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-white font-bold text-sm focus:outline-none focus:ring-2 focus:ring-tech-500">
-                                <option value="5.5">Piretroides / Diamidas (pH 5.5)</option>
-                                <option value="6.0">Organofosforados / Triazoles (pH 6.0)</option>
-                                <option value="6.5">Bioinsumos / Cúpricos (pH 6.5)</option>
+                        <div class="flex gap-2">
+                            <select id="rotTarget" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2 text-white font-bold text-sm">
+                                <option value="PRODIPLOSIS">Prodiplosis longifila (Espárrago/Palto)</option>
+                                <option value="TRIPS">Trips - Frankliniella occidentalis</option>
+                                <option value="OIDIUM">Oídium / Cenicilla</option>
                             </select>
+                            <button onclick="generateRotation()" class="bg-amber-600 hover:bg-amber-500 text-white font-bold px-4 py-2 rounded-xl text-xs whitespace-nowrap">Generar</button>
                         </div>
-                    </div>
-                    <button onclick="calculatePH()" class="w-full bg-tech-600 hover:bg-tech-500 text-white font-bold py-3 rounded-xl shadow-lg shadow-tech-600/30 transition-all text-xs flex items-center justify-center gap-2">
-                        Calcular Regulador de pH
-                    </button>
-                    <div id="phResult" class="hidden p-4 rounded-xl bg-tech-500/20 border border-tech-500/40 text-center">
-                        <p class="text-[11px] text-tech-300 font-semibold uppercase">Dosis Estimada Acidificante por 200 L:</p>
-                        <p id="phValue" class="text-xl font-bold text-white font-heading mt-0.5">0 ml / 200 L</p>
+                        <div id="rotResult" class="hidden grid sm:grid-cols-3 gap-2 pt-2 text-xs"></div>
                     </div>
                 </div>
 
-                <!-- HERRAMIENTA 3: ROTACIÓN ANTIRRESISTENCIA -->
-                <div class="bg-white/5 border border-white/10 backdrop-blur-md p-6 sm:p-8 rounded-3xl space-y-5 lg:col-span-2">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-amber-500/20 text-amber-400 rounded-xl flex items-center justify-center text-xl font-bold"><i class="ph ph-arrows-clockwise"></i></div>
-                        <div>
-                            <h3 class="text-lg font-bold font-heading text-white">Generador de Rotación Antirresistencia (IRAC / FRAC)</h3>
-                            <p class="text-xs text-slate-400">Esquema preventivo alternado de grupos químicos para auditorías GlobalG.A.P.</p>
-                        </div>
-                    </div>
-                    <div class="grid sm:grid-cols-3 gap-4">
-                        <div class="sm:col-span-2">
-                            <label class="block text-xs font-bold text-amber-300 uppercase mb-2">Plaga / Enfermedad Objetivo:</label>
-                            <select id="rotTarget" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-white font-bold text-sm focus:outline-none focus:ring-2 focus:ring-amber-500">
-                                <option value="PRODIPLOSIS">Prodiplosis longifila (Espárrago / Palto / Tomate)</option>
-                                <option value="TRIPS">Trips - Frankliniella occidentalis (Vid / Palto)</option>
-                                <option value="OIDIUM">Oídium / Cenicilla (Vid / Capsicum)</option>
-                                <option value="SPODOPTERA">Spodoptera frugiperda (Maíz / Hortalizas)</option>
-                            </select>
-                        </div>
-                        <div class="flex items-end">
-                            <button onclick="generateRotation()" class="w-full bg-amber-600 hover:bg-amber-500 text-white font-bold py-2.5 rounded-xl shadow-lg shadow-amber-600/30 transition-all text-xs">
-                                Generar Programa 3 Bloques
-                            </button>
-                        </div>
-                    </div>
-                    <div id="rotResult" class="hidden grid sm:grid-cols-3 gap-3 pt-2">
-                        <!-- Generado por JavaScript -->
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- ========================================== -->
-    <!-- NUEVA SECCIÓN GRANDE: AGROTOOLS            -->
-    <!-- ========================================== -->
-    <section id="agrotools" class="py-24 bg-gradient-to-br from-brand-900 via-slate-900 to-emerald-950 text-white relative overflow-hidden border-t-4 border-brand-500">
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#16a34a_1.5px,transparent_1.5px)] [background-size:24px_24px]"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
-            
+    <!-- SECCIÓN AGROTOOLS (EMBEBIDA / INTEGRADA) -->
+    <section id="agrotools" class="py-20 bg-slate-900 text-white border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
             <div class="text-center max-w-3xl mx-auto space-y-3">
                 <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-brand-500/20 border border-brand-500/40 text-brand-300 text-xs font-bold uppercase tracking-widest">
-                    <i class="ph ph-cpu text-sm"></i> Plataforma Web Integrada
+                    <i class="ph ph-cpu text-sm"></i> Suite de Ingeniería
                 </span>
-                <h2 class="text-4xl sm:text-5xl font-extrabold font-heading tracking-tight text-white">AGROTOOLS</h2>
-                <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
-                    Acceda directamente a nuestra suite digital especializada para ingenieros agrónomos, con simulaciones en tiempo real, cálculos hídricos avanzados y edafología de campo.
-                </p>
+                <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-white">Plataforma AGROTOOLS Integrada</h2>
+                <p class="text-slate-400 text-sm">Acceso directo a las herramientas avanzadas de cálculo hídrico, edafología y simulación de pozos para la agroexportación.</p>
             </div>
 
-            <!-- CONTENEDOR PRINCIPAL / INTEGRACIÓN INTERACTIVA -->
-            <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-6 sm:p-10 shadow-2xl grid lg:grid-cols-12 gap-8 items-center">
-                
-                <!-- Columna Izquierda: Información y Accesos -->
-                <div class="lg:col-span-5 space-y-6">
-                    <div class="space-y-4">
-                        <h3 class="text-2xl sm:text-3xl font-bold font-heading text-brand-300">Optimice su Gestión Agrícola con AGROTOOLS</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed">
-                            Diseñado específicamente para el sector agroexportador de la costa peruana. Resuelva balances hídricos, curvas de abatimiento y planeamiento fitosanitario en segundos.
-                        </p>
+            <div class="bg-slate-950 rounded-3xl border border-slate-800 overflow-hidden shadow-2xl relative">
+                <div class="bg-slate-900 px-6 py-4 flex items-center justify-between border-b border-slate-800">
+                    <div class="flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
+                        <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
+                        <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+                        <span class="text-xs text-slate-400 ml-2 font-mono">https://agrotools-seven.vercel.app/</span>
                     </div>
-
-                    <div class="space-y-3">
-                        <div class="flex items-start gap-3 bg-black/20 p-3.5 rounded-xl border border-white/10">
-                            <i class="ph ph-check-circle text-brand-400 text-xl shrink-0 mt-0.5"></i>
-                            <div>
-                                <h4 class="font-bold text-sm text-white">Cálculos Hidrogeológicos</h4>
-                                <p class="text-xs text-slate-300">Estimación de abatimiento de acuíferos mediante ecuaciones de Theis y Cooper-Jacob.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3 bg-black/20 p-3.5 rounded-xl border border-white/10">
-                            <i class="ph ph-check-circle text-brand-400 text-xl shrink-0 mt-0.5"></i>
-                            <div>
-                                <h4 class="font-bold text-sm text-white">Programación de Riego & Suelos</h4>
-                                <p class="text-xs text-slate-300">Balances de humedad y láminas de riego para cultivos como espárrago y palto.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="pt-4 flex flex-wrap gap-4">
-                        <a href="https://agrotools-seven.vercel.app/" target="_blank" class="bg-brand-600 hover:bg-brand-500 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-brand-600/40 transition-all flex items-center gap-2 text-sm">
-                            <i class="ph ph-globe text-lg"></i> Abrir AGROTOOLS en Pantalla Completa
-                        </a>
-                    </div>
+                    <a href="https://agrotools-seven.vercel.app/" target="_blank" class="text-xs text-brand-400 hover:underline flex items-center gap-1 font-semibold">
+                        Pantalla Completa <i class="ph ph-arrow-square-out"></i>
+                    </a>
                 </div>
-
-                <!-- Columna Derecha: Vista Previa Embebida (Iframe Interactiva) -->
-                <div class="lg:col-span-7">
-                    <div class="bg-slate-950 rounded-2xl overflow-hidden border-2 border-brand-500/30 shadow-2xl relative group">
-                        <!-- Barra Superior Simulada del Navegador -->
-                        <div class="bg-slate-900 px-4 py-3 flex items-center justify-between border-b border-slate-800">
-                            <div class="flex items-center gap-2">
-                                <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
-                                <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
-                                <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
-                                <span class="text-xs text-slate-400 ml-2 font-mono">https://agrotools-seven.vercel.app/</span>
-                            </div>
-                            <a href="https://agrotools-seven.vercel.app/" target="_blank" class="text-xs text-brand-400 hover:underline flex items-center gap-1 font-semibold">
-                                Expandir <i class="ph ph-arrow-square-out text-sm"></i>
-                            </a>
-                        </div>
-                        
-                        <!-- Iframe incrustando AgroTools -->
-                        <div class="w-full h-[450px] sm:h-[500px] bg-slate-900 relative">
-                            <iframe src="https://agrotools-seven.vercel.app/" class="w-full h-full border-0" title="AGROTOOLS Platform"></iframe>
-                        </div>
-                    </div>
+                <div class="w-full h-[500px] bg-slate-900">
+                    <iframe src="https://agrotools-seven.vercel.app/" class="w-full h-full border-0" title="AgroTools Platform"></iframe>
                 </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- GUÍA DE COMPATIBILIDAD DE MEZCLAS -->
-    <section id="mezclas" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-3xl font-bold font-heading text-slate-900">Compatibilidad de Mezclas en Tanque</h2>
-                <p class="text-slate-600 mt-2 text-sm">Consulte las recomendaciones físicas y químicas antes de preparar caldos de fumigación en el cilindro.</p>
-            </div>
-            <div class="overflow-x-auto rounded-2xl border border-slate-200">
-                <table class="w-full text-xs text-left text-slate-600">
-                    <thead class="text-xs font-bold text-slate-900 uppercase bg-slate-100 border-b border-slate-200">
-                        <tr>
-                            <th class="px-6 py-4">Combinación de Productos</th>
-                            <th class="px-6 py-4">Compatibilidad</th>
-                            <th class="px-6 py-4">Recomendación Técnica de Campo</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-200 font-medium">
-                        <tr class="hover:bg-slate-50">
-                            <td class="px-6 py-4 font-bold text-slate-900">Insecticidas EC + Bioestimulantes A.A.</td>
-                            <td class="px-6 py-4"><span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2.5 py-1 rounded-full">Compatible</span></td>
-                            <td class="px-6 py-4">Mezcla segura. Favorece la penetración foliar y rápida asimilación.</td>
-                        </tr>
-                        <tr class="hover:bg-slate-50">
-                            <td class="px-6 py-4 font-bold text-slate-900">Fungicidas Cúpricos + Aceites Agrícolas</td>
-                            <td class="px-6 py-4"><span class="bg-red-100 text-red-800 text-[10px] font-bold px-2.5 py-1 rounded-full">Incompatible</span></td>
-                            <td class="px-6 py-4">Riesgo severo de fitotoxicidad en brotes tiernos. Aplicar por separado.</td>
-                        </tr>
-                        <tr class="hover:bg-slate-50">
-                            <td class="px-6 py-4 font-bold text-slate-900">Fosfitos de Potasio + Fungicidas Triazoles</td>
-                            <td class="px-6 py-4"><span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2.5 py-1 rounded-full">Prueba Previa</span></td>
-                            <td class="px-6 py-4">Verificar pH de la mezcla (óptimo 5.5 - 6.5) antes de llenar el cilindro.</td>
-                        </tr>
-                        <tr class="hover:bg-slate-50">
-                            <td class="px-6 py-4 font-bold text-slate-900">Inoculantes Biológicos (Bacillus) + Bactericidas Cúpricos</td>
-                            <td class="px-6 py-4"><span class="bg-red-100 text-red-800 text-[10px] font-bold px-2.5 py-1 rounded-full">Incompatible</span></td>
-                            <td class="px-6 py-4">El cobre inhibe o destruye la viabilidad de las esporas bacterianas o conidias. Respetar 7 días de diferencia.</td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
         </div>
     </section>
 
     <!-- SERVICIOS TÉCNICOS -->
-    <section id="servicios" class="py-20 bg-slate-100 border-y border-slate-200">
+    <section id="servicios" class="py-20 bg-slate-950 border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold font-heading text-slate-900">Servicios Especializados de Campo</h2>
-                <p class="text-slate-600 mt-3">Acompañamiento agronómico para maximizar la eficacia de las aplicaciones.</p>
+                <h2 class="text-3xl font-bold font-heading text-white">Servicios Especializados de Campo</h2>
+                <p class="text-slate-400 mt-2 text-sm">Acompañamiento agronómico en campo para fundos de la costa norte peruana.</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
-                    <div class="w-12 h-12 bg-brand-100 text-brand-700 rounded-xl flex items-center justify-center text-2xl font-bold mb-6">
+                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800">
+                    <div class="w-12 h-12 bg-brand-500/10 text-brand-400 rounded-xl flex items-center justify-center text-2xl font-bold mb-6 border border-brand-500/30">
                         <i class="ph ph-drop"></i>
                     </div>
-                    <h3 class="text-xl font-bold font-heading text-slate-900 mb-3">Diagnóstico Fitosanitario y Biológico</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Identificación de plagas y patógenos con recomendación de rotación de activos y biocontroladores.</p>
+                    <h3 class="text-xl font-bold font-heading text-white mb-3">Diagnóstico Fitosanitario</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Identificación de plagas y patógenos con recomendación estricta de rotación de activos y biocontroladores.</p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
-                    <div class="w-12 h-12 bg-tech-500/10 text-tech-600 rounded-xl flex items-center justify-center text-2xl font-bold mb-6">
+                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800">
+                    <div class="w-12 h-12 bg-tech-500/10 text-tech-400 rounded-xl flex items-center justify-center text-2xl font-bold mb-6 border border-tech-500/30">
                         <i class="ph ph-bug"></i>
                     </div>
-                    <h3 class="text-xl font-bold font-heading text-slate-900 mb-3">Calibración de Equipos y Boquillas</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Selección de boquillas, presión y tamaño de gota para evitar deriva e ineficiencia en la aplicación.</p>
+                    <h3 class="text-xl font-bold font-heading text-white mb-3">Calibración de Equipos</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Selección de boquillas, presión y tamaño de gota para evitar deriva e ineficiencia en la aplicación.</p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
-                    <div class="w-12 h-12 bg-amber-500/10 text-amber-600 rounded-xl flex items-center justify-center text-2xl font-bold mb-6">
+                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800">
+                    <div class="w-12 h-12 bg-amber-500/10 text-amber-400 rounded-xl flex items-center justify-center text-2xl font-bold mb-6 border border-amber-500/30">
                         <i class="ph ph-chart-line-up"></i>
                     </div>
-                    <h3 class="text-xl font-bold font-heading text-slate-900 mb-3">Planes Antiestrés Térmico e Hídrico</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Aplicación estratégica de bioestimulantes en periodos críticos de floración y cuajado.</p>
+                    <h3 class="text-xl font-bold font-heading text-white mb-3">Planes Antiestrés Térmico</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Aplicación estratégica de bioestimulantes en periodos críticos de floración y cuajado bajo alta radiación.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PIE DE PÁGINA (FOOTER) -->
-    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 text-sm">
+    <!-- PIE DE PÁGINA -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900 text-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8 mb-8">
             <div class="space-y-4">
                 <div class="flex items-center gap-2 text-white font-bold font-heading text-lg">
                     <div class="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center text-white"><i class="ph ph-plant"></i></div>
-                    SOLUTION FACS & AGROTOOLS
+                    SOLUTION FACS
                 </div>
-                <p class="text-xs leading-relaxed">Soluciones agrícolas, biotecnología y protección fitosanitaria especializada en La Libertad, Perú.</p>
+                <p class="text-xs leading-relaxed">Command Center agrícola, biotecnología y protección fitosanitaria especializada en La Libertad, Perú.</p>
             </div>
             <div>
                 <h4 class="text-white font-bold font-heading mb-3">Sedes</h4>
@@ -473,18 +414,18 @@
                 <p class="text-xs leading-relaxed">Insumos regulados para agroexportación y mercado nacional.</p>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 border-t border-slate-800 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 border-t border-slate-900 text-center text-xs text-slate-600">
             © 2026 SOLUTION FACS & AGROTOOLS - Todos los derechos reservados.
         </div>
     </footer>
 
-    <!-- SLIDE-OVER CARRITO DE COMPRAS -->
+    <!-- SLIDE-OVER CARRITO / COTIZACIÓN -->
     <div id="cartModal" class="fixed inset-0 z-50 overflow-hidden hidden" role="dialog" aria-modal="true">
-        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" id="closeCartOverlay"></div>
+        <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-sm transition-opacity" id="closeCartOverlay"></div>
         <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
             <div class="pointer-events-auto w-screen max-w-md">
-                <div class="flex h-full flex-col bg-white shadow-2xl">
-                    <div class="p-6 bg-slate-900 text-white flex items-center justify-between">
+                <div class="flex h-full flex-col bg-slate-900 border-l border-slate-800 text-white shadow-2xl">
+                    <div class="p-6 bg-slate-950 flex items-center justify-between border-b border-slate-800">
                         <div class="flex items-center gap-2">
                             <i class="ph ph-shopping-cart text-xl text-brand-400"></i>
                             <h2 class="text-lg font-bold font-heading">Su Cotización de Insumos</h2>
@@ -496,12 +437,12 @@
                         <p class="text-center text-slate-500 text-sm py-8">Su carrito de cotización está vacío.</p>
                     </div>
 
-                    <div class="border-t border-slate-200 p-6 bg-slate-50 space-y-4">
-                        <div class="flex justify-between items-center font-bold text-slate-900 text-base">
+                    <div class="border-t border-slate-800 p-6 bg-slate-950 space-y-4">
+                        <div class="flex justify-between items-center font-bold text-white text-base">
                             <span>Monto Total Estimado:</span>
-                            <span id="cartTotal" class="text-brand-700 text-xl font-heading">S/ 0.00</span>
+                            <span id="cartTotal" class="text-brand-400 text-xl font-heading">S/ 0.00</span>
                         </div>
-                        <button id="sendWhatsAppOrderBtn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-emerald-600/20 transition-all flex items-center justify-center gap-2 text-sm">
+                        <button id="sendWhatsAppOrderBtn" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 text-sm">
                             <i class="ph ph-whatsapp-logo text-xl"></i> Enviar Pedido por WhatsApp
                         </button>
                     </div>
@@ -515,782 +456,184 @@
         const defaultData = {
             whatsapp: "51901742151",
             productos: [
-                // --- CATEGORÍA 1: INSUMOS BIOLÓGICOS (10 PRODUCTOS) ---
-                {
-                    id: 1,
-                    nombre: "Bacillus thuringiensis",
-                    categoria_key: "BIOLOGICOS",
-                    categoria: "Insecticida Biológico",
-                    ingrediente_activo: "Bacillus thuringiensis (32,000 UI/mg)",
-                    modo_accion: "Toxinas Cry por ingestión. Provoca la parálisis intestinal y lisis celular en larvas de lepidópteros.",
-                    descripcion: "Insumo biológico para el control de Spodoptera frugiperda, Helicoverpa zea y gusanos perforadores sin dejar residuos químicos.",
-                    precio: 82.00,
-                    variantes: ["Bolsa 500 g", "Pote 1 kg"]
-                },
-                {
-                    id: 2,
-                    nombre: "Trichoderma harzianum",
-                    categoria_key: "BIOLOGICOS",
-                    categoria: "Fungicida Biológico",
-                    ingrediente_activo: "Trichoderma harzianum (1x10^9 UFC/g)",
-                    modo_accion: "Micoparasitismo activo, competencia directa por nutrientes en la rizosfera e inducción de defensas (SAR).",
-                    descripcion: "Protección biológica radicular preventiva frente a Phytophthora, Fusarium, Rhizoctonia y Pythium.",
-                    precio: 90.00,
-                    variantes: ["Bolsa 500 g", "Pote 1 kg"]
-                },
-                {
-                    id: 3,
-                    nombre: "Beauveria bassiana",
-                    categoria_key: "BIOLOGICOS",
-                    categoria: "Bio-Insecticida Entomopatógeno",
-                    ingrediente_activo: "Beauveria bassiana (1x10^9 conidias/g)",
-                    modo_accion: "Adhesión, germinación de tubo germinativo y penetración mecánica/enzimática sobre la cutícula de insectos plaga.",
-                    descripcion: "Control biológico especializado de mosca blanca, picudo, trips y queresas blandas en hortalizas y frutales.",
-                    precio: 95.00,
-                    variantes: ["Bolsa 500 g", "Pote 1 kg"]
-                },
-                {
-                    id: 4,
-                    nombre: "Metarhizium anisopliae",
-                    categoria_key: "BIOLOGICOS",
-                    categoria: "Bio-Insecticida de Suelo y Follaje",
-                    ingrediente_activo: "Metarhizium anisopliae (1x10^9 conidias/g)",
-                    modo_accion: "Germinación sobre epicutícula produciendo toxinas (destruxinas) que disuelven el tejido interno del insecto.",
-                    descripcion: "Eficaz sobre gusanos blancos, chinches, gusanos aradores y gusanos cortadores de raíz.",
-                    precio: 92.00,
-                    variantes: ["Bolsa 500 g", "Pote 1 kg"]
-                },
-                {
-                    id: 5,
-                    nombre: "Paecilomyces lilacinus",
-                    categoria_key: "BIOLOGICOS",
-                    categoria: "Nematicida Biológico",
-                    ingrediente_activo: "Purpureocillium lilacinum (1x10^9 UFC/g)",
-                    modo_accion: "Infección y parasitismo directo sobre masas de huevos, juveniles (J2) y hembras fitoparásitas de nematodos.",
-                    descripcion: "Control biológico de nematodos de nódulo radicular (Meloidogyne spp., Pratylenchus) en suelos agrícolas.",
-                    precio: 105.00,
-                    variantes: ["Bolsa 500 g", "Pote 1 kg"]
-                },
-                {
-                    id: 6,
-                    nombre: "Bacillus subtilis",
-                    categoria_key: "BIOLOGICOS",
-                    categoria: "Bactericida y Fungicida Biológico",
-                    ingrediente_activo: "Bacillus subtilis (1x10^9 UFC/g)",
-                    modo_accion: "Producción de lipopéptidos surfactantes que perforan la membrana celular de hifas y esporas fúngicas.",
-                    descripcion: "Bio-fungicida foliar para prevención y frenado de Oídium, Botrytis cinerea y bacteriosis foliares.",
-                    precio: 98.00,
-                    variantes: ["Frasco 1 Litro", "Pote 1 kg"]
-                },
-                {
-                    id: 7,
-                    nombre: "Lecanicillium lecanii",
-                    categoria_key: "BIOLOGICOS",
-                    categoria: "Bio-Insecticida Entomopatógeno",
-                    ingrediente_activo: "Lecanicillium lecanii (1x10^9 conidias/g)",
-                    modo_accion: "Microparásito de insectos chupadores que germina en la cutícula en condiciones de humedad media-alta.",
-                    descripcion: "Insumo biológico de alta selectividad contra pulgones, áfidos y trips en cultivos protegidos y de campo abierto.",
-                    precio: 88.00,
-                    variantes: ["Bolsa 500 g", "Pote 1 kg"]
-                },
-                {
-                    id: 8,
-                    nombre: "Bacillus amyloliquefaciens",
-                    categoria_key: "BIOLOGICOS",
-                    categoria: "Inoculante Fitosanitario",
-                    ingrediente_activo: "Bacillus amyloliquefaciens (1x10^9 UFC/g)",
-                    modo_accion: "Colonización rápida del sistema radicular y secreción de iturinas que activan la SAR vegetal.",
-                    descripcion: "Protección biológica y bioestimulación del root-system contra agentes patógenos de suelo.",
-                    precio: 110.00,
-                    variantes: ["Frasco 1 Litro", "Pote 1 kg"]
-                },
-                {
-                    id: 9,
-                    nombre: "Pochonia chlamydosporia",
-                    categoria_key: "BIOLOGICOS",
-                    categoria: "Nematicida Biológico de Suelo",
-                    ingrediente_activo: "Pochonia chlamydosporia (1x10^9 esporas/g)",
-                    modo_accion: "Endófito de raíz que destruye la cubierta proteica de huevos y quistes de nematodos noduladores.",
-                    descripcion: "Bio-controlador de ciclo largo en el suelo para mantener bajas poblaciones de nematodos agalladores.",
-                    precio: 115.00,
-                    variantes: ["Bolsa 500 g", "Pote 1 kg"]
-                },
-                {
-                    id: 10,
-                    nombre: "Extracto de Neem",
-                    categoria_key: "BIOLOGICOS",
-                    categoria: "Bio-Insecticida Botánico",
-                    ingrediente_activo: "Azadiractina (12,000 ppm)",
-                    modo_accion: "Regulador de la ecdisona (muda de larvas) con potente efecto antifeedant (repelente e inhibidor de la alimentación).",
-                    descripcion: "Extracto vegetal orgánico ideal para rotación de control de minadores de hojas, Trips y larvas tiernas.",
-                    precio: 78.00,
-                    variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
-                },
+                { id: 1, nombre: "Bacillus thuringiensis", categoria_key: "BIOLOGICOS", categoria: "Insecticida Biológico", ingrediente_activo: "Bacillus thuringiensis (32,000 UI/mg)", modo_accion: "Toxinas Cry por ingestión. Lisis celular en larvas.", descripcion: "Control de Spodoptera y gusanos perforadores sin residuos.", precio: 82.00, variantes: ["Bolsa 500 g", "Pote 1 kg"] },
+                { id: 2, nombre: "Trichoderma harzianum", categoria_key: "BIOLOGICOS", categoria: "Fungicida Biológico", ingrediente_activo: "Trichoderma harzianum (1x10^9 UFC/g)", modo_accion: "Micoparasitismo y competencia radicular.", descripcion: "Protección biológica frente a Phytophthora y Fusarium.", precio: 90.00, variantes: ["Bolsa 500 g", "Pote 1 kg"] },
+                { id: 3, nombre: "Beauveria bassiana", categoria_key: "BIOLOGICOS", categoria: "Bio-Insecticida", ingrediente_activo: "Beauveria bassiana (1x10^9 conidias/g)", modo_accion: "Penetración enzimática sobre cutícula.", descripcion: "Control de mosca blanca, picudo y trips.", precio: 95.00, variantes: ["Bolsa 500 g", "Pote 1 kg"] },
+                { id: 4, nombre: "Metarhizium anisopliae", categoria_key: "BIOLOGICOS", categoria: "Bio-Insecticida", ingrediente_activo: "Metarhizium anisopliae (1x10^9)", modo_accion: "Producción de destruxinas internas.", descripcion: "Eficaz sobre gusanos blancos y cortadores de raíz.", precio: 92.00, variantes: ["Bolsa 500 g", "Pote 1 kg"] },
+                { id: 5, nombre: "Paecilomyces lilacinus", categoria_key: "BIOLOGICOS", categoria: "Nematicida Biológico", ingrediente_activo: "Purpureocillium lilacinum", modo_accion: "Parasitismo de huevos y hembras de nematodos.", descripcion: "Control de nematodos de nódulo radicular.", precio: 105.00, variantes: ["Bolsa 500 g", "Pote 1 kg"] },
+                { id: 6, nombre: "Bacillus subtilis", categoria_key: "BIOLOGICOS", categoria: "Bactericida Biológico", ingrediente_activo: "Bacillus subtilis", modo_accion: "Lipopéptidos surfactantes antimicrobianos.", descripcion: "Prevención de Oídium y Botrytis.", precio: 98.00, variantes: ["Frasco 1 Litro", "Pote 1 kg"] },
+                { id: 7, nombre: "Lecanicillium lecanii", categoria_key: "BIOLOGICOS", categoria: "Bio-Insecticida", ingrediente_activo: "Lecanicillium lecanii", modo_accion: "Microparásito de insectos chupadores.", descripcion: "Selectivo contra áfidos y pulgones.", precio: 88.00, variantes: ["Bolsa 500 g", "Pote 1 kg"] },
+                { id: 8, nombre: "Bacillus amyloliquefaciens", categoria_key: "BIOLOGICOS", categoria: "Inoculante", ingrediente_activo: "Bacillus amyloliquefaciens", modo_accion: "Secreción de iturinas y activación SAR.", descripcion: "Protección radicular avanzada.", precio: 110.00, variantes: ["Frasco 1 Litro", "Pote 1 kg"] },
+                { id: 9, nombre: "Pochonia chlamydosporia", categoria_key: "BIOLOGICOS", categoria: "Nematicida Suelo", ingrediente_activo: "Pochonia chlamydosporia", modo_accion: "Destrucción de cubierta proteica de quistes.", descripcion: "Control de ciclo largo para nematodos.", precio: 115.00, variantes: ["Bolsa 500 g", "Pote 1 kg"] },
+                { id: 10, nombre: "Extracto de Neem", categoria_key: "BIOLOGICOS", categoria: "Bio-Botanico", ingrediente_activo: "Azadiractina (12,000 ppm)", modo_accion: "Regulador de ecdisona y antifeedant.", descripcion: "Repelente orgánico para minadores y trips.", precio: 78.00, variantes: ["Frasco 1 Litro", "Galón 5 Litros"] },
 
-                // --- CATEGORÍA 2: INSECTICIDAS & ACARICIDAS (10 PRODUCTOS) ---
-                {
-                    id: 11,
-                    nombre: "Abamectina",
-                    categoria_key: "INSECTICIDAS",
-                    categoria: "Insecticida / Acaricida",
-                    ingrediente_activo: "Abamectina (18 g/L)",
-                    modo_accion: "Contacto e ingestión translaminar. Agonista del GABA (IRAC Grupo 6).",
-                    descripcion: "Inhibe impulsos nerviosos. Excelente control de ácaros y Liriomyza en hortalizas y frutales.",
-                    precio: 85.00,
-                    variantes: ["Frasco 250 ml", "Frasco 1 Litro", "Galón 5 Litros"]
-                },
-                {
-                    id: 12,
-                    nombre: "Emamectin Benzoate",
-                    categoria_key: "INSECTICIDAS",
-                    categoria: "Insecticida",
-                    ingrediente_activo: "Benzoato de Emamectina (50 g/kg)",
-                    modo_accion: "Translaminar por ingestión (IRAC Grupo 6). Parálisis rápida en larvas.",
-                    descripcion: "Control en Spodoptera frugiperda y Helicoverpa zea en maíz, espárrago y hortalizas.",
-                    precio: 95.00,
-                    variantes: ["Bolsa 100 g", "Bolsa 500 g", "Pote 1 kg"]
-                },
-                {
-                    id: 13,
-                    nombre: "Spirofet",
-                    categoria_key: "INSECTICIDAS",
-                    categoria: "Acaricida",
-                    ingrediente_activo: "Spirodiclofen (240 g/L)",
-                    modo_accion: "Inhibidor de la síntesis de lípidos (IRAC Grupo 23). Ovicida y ninficida.",
-                    descripcion: "Control prolongado de ácaro hialino y Panonychus citri en palto y cítricos.",
-                    precio: 140.00,
-                    variantes: ["Frasco 250 ml", "Frasco 1 Litro"]
-                },
-                {
-                    id: 14,
-                    nombre: "Cypermethrin",
-                    categoria_key: "INSECTICIDAS",
-                    categoria: "Insecticida Piretroide",
-                    ingrediente_activo: "Cipermetrina (250 g/L)",
-                    modo_accion: "Modulador del canal de sodio (IRAC Grupo 3A). Efecto de derribo de contacto.",
-                    descripcion: "Acción inmediata sobre gusanos cortadores, mosquita blanca y masticadores de follaje.",
-                    precio: 52.00,
-                    variantes: ["Frasco 250 ml", "Frasco 1 Litro", "Galón 5 Litros"]
-                },
-                {
-                    id: 15,
-                    nombre: "Teflubenzuron",
-                    categoria_key: "INSECTICIDAS",
-                    categoria: "Regulador de Crecimiento (IGR)",
-                    ingrediente_activo: "Teflubenzuron (150 g/L)",
-                    modo_accion: "Inhibidor de la biosíntesis de quitina (IRAC Grupo 15). Impide la muda de larvas.",
-                    descripcion: "Inhibidor de muda selectivo para Prodiplosis longifila y lepidópteros sin afectar benéficos.",
-                    precio: 115.00,
-                    variantes: ["Frasco 250 ml", "Frasco 1 Litro"]
-                },
-                {
-                    id: 16,
-                    nombre: "Spinetoram",
-                    categoria_key: "INSECTICIDAS",
-                    categoria: "Insecticida Espinosina",
-                    ingrediente_activo: "Spinetoram (120 g/L)",
-                    modo_accion: "Modulador alostérico de receptores nicotínicos (IRAC Grupo 5).",
-                    descripcion: "Máxima eficacia en el control de Trips (Frankliniella occidentalis) y Prodiplosis.",
-                    precio: 210.00,
-                    variantes: ["Frasco 250 ml", "Frasco 1 Litro"]
-                },
-                {
-                    id: 17,
-                    nombre: "Acetamiprid",
-                    categoria_key: "INSECTICIDAS",
-                    categoria: "Insecticida Sistémico",
-                    ingrediente_activo: "Acetamiprid (200 g/kg)",
-                    modo_accion: "Neonicotinoide sistémico acrópeto y translaminar (IRAC Grupo 4A).",
-                    descripcion: "Control efectivo de afidos, pulgones, mosca blanca y queresas blandas.",
-                    precio: 78.00,
-                    variantes: ["Bolsa 100 g", "Bolsa 500 g", "Pote 1 kg"]
-                },
-                {
-                    id: 18,
-                    nombre: "Alpha-cypermethrin",
-                    categoria_key: "INSECTICIDAS",
-                    categoria: "Insecticida Piretroide",
-                    ingrediente_activo: "Alpha-cypermethrin (100 g/L)",
-                    modo_accion: "Actúa por contacto e ingestión. Interfiere en los canales de sodio provocando parálisis.",
-                    descripcion: "Control de choque para larvas de lepidópteros y trips en cultivos de alta densidad.",
-                    precio: 88.00,
-                    variantes: ["Bolsa 100 g", "Pote 1 kg"]
-                },
-                {
-                    id: 19,
-                    nombre: "Chlorantraniliprole",
-                    categoria_key: "INSECTICIDAS",
-                    categoria: "Insecticida Diamida",
-                    ingrediente_activo: "Clorantraniliprol (200 g/L)",
-                    modo_accion: "Activador de receptores de ryanodina (IRAC Grupo 28). Parálisis muscular.",
-                    descripcion: "Larga residualidad contra polilla del tomate, Heliothis y barrenadores.",
-                    precio: 245.00,
-                    variantes: ["Frasco 100 ml", "Frasco 500 ml"]
-                },
-                {
-                    id: 20,
-                    nombre: "Methomyl 90 SP",
-                    categoria_key: "INSECTICIDAS",
-                    categoria: "Insecticida Carbamato",
-                    ingrediente_activo: "Metomilo (900 g/kg)",
-                    modo_accion: "Inhibidor de la acetilcolinesterasa (IRAC 1A) con alto efecto de derribo de contacto.",
-                    descripcion: "Choque inmediato contra adultos y larvas de gusano cogollero y trips.",
-                    precio: 88.00,
-                    variantes: ["Bolsa 100 g", "Pote 1 kg"]
-                },
+                // INSECTICIDAS
+                { id: 11, nombre: "Abamectina", categoria_key: "INSECTICIDAS", categoria: "Acaricida / Insecticida", ingrediente_activo: "Abamectina (18 g/L)", modo_accion: "Agonista GABA (IRAC 6).", descripcion: "Control de ácaros y Liriomyza.", precio: 85.00, variantes: ["Frasco 250 ml", "Frasco 1 Litro"] },
+                { id: 12, nombre: "Emamectin Benzoate", categoria_key: "INSECTICIDAS", categoria: "Insecticida", ingrediente_activo: "Benzoato de Emamectina", modo_accion: "Translaminar por ingestión (IRAC 6).", descripcion: "Control en Spodoptera y lepidópteros.", precio: 95.00, variantes: ["Bolsa 100 g", "Pote 1 kg"] },
+                { id: 13, nombre: "Spirofet", categoria_key: "INSECTICIDAS", categoria: "Acaricida", ingrediente_activo: "Spirodiclofen (240 g/L)", modo_accion: "Inhibidor de lípidos (IRAC 23).", descripcion: "Control prolongado de ácaros en palto.", precio: 140.00, variantes: ["Frasco 250 ml", "Frasco 1 Litro"] },
+                { id: 14, nombre: "Cypermethrin", categoria_key: "INSECTICIDAS", categoria: "Piretroide", ingrediente_activo: "Cipermetrina (250 g/L)", modo_accion: "Canal de sodio (IRAC 3A).", descripcion: "Efecto de derribo inmediato.", precio: 52.00, variantes: ["Frasco 250 ml", "Frasco 1 Litro"] },
+                { id: 15, nombre: "Teflubenzuron", categoria_key: "INSECTICIDAS", categoria: "Regulador (IGR)", ingrediente_activo: "Teflubenzuron (150 g/L)", modo_accion: "Inhibidor de quitina (IRAC 15).", descripcion: "Selectivo para Prodiplosis.", precio: 115.00, variantes: ["Frasco 250 ml", "Frasco 1 Litro"] },
+                { id: 16, nombre: "Spinetoram", categoria_key: "INSECTICIDAS", categoria: "Espinosina", ingrediente_activo: "Spinetoram (120 g/L)", modo_accion: "Receptores nicotínicos (IRAC 5).", descripcion: "Máxima eficacia en trips.", precio: 210.00, variantes: ["Frasco 250 ml", "Frasco 1 Litro"] },
+                { id: 17, nombre: "Acetamiprid", categoria_key: "INSECTICIDAS", categoria: "Sistémico", ingrediente_activo: "Acetamiprid (200 g/kg)", modo_accion: "Neonicotinoide (IRAC 4A).", descripcion: "Control de áfidos y mosca blanca.", precio: 78.00, variantes: ["Bolsa 100 g", "Pote 1 kg"] },
+                { id: 18, nombre: "Alpha-cypermethrin", categoria_key: "INSECTICIDAS", categoria: "Piretroide", ingrediente_activo: "Alpha-cypermethrin", modo_accion: "Interferencia en canales de sodio.", descripcion: "Control de choque en alta densidad.", precio: 88.00, variantes: ["Bolsa 100 g", "Pote 1 kg"] },
+                { id: 19, nombre: "Chlorantraniliprole", categoria_key: "INSECTICIDAS", categoria: "Diamida", ingrediente_activo: "Clorantraniliprol", modo_accion: "Receptores ryanodina (IRAC 28).", descripcion: "Larga residualidad en polillas.", precio: 245.00, variantes: ["Frasco 100 ml", "Frasco 500 ml"] },
+                { id: 20, nombre: "Methomyl 90 SP", categoria_key: "INSECTICIDAS", categoria: "Carbamato", ingrediente_activo: "Metomilo (900 g/kg)", modo_accion: "Inhibidor acetilcolinesterasa (IRAC 1A).", descripcion: "Choque inmediato contra cogollero.", precio: 88.00, variantes: ["Bolsa 100 g", "Pote 1 kg"] },
 
-                // --- CATEGORÍA 3: FUNGICIDAS & BACTERICIDAS (10 PRODUCTOS) ---
-                {
-                    id: 21,
-                    nombre: "Azoxystrobin",
-                    categoria_key: "FUNGICIDAS",
-                    categoria: "Fungicida Sistémico",
-                    ingrediente_activo: "Azoxystrobin (250 g/L)",
-                    modo_accion: "Inhibidor del complejo III mitocondrial (FRAC Grupo 11 - Estrobirulina).",
-                    descripcion: "Protección preventiva y curativa contra oídium, roya y antravnosis.",
-                    precio: 135.00,
-                    variantes: ["Frasco 250 ml", "Frasco 1 Litro"]
-                },
-                {
-                    id: 22,
-                    nombre: "Difenoconazole",
-                    categoria_key: "FUNGICIDAS",
-                    categoria: "Fungicida Curativo",
-                    ingrediente_activo: "Difenoconazole (250 g/L)",
-                    modo_accion: "Inhibidor de la C14-desmetilasa (FRAC Grupo 3 - Triazol).",
-                    descripcion: "Excelente detención del desarrollo de Alternaria solani y Cercospora.",
-                    precio: 110.00,
-                    variantes: ["Frasco 250 ml", "Frasco 1 Litro"]
-                },
-                {
-                    id: 23,
-                    nombre: "Mancozeb",
-                    categoria_key: "FUNGICIDAS",
-                    categoria: "Fungicida Preventivo",
-                    ingrediente_activo: "Mancozeb (800 g/kg)",
-                    modo_accion: "Contacto de acción multisitio (FRAC Grupo M01 - Ditiocarbamato).",
-                    descripcion: "Insumo básico de protección foliar contra mildiu, alternariosis y lancha.",
-                    precio: 42.00,
-                    variantes: ["Bolsa 1 kg", "Saco 25 kg"]
-                },
-                {
-                    id: 24,
-                    nombre: "Tebuconazole",
-                    categoria_key: "FUNGICIDAS",
-                    categoria: "Fungicida Erradicante",
-                    ingrediente_activo: "Tebuconazole (250 g/L)",
-                    modo_accion: "Sistémico triazol con acción de traslocación acrópeta (FRAC Grupo 3).",
-                    descripcion: "Especial para control de Botrytis cinerea y pudriciones en espárrago y vid.",
-                    precio: 118.00,
-                    variantes: ["Frasco 250 ml", "Frasco 1 Litro"]
-                },
-                {
-                    id: 25,
-                    nombre: "Metalaxyl + Mancozeb",
-                    categoria_key: "FUNGICIDAS",
-                    categoria: "Fungicida Oomiceticida",
-                    ingrediente_activo: "Metalaxil 8% + Mancozeb 64%",
-                    modo_accion: "Acción combinada sistémica y de contacto (FRAC A1 + M01).",
-                    descripcion: "Fórmula de ataque contra Phytophthora infestans y mildius en hortalizas.",
-                    precio: 75.00,
-                    variantes: ["Bolsa 1 kg", "Caja 10 kg"]
-                },
-                {
-                    id: 26,
-                    nombre: "Hidróxido de Cobre",
-                    categoria_key: "FUNGICIDAS",
-                    categoria: "Cúprico / Bactericidida",
-                    ingrediente_activo: "Hidróxido Cúprico (770 g/kg)",
-                    modo_accion: "Liberación de iones Cu++ con destrucción proteica (FRAC Grupo M01).",
-                    descripcion: "Prevención de manchas bacterianas (Xanthomonas) y pudriciones ácidas.",
-                    precio: 58.00,
-                    variantes: ["Bolsa 1 kg", "Saco 15 kg"]
-                },
-                {
-                    id: 27,
-                    nombre: "Propamocarb",
-                    categoria_key: "FUNGICIDAS",
-                    categoria: "Fungicida de Suelo",
-                    ingrediente_activo: "Clorhidrato de Propamocarb (722 g/L)",
-                    modo_accion: "Sistémico radicular. Altera la permeabilidad de la membrana (FRAC F4).",
-                    descripcion: "Prevención de Pythium y Phytophthora mediante aplicación en fertirriego.",
-                    precio: 125.00,
-                    variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
-                },
-                {
-                    id: 28,
-                    nombre: "Chlorothalonil",
-                    categoria_key: "FUNGICIDAS",
-                    categoria: "Fungicida Multisitio",
-                    ingrediente_activo: "Clorotalonil (720 g/L)",
-                    modo_accion: "Inactivación de grupos sulfhidrilo (FRAC Grupo M05). Contacto puro.",
-                    descripcion: "Sólida barrera protectora de amplio espectro para oídium y Septoria.",
-                    precio: 68.00,
-                    variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
-                },
-                {
-                    id: 29,
-                    nombre: "Cymoxanil + Mancozeb",
-                    categoria_key: "FUNGICIDAS",
-                    categoria: "Fungicida Curativo Mildiu",
-                    ingrediente_activo: "Cimoxanilo 8% + Mancozeb 64%",
-                    modo_accion: "Penetrante con acción curativa temprana y barrera protectora.",
-                    descripcion: "Control de rescate para atajar ataques de Mildiu (Peronospora spp.).",
-                    precio: 72.00,
-                    variantes: ["Bolsa 1 kg"]
-                },
-                {
-                    id: 30,
-                    nombre: "Fosfito de Potasio",
-                    categoria_key: "FUNGICIDAS",
-                    categoria: "Fungicida Inductor",
-                    ingrediente_activo: "Fosfitos de Potasio (P2O5 40% + K2O 20%)",
-                    modo_accion: "Estimulante de la ruta metabólica de la ácido shikímico (fitoalexinas).",
-                    descripcion: "Refuerza la pared celular y previene pudriciones del cuello por Phytophthora.",
-                    precio: 62.00,
-                    variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
-                },
+                // FUNGICIDAS
+                { id: 21, nombre: "Azoxystrobin", categoria_key: "FUNGICIDAS", categoria: "Estrobirulina", ingrediente_activo: "Azoxystrobin", modo_accion: "Complejo III mitocondrial (FRAC 11).", descripcion: "Protección contra oídium y roya.", precio: 135.00, variantes: ["Frasco 250 ml", "Frasco 1 Litro"] },
+                { id: 22, nombre: "Difenoconazole", categoria_key: "FUNGICIDAS", categoria: "Triazol", ingrediente_activo: "Difenoconazole", modo_accion: "Inhibidor C14-desmetilasa (FRAC 3).", descripcion: "Detención de Alternaria y Cercospora.", precio: 110.00, variantes: ["Frasco 250 ml", "Frasco 1 Litro"] },
+                { id: 23, nombre: "Mancozeb", categoria_key: "FUNGICIDAS", categoria: "Multisitio", ingrediente_activo: "Mancozeb (800 g/kg)", modo_accion: "Contacto multisitio (FRAC M01).", descripcion: "Protección foliar contra mildiu.", precio: 42.00, variantes: ["Bolsa 1 kg", "Saco 25 kg"] },
+                { id: 24, nombre: "Tebuconazole", categoria_key: "FUNGICIDAS", categoria: "Triazol", ingrediente_activo: "Tebuconazole", modo_accion: "Traslocación acrópeta (FRAC 3).", descripcion: "Control de Botrytis en espárrago y vid.", precio: 118.00, variantes: ["Frasco 250 ml", "Frasco 1 Litro"] },
+                { id: 25, nombre: "Metalaxyl + Mancozeb", categoria_key: "FUNGICIDAS", categoria: "Oomiceticida", ingrediente_activo: "Metalaxil + Mancozeb", modo_accion: "Acción sistémica y contacto (FRAC A1).", descripcion: "Ataque contra Phytophthora infestans.", precio: 75.00, variantes: ["Bolsa 1 kg"] },
+                { id: 26, nombre: "Hidróxido de Cobre", categoria_key: "FUNGICIDAS", categoria: "Cúprico", ingrediente_activo: "Hidróxido Cúprico", modo_accion: "Liberación de iones Cu++ (FRAC M01).", descripcion: "Prevención de Xanthomonas.", precio: 58.00, variantes: ["Bolsa 1 kg", "Saco 15 kg"] },
+                { id: 27, nombre: "Propamocarb", categoria_key: "FUNGICIDAS", categoria: "Sistémico Suelo", ingrediente_activo: "Propamocarb", modo_accion: "Permeabilidad de membrana (FRAC F4).", descripcion: "Prevención de Pythium en fertirriego.", precio: 125.00, variantes: ["Frasco 1 Litro"] },
+                { id: 28, nombre: "Chlorothalonil", categoria_key: "FUNGICIDAS", categoria: "Multisitio", ingrediente_activo: "Clorotalonil", modo_accion: "Grupos sulfhidrilo (FRAC M05).", descripcion: "Barrera protectora de amplio espectro.", precio: 68.00, variantes: ["Frasco 1 Litro"] },
+                { id: 29, nombre: "Cymoxanil + Mancozeb", categoria_key: "FUNGICIDAS", categoria: "Curativo Mildiu", ingrediente_activo: "Cimoxanilo + Mancozeb", modo_accion: "Penetrante curativo temprano.", descripcion: "Control de rescate para Peronospora.", precio: 72.00, variantes: ["Bolsa 1 kg"] },
+                { id: 30, nombre: "Fosfito de Potasio", categoria_key: "FUNGICIDAS", categoria: "Inductor SAR", ingrediente_activo: "Fosfitos de Potasio", modo_accion: "Ácido shikímico y fitoalexinas.", descripcion: "Refuerza pared celular ante Phytophthora.", precio: 62.00, variantes: ["Frasco 1 Litro"] },
 
-                // --- CATEGORÍA 4: HERBICIDAS (10 PRODUCTOS) ---
-                {
-                    id: 31,
-                    nombre: "Glufosinato de Amonio",
-                    categoria_key: "HERBICIDAS",
-                    categoria: "Herbicida de Contacto",
-                    ingrediente_activo: "Glufosinato de Amonio (200 g/L)",
-                    modo_accion: "Inhibidor de la glutamina sintetasa (HRAC Grupo 10). Desecación foliar.",
-                    descripcion: "Control rápido de malezas hoja ancha y gramíneas entre hileras de cultivo.",
-                    precio: 78.00,
-                    variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
-                },
-                {
-                    id: 32,
-                    nombre: "Pendimethalin",
-                    categoria_key: "HERBICIDAS",
-                    categoria: "Herbicida Pre-emergente",
-                    ingrediente_activo: "Pendimetalina (400 g/L)",
-                    modo_accion: "Inhibidor de la formación de microtúbulos (HRAC Grupo 3 - Dinitroanilina).",
-                    descripcion: "Impide la germinación de malezas gramíneas y de hoja ancha en suelos limpios.",
-                    precio: 62.00,
-                    variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
-                },
-                {
-                    id: 33,
-                    nombre: "Oxifluorfen",
-                    categoria_key: "HERBICIDAS",
-                    categoria: "Herbicida de Sello",
-                    ingrediente_activo: "Oxifluorfen (240 g/L)",
-                    modo_accion: "Inhibidor de la PPO (HRAC Grupo 14). Forma película en la superficie del suelo.",
-                    descripcion: "Control pre y post-emergente temprano en trasplantes de cebolla, ajo y frutales.",
-                    precio: 92.00,
-                    variantes: ["Frasco 250 ml", "Frasco 1 Litro"]
-                },
-                {
-                    id: 34,
-                    nombre: "Haloxyfop-P-Methyl",
-                    categoria_key: "HERBICIDAS",
-                    categoria: "Graminicida Selectivo",
-                    ingrediente_activo: "Haloxifop-P-metil (108 g/L)",
-                    modo_accion: "Inhibidor de la ACCasa (HRAC Grupo 1). Sistémico contra gramíneas.",
-                    descripcion: "Elimina gramíneas (Echinochloa, Sorghum) sin dañar cultivos de hoja ancha.",
-                    precio: 105.00,
-                    variantes: ["Frasco 250 ml", "Frasco 1 Litro"]
-                },
-                {
-                    id: 35,
-                    nombre: "Clethodim",
-                    categoria_key: "HERBICIDAS",
-                    categoria: "Graminicida Post-emergente",
-                    ingrediente_activo: "Cletodim (240 g/L)",
-                    modo_accion: "Inhibidor de la síntesis de lípidos ACCasa (HRAC Grupo 1 - Ciclohexanodiona).",
-                    descripcion: "Altamente selectivo para erradicar malezas gramíneas perennes y anuales.",
-                    precio: 98.00,
-                    variantes: ["Frasco 250 ml", "Frasco 1 Litro"]
-                },
-                {
-                    id: 36,
-                    nombre: "Metribuzin",
-                    categoria_key: "HERBICIDAS",
-                    categoria: "Herbicida Selectivo",
-                    ingrediente_activo: "Metribuzina (480 g/L)",
-                    modo_accion: "Inhibidor del Fotosistema II (HRAC Grupo 5 - Triazinona).",
-                    descripcion: "Control de malezas en siembras de papa, tomate y espárrago establecido.",
-                    precio: 112.00,
-                    variantes: ["Frasco 500 ml", "Frasco 1 Litro"]
-                },
-                {
-                    id: 37,
-                    nombre: "2,4-D Amina",
-                    categoria_key: "HERBICIDAS",
-                    categoria: "Herbicida Hormonal",
-                    ingrediente_activo: "2,4-D Sal Amina (600 g/L)",
-                    modo_accion: "Mimetizador de auxinas (HRAC Grupo 4). Deforma malezas de hoja ancha.",
-                    descripcion: "Selectivo para caña de azúcar, maíz y arroz contra malezas dicotiledóneas.",
-                    precio: 45.00,
-                    variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
-                },
-                {
-                    id: 38,
-                    nombre: "Fluroxypyr",
-                    categoria_key: "HERBICIDAS",
-                    categoria: "Herbicida Sistémico",
-                    ingrediente_activo: "Fluroxipir-meptil (200 g/L)",
-                    modo_accion: "Auxina sintética (HRAC Grupo 4). Penetra por hojas y trasloca a la raíz.",
-                    descripcion: "Especialista para malezas difícil control como picos y verdolaga entre surcos.",
-                    precio: 85.00,
-                    variantes: ["Frasco 250 ml", "Frasco 1 Litro"]
-                },
-                {
-                    id: 39,
-                    nombre: "Quizalofop-P-Tefuril",
-                    categoria_key: "HERBICIDAS",
-                    categoria: "Graminicida Foliar",
-                    ingrediente_activo: "Quizalofop-P-tefuril (120 g/L)",
-                    modo_accion: "Inhibición rápida del crecimiento meristemático en gramíneas.",
-                    descripcion: "Acción traslocadora a rizomas de malezas como caminadora y grama dulce.",
-                    precio: 102.00,
-                    variantes: ["Frasco 250 ml", "Frasco 1 Litro"]
-                },
-                {
-                    id: 40,
-                    nombre: "Atrazina",
-                    categoria_key: "HERBICIDAS",
-                    categoria: "Herbicida Pre/Post Temprano",
-                    ingrediente_activo: "Atrazina (500 g/L)",
-                    modo_accion: "Inhibidor de la fotosíntesis (HRAC Grupo 5). Absorbido por raíces y hojas.",
-                    descripcion: "Control prolongado de malezas en cultivos de maíz y sorgo.",
-                    precio: 48.00,
-                    variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
-                },
+                // HERBICIDAS
+                { id: 31, nombre: "Glufosinato de Amonio", categoria_key: "HERBICIDAS", categoria: "Contacto", ingrediente_activo: "Glufosinato de Amonio", modo_accion: "Inhibidor glutamina (HRAC 10).", descripcion: "Desecación foliar rápida.", precio: 78.00, variantes: ["Frasco 1 Litro"] },
+                { id: 32, nombre: "Pendimethalin", categoria_key: "HERBICIDAS", categoria: "Pre-emergente", ingrediente_activo: "Pendimetalina", modo_accion: "Microtúbulos (HRAC 3).", descripcion: "Impide germinación de malezas.", precio: 62.00, variantes: ["Frasco 1 Litro"] },
+                { id: 33, nombre: "Oxifluorfen", categoria_key: "HERBICIDAS", categoria: "Sello", ingrediente_activo: "Oxifluorfen", modo_accion: "Inhibidor PPO (HRAC 14).", descripcion: "Control en cebolla, ajo y frutales.", precio: 92.00, variantes: ["Frasco 1 Litro"] },
+                { id: 34, nombre: "Haloxyfop-P-Methyl", categoria_key: "HERBICIDAS", categoria: "Graminicida", ingrediente_activo: "Haloxifop-P-metil", modo_accion: "Inhibidor ACCasa (HRAC 1).", descripcion: "Elimina gramíneas sin dañar hoja ancha.", precio: 105.00, variantes: ["Frasco 1 Litro"] },
+                { id: 35, nombre: "Clethodim", categoria_key: "HERBICIDAS", categoria: "Post-emergente", ingrediente_activo: "Cletodim", modo_accion: "Síntesis de lípidos (HRAC 1).", descripcion: "Selectivo para gramíneas perennes.", precio: 98.00, variantes: ["Frasco 1 Litro"] },
+                { id: 36, nombre: "Metribuzin", categoria_key: "HERBICIDAS", categoria: "Selectivo", ingrediente_activo: "Metribuzina", modo_accion: "Fotosistema II (HRAC 5).", descripcion: "Control en papa, tomate y espárrago.", precio: 112.00, variantes: ["Frasco 1 Litro"] },
+                { id: 37, nombre: "2,4-D Amina", categoria_key: "HERBICIDAS", categoria: "Hormonal", ingrediente_activo: "2,4-D Sal Amina", modo_accion: "Auxina sintética (HRAC 4).", descripcion: "Selectivo en caña y maíz.", precio: 45.00, variantes: ["Frasco 1 Litro"] },
+                { id: 38, nombre: "Fluroxypyr", categoria_key: "HERBICIDAS", categoria: "Sistémico", ingrediente_activo: "Fluroxipir-meptil", modo_accion: "Auxina sintética (HRAC 4).", descripcion: "Para malezas de difícil control.", precio: 85.00, variantes: ["Frasco 1 Litro"] },
+                { id: 39, nombre: "Quizalofop-P-Tefuril", categoria_key: "HERBICIDAS", categoria: "Foliar", ingrediente_activo: "Quizalofop-P-tefuril", modo_accion: "Crecimiento meristemático.", descripcion: "Traslocación a rizomas.", precio: 102.00, variantes: ["Frasco 1 Litro"] },
+                { id: 40, nombre: "Atrazina", categoria_key: "HERBICIDAS", categoria: "Pre/Post Temprano", ingrediente_activo: "Atrazina", modo_accion: "Fotosíntesis (HRAC 5).", descripcion: "Control prolongado en maíz.", precio: 48.00, variantes: ["Frasco 1 Litro"] },
 
-                // --- CATEGORÍA 5: BIOESTIMULANTES & NUTRICIÓN (10 PRODUCTOS) ---
-                {
-                    id: 41,
-                    nombre: "Extracto de Algas",
-                    categoria_key: "BIOESTIMULANTES",
-                    categoria: "Bioestimulante Orgánico",
-                    ingrediente_activo: "Ascophyllum nodosum + Fitohormonas",
-                    modo_accion: "Induce síntesis endógena de citoquininas y auxinas frente a estrés.",
-                    descripcion: "Maximiza la floración, el cuajado y la retención de frutos en cultivos de exportación.",
-                    precio: 65.00,
-                    variantes: ["Frasco 1 Litro", "Galón 5 Litros", "Bidón 20 Litros"]
-                },
-                {
-                    id: 42,
-                    nombre: "Aminoácidos Libres",
-                    categoria_key: "BIOESTIMULANTES",
-                    categoria: "Activador Fisiológico",
-                    ingrediente_activo: "Aminoácidos de Hidrólisis Enzimática 240 g/L",
-                    modo_accion: "Ahorro energético vegetal directo para asimilación inmediata en brotación.",
-                    descripcion: "Acelera la recuperación tras heladas, sequías o fitotoxicidad por plaguicidas.",
-                    precio: 58.00,
-                    variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
-                },
-                {
-                    id: 43,
-                    nombre: "Calcio Boro",
-                    categoria_key: "BIOESTIMULANTES",
-                    categoria: "Nutrición Estructural",
-                    ingrediente_activo: "CaO 15% + Boro 2% Quelatado",
-                    modo_accion: "Fortalece paredes celulares mediante pectatos de calcio en cuajado.",
-                    descripcion: "Prevención de 'tip burn' en hortalizas y rajado de fruto en palto y frutales.",
-                    precio: 48.00,
-                    variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
-                },
-                {
-                    id: 44,
-                    nombre: "Potasio Foliar",
-                    categoria_key: "BIOESTIMULANTES",
-                    categoria: "Madurante y Llenado",
-                    ingrediente_activo: "K2O 50% p/v en solución neutra",
-                    modo_accion: "Translocación acelerada de azúcares y almidones hacia los órganos de reserva.",
-                    descripcion: "Promueve el calibre, peso, color y grado Brix en la fase de llenado de fruto.",
-                    precio: 72.00,
-                    variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
-                },
-                {
-                    id: 45,
-                    nombre: "Fosfito K",
-                    categoria_key: "BIOESTIMULANTES",
-                    categoria: "Fitoalexínico",
-                    ingrediente_activo: "Fosfitos de Potasio (P2O5 40% + K2O 20%)",
-                    modo_accion: "Estimulante de la síntesis de fitoalexinas y engrosa las paredes vasculares.",
-                    descripcion: "Foliar y radicular para prevención de patógenos del cuello como Phytophthora.",
-                    precio: 62.00,
-                    variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
-                },
-                {
-                    id: 46,
-                    nombre: "Enraizante Radicular",
-                    categoria_key: "BIOESTIMULANTES",
-                    categoria: "Enraizante Concentrado",
-                    ingrediente_activo: "Auxinas + Ácidos Húmicos y Fúlvicos",
-                    modo_accion: "Inducción de división celular para emisión de cabellera radicular nueva.",
-                    descripcion: "Consigue un rápido establecimiento en plántulas recién trasplantadas.",
-                    precio: 85.00,
-                    variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
-                },
-                {
-                    id: 47,
-                    nombre: "Cinc Quelatado",
-                    categoria_key: "BIOESTIMULANTES",
-                    categoria: "Microelemento Foliar",
-                    ingrediente_activo: "Cinc Soluble 15% Quelatado EDTA",
-                    modo_accion: "Precursor fundamental de la síntesis del aminoácido Triptófano (Auxinas).",
-                    descripcion: "Corrige el arrosetamiento y hojas pequeñas en brotes jóvenes de frutales.",
-                    precio: 54.00,
-                    variantes: ["Pote 1 kg"]
-                },
-                {
-                    id: 48,
-                    nombre: "Anti-Estrés Térmico",
-                    categoria_key: "BIOESTIMULANTES",
-                    categoria: "Osmoprotector",
-                    ingrediente_activo: "Glicina Betaina 97% WP",
-                    modo_accion: "Mantiene el turgor celular regulando el balance osmótico interno.",
-                    descripcion: "Protege el aparato fotosintético en picos de alta radiación y golpe de calor.",
-                    precio: 110.00,
-                    variantes: ["Pote 1 kg"]
-                },
-                {
-                    id: 49,
-                    nombre: "Hierro Quelatado",
-                    categoria_key: "BIOESTIMULANTES",
-                    categoria: "Corrector de Clorosis",
-                    ingrediente_activo: "Hierro Quelatado en isómero Ortho-Ortho 4.8%",
-                    modo_accion: "Hierro de alta estabilidad en suelos alcalinos o calcáreos de la costa.",
-                    descripcion: "Cura inmediata de la clorosis férrica (amarillamiento de hojas jóvenes).",
-                    precio: 95.00,
-                    variantes: ["Bolsa 1 kg", "Caja 5 kg"]
-                },
-                {
-                    id: 50,
-                    nombre: "Boro Etanolamina",
-                    categoria_key: "BIOESTIMULANTES",
-                    categoria: "Nutrición de Floración",
-                    ingrediente_activo: "Boro complejo en poliol etanolamina 100 g/L",
-                    modo_accion: "Movilidad foliar superior para viabilidad de granos de polen y tubo polínico.",
-                    descripcion: "Aplicación pre-floración obligatoria para asegurar un cuajado homogéneo.",
-                    precio: 46.00,
-                    variantes: ["Frasco 1 Litro", "Galón 5 Litros"]
-                }
+                // BIOESTIMULANTES
+                { id: 41, nombre: "Extracto de Algas", categoria_key: "BIOESTIMULANTES", categoria: "Orgánico", ingrediente_activo: "Ascophyllum nodosum", modo_accion: "Citoquininas y auxinas endógenas.", descripcion: "Maximiza floración y cuajado.", precio: 65.00, variantes: ["Frasco 1 Litro", "Galón 5 Litros"] },
+                { id: 42, nombre: "Aminoácidos Libres", categoria_key: "BIOESTIMULANTES", categoria: "Activador", ingrediente_activo: "Hidrólisis Enzimática 240 g/L", modo_accion: "Ahorro energético vegetal.", descripcion: "Recuperación tras estrés y heladas.", precio: 58.00, variantes: ["Frasco 1 Litro"] },
+                { id: 43, nombre: "Calcio Boro", categoria_key: "BIOESTIMULANTES", categoria: "Estructural", ingrediente_activo: "CaO 15% + Boro 2%", modo_accion: "Pectatos de calcio en paredes.", descripcion: "Prevención de rajado de fruto.", precio: 48.00, variantes: ["Frasco 1 Litro"] },
+                { id: 44, nombre: "Potasio Foliar", categoria_key: "BIOESTIMULANTES", categoria: "Madurante", ingrediente_activo: "K2O 50% p/v neutro", modo_accion: "Translocación de azúcares.", descripcion: "Aumenta calibre y grados Brix.", precio: 72.00, variantes: ["Frasco 1 Litro"] },
+                { id: 45, nombre: "Fosfito K", categoria_key: "BIOESTIMULANTES", categoria: "Fitoalexinas", ingrediente_activo: "P2O5 40% + K2O 20%", modo_accion: "Estimula defensas vasculares.", descripcion: "Prevención de patógenos de cuello.", precio: 62.00, variantes: ["Frasco 1 Litro"] },
+                { id: 46, nombre: "Enraizante Radicular", categoria_key: "BIOESTIMULANTES", categoria: "Enraizante", ingrediente_activo: "Auxinas + Ácidos Húmicos", modo_accion: "División celular radicular.", descripcion: "Establecimiento rápido de plántulas.", precio: 85.00, variantes: ["Frasco 1 Litro"] },
+                { id: 47, nombre: "Cinc Quelatado", categoria_key: "BIOESTIMULANTES", categoria: "Microelemento", ingrediente_activo: "Cinc 15% EDTA", modo_accion: "Precursor de triptófano.", descripcion: "Corrige arrosetamiento en frutales.", precio: 54.00, variantes: ["Pote 1 kg"] },
+                { id: 48, nombre: "Anti-Estrés Térmico", categoria_key: "BIOESTIMULANTES", categoria: "Osmoprotector", ingrediente_activo: "Glicina Betaina 97%", modo_accion: "Balance osmótico interno.", descripcion: "Protección ante golpe de calor.", precio: 110.00, variantes: ["Pote 1 kg"] },
+                { id: 49, nombre: "Hierro Quelatado", categoria_key: "BIOESTIMULANTES", categoria: "Corrector Clorosis", ingrediente_activo: "Hierro Ortho-Ortho 4.8%", modo_accion: "Estabilidad en suelos alcalinos.", descripcion: "Cura de clorosis férrica.", precio: 95.00, variantes: ["Bolsa 1 kg"] },
+                { id: 50, nombre: "Boro Etanolamina", categoria_key: "BIOESTIMULANTES", categoria: "Floración", ingrediente_activo: "Boro poliol etanolamina", modo_accion: "Movilidad para tubo polínico.", descripcion: "Cuajado homogéneo pre-floración.", precio: 46.00, variantes: ["Frasco 1 Litro"] }
             ]
         };
 
         let currentCart = [];
-        let catalogProducts = [];
+        let catalogProducts = defaultData.productos;
         let activeCategory = 'TODOS';
 
         document.addEventListener('DOMContentLoaded', () => {
-            loadCatalog();
+            renderProducts();
             setupCartEventListeners();
         });
 
-        function loadCatalog() {
-            fetch('./data.json')
-                .then(res => res.json())
-                .then(data => {
-                    catalogProducts = data.productos || defaultData.productos;
-                    renderProducts();
-                })
-                .catch(() => {
-                    catalogProducts = defaultData.productos;
-                    renderProducts();
-                });
-        }
-
         function filterCategory(categoryKey) {
             activeCategory = categoryKey;
-            
             document.querySelectorAll('.cat-btn').forEach(btn => {
                 if (btn.getAttribute('data-cat') === categoryKey) {
-                    btn.className = "cat-btn bg-brand-600 text-white px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold shadow-sm transition-all";
+                    btn.className = "cat-btn bg-brand-600 text-white px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold shadow-sm transition-all border border-brand-500";
                 } else {
-                    btn.className = "cat-btn bg-slate-100 text-slate-700 hover:bg-slate-200 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all";
+                    btn.className = "cat-btn bg-slate-950 text-slate-300 hover:bg-slate-800 border border-slate-800 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all";
                 }
             });
-
             renderProducts();
         }
 
-        function searchProducts() {
-            renderProducts();
-        }
+        function searchProducts() { renderProducts(); }
 
         function renderProducts() {
             const grid = document.getElementById('productsGrid');
             const query = document.getElementById('searchInput') ? document.getElementById('searchInput').value.toLowerCase().trim() : '';
 
-            let filteredProducts = activeCategory === 'TODOS' 
-                ? catalogProducts 
-                : catalogProducts.filter(p => p.categoria_key === activeCategory);
-
+            let filtered = activeCategory === 'TODOS' ? catalogProducts : catalogProducts.filter(p => p.categoria_key === activeCategory);
             if (query !== '') {
-                filteredProducts = filteredProducts.filter(p => 
-                    p.nombre.toLowerCase().includes(query) || 
-                    (p.ingrediente_activo && p.ingrediente_activo.toLowerCase().includes(query)) ||
-                    (p.descripcion && p.descripcion.toLowerCase().includes(query)) ||
-                    (p.modo_accion && p.modo_accion.toLowerCase().includes(query))
-                );
+                filtered = filtered.filter(p => p.nombre.toLowerCase().includes(query) || p.ingrediente_activo.toLowerCase().includes(query) || p.descripcion.toLowerCase().includes(query));
             }
 
-            if (filteredProducts.length === 0) {
-                grid.innerHTML = `
-                    <div class="col-span-full text-center py-12">
-                        <i class="ph ph-magnifying-glass text-4xl text-slate-300 block mb-2"></i>
-                        <p class="text-slate-500 font-semibold text-sm">No se encontraron productos coincidentes con "${query}".</p>
-                    </div>
-                `;
+            if (filtered.length === 0) {
+                grid.innerHTML = `<div class="col-span-full text-center py-12 text-slate-500">No se encontraron productos coincidentes.</div>`;
                 return;
             }
 
-            grid.innerHTML = filteredProducts.map(prod => `
-                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
-                    <div>
-                        <!-- Cabecera de Producto -->
-                        <div class="relative aspect-4/3 overflow-hidden bg-white flex flex-col justify-between p-5 border-b border-slate-200">
-                            <div class="flex justify-between items-start">
-                                <span class="bg-brand-600 text-white text-[10px] font-extrabold px-2.5 py-1 rounded-md tracking-wider uppercase">
-                                    ${prod.categoria}
-                                </span>
-                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">FACS-2026</span>
-                            </div>
-                            
-                            <div class="my-auto py-2">
-                                <h3 class="font-extrabold uppercase text-slate-900 text-3xl sm:text-4xl tracking-tighter leading-none font-heading">
-                                    ${prod.nombre}
-                                </h3>
-                            </div>
-
-                            <div class="border-t border-slate-100 pt-2 flex items-center justify-between">
-                                <span class="text-[11px] font-bold text-brand-700 truncate max-w-[200px]">I.A: ${prod.ingrediente_activo}</span>
-                                <span class="w-2 h-2 rounded-full bg-brand-500"></span>
-                            </div>
+            grid.innerHTML = filtered.map(prod => `
+                <div class="bg-slate-950 rounded-2xl border border-slate-800 overflow-hidden shadow-sm hover:border-brand-500/50 transition-all flex flex-col justify-between">
+                    <div class="p-5 border-b border-slate-900">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="bg-brand-950 text-brand-400 border border-brand-500/30 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase">${prod.categoria}</span>
+                            <span class="text-[10px] text-slate-500 font-mono">FACS-2026</span>
                         </div>
-
-                        <div class="p-5">
-                            <p class="text-slate-600 text-xs mb-3 line-clamp-2">${prod.descripcion}</p>
-                            ${prod.modo_accion ? `
-                                <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-100 mb-4">
-                                    <p class="text-[11px] text-slate-500 leading-tight"><strong>Acción:</strong> ${prod.modo_accion}</p>
-                                </div>
-                            ` : ''}
-                            
-                            <div class="mb-4">
-                                <label class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Presentación / Dosis:</label>
-                                <select id="variant-${prod.id}" class="w-full text-xs bg-slate-50 border border-slate-200 rounded-lg p-2 font-semibold text-slate-800">
-                                    ${prod.variantes.map(v => `<option value="${v}">${v}</option>`).join('')}
-                                </select>
-                            </div>
+                        <h3 class="font-extrabold uppercase text-white text-xl tracking-tight font-heading mt-2">${prod.nombre}</h3>
+                        <p class="text-[11px] text-brand-400 font-medium mt-1">I.A: ${prod.ingrediente_activo}</p>
+                        <p class="text-slate-400 text-xs mt-3 line-clamp-2">${prod.descripcion}</p>
+                        
+                        <div class="mt-4">
+                            <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Presentación:</label>
+                            <select id="variant-${prod.id}" class="w-full text-xs bg-slate-900 border border-slate-800 rounded-lg p-2 text-white font-semibold">
+                                ${prod.variantes.map(v => `<option value="${v}">${v}</option>`).join('')}
+                            </select>
                         </div>
                     </div>
-                    <div class="p-5 pt-0 border-t border-slate-100 mt-auto space-y-3">
-                        <div class="flex items-center justify-between gap-2">
-                            <div>
-                                <span class="text-[10px] text-slate-400 block font-semibold">Precio ref.</span>
-                                <span class="text-lg font-bold font-heading text-slate-900">S/ ${prod.precio.toFixed(2)}</span>
-                            </div>
-                            <button onclick="addToCart(${prod.id})" class="bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs px-3.5 py-2.5 rounded-xl transition-all flex items-center gap-1.5 shadow-sm">
-                                <i class="ph ph-shopping-cart-simple text-base"></i> Agregar
-                            </button>
+                    <div class="p-5 pt-3 bg-slate-900/50 flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] text-slate-500 block">Ref.</span>
+                            <span class="text-base font-bold font-heading text-white">S/ ${prod.precio.toFixed(2)}</span>
                         </div>
-                        <button onclick="requestSpecSheet('${prod.nombre}')" class="w-full text-center text-[11px] font-bold text-slate-500 hover:text-brand-700 transition-colors flex items-center justify-center gap-1">
-                            <i class="ph ph-file-pdf text-sm"></i> Solicitar Ficha Técnica SENASA
+                        <button onclick="addToCart(${prod.id})" class="bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs px-3.5 py-2 rounded-xl transition-all flex items-center gap-1.5 shadow-sm">
+                            <i class="ph ph-shopping-cart-simple text-base"></i> Agregar
                         </button>
                     </div>
                 </div>
             `).join('');
         }
 
+        function runSimulation() {
+            const cuprico = document.getElementById('simCuprico').checked;
+            const aceite = document.getElementById('simAceite').checked;
+            const alertBox = document.getElementById('simAlert');
+            const successBox = document.getElementById('simSuccess');
+
+            if (cuprico && aceite) {
+                alertBox.classList.remove('hidden');
+                successBox.classList.add('hidden');
+            } else {
+                alertBox.classList.add('hidden');
+                successBox.classList.remove('hidden');
+            }
+        }
+
         function calculateDose() {
             const vol = parseFloat(document.getElementById('calcVolume').value) || 0;
             const dose = parseFloat(document.getElementById('calcDose').value) || 0;
-            
-            if (vol <= 0 || dose <= 0) {
-                alert("Ingrese valores mayores a cero.");
-                return;
-            }
-
-            const totalNeeded = (vol / 200) * dose;
-            document.getElementById('calcValue').innerText = `${totalNeeded.toFixed(1)} ml / g`;
+            const total = (vol / 200) * dose;
+            document.getElementById('calcValue').innerText = `${total.toFixed(1)} ml / g requeridos`;
             document.getElementById('calcResult').classList.remove('hidden');
-        }
-
-        function calculatePH() {
-            const current = parseFloat(document.getElementById('phCurrent').value);
-            const target = parseFloat(document.getElementById('phPesticide').value);
-            const diff = current - target;
-            
-            let recommendedMl = Math.max(0, Math.round(diff * 60));
-            document.getElementById('phValue').innerText = `${recommendedMl} ml de Acidificante / 200 L`;
-            document.getElementById('phResult').classList.remove('hidden');
         }
 
         function generateRotation() {
             const target = document.getElementById('rotTarget').value;
             const resDiv = document.getElementById('rotResult');
             resDiv.classList.remove('hidden');
-
-            let blocks = [];
-            if (target === 'PRODIPLOSIS') {
-                blocks = [
-                    { b: "Bloque 1 (Inicio)", p: "Teflubenzuron 150 SC", m: "IRAC Grupo 15 (Inhibidor de Muda)" },
-                    { b: "Bloque 2 (Control)", p: "Spinetoram 120 SC", m: "IRAC Grupo 5 (Espinocinas)" },
-                    { b: "Bloque 3 (Limpieza)", p: "Beauveria bassiana", m: "Bio-Controlador Cuticular" }
-                ];
-            } else if (target === 'TRIPS') {
-                blocks = [
-                    { b: "Bloque 1 (Inicio)", p: "Spinetoram 120 SC", m: "IRAC Grupo 5 (Acción Nicotínica)" },
-                    { b: "Bloque 2 (Control)", p: "Abamectina 1.8% EC", m: "IRAC Grupo 6 (Modulador de Cloro)" },
-                    { b: "Bloque 3 (Limpieza)", p: "Lecanicillium lecanii", m: "Bio-Insecticida Entomopatógeno" }
-                ];
-            } else if (target === 'OIDIUM') {
-                blocks = [
-                    { b: "Bloque 1 (Preventivo)", p: "Azoxystrobin 250 SC", m: "FRAC Grupo 11 (Estrobirulina)" },
-                    { b: "Bloque 2 (Curativo)", p: "Difenoconazole 250 EC", m: "FRAC Grupo 3 (Triazol DMI)" },
-                    { b: "Bloque 3 (Bio-Stop)", p: "Bacillus subtilis (QST 713)", m: "Bio-Lisis de Paredes Fúngicas" }
-                ];
-            } else {
-                blocks = [
-                    { b: "Bloque 1 (Eclosión)", p: "Bacillus thuringiensis (Bt)", m: "Toxinas Cry Intestinales" },
-                    { b: "Bloque 2 (Larvas 1-3)", p: "Emamectin Benzoate 5% SG", m: "IRAC Grupo 6 (Parálisis Rápida)" },
-                    { b: "Bloque 3 (Residual)", p: "Chlorantraniliprole 200 SC", m: "IRAC Grupo 28 (Diamida Ryanodina)" }
-                ];
-            }
+            
+            let blocks = [
+                { b: "Bloque 1", p: "Teflubenzuron 150 SC", m: "IRAC Grupo 15" },
+                { b: "Bloque 2", p: "Spinetoram 120 SC", m: "IRAC Grupo 5" },
+                { b: "Bloque 3", p: "Beauveria bassiana", m: "Bio-Controlador" }
+            ];
 
             resDiv.innerHTML = blocks.map(bk => `
-                <div class="bg-slate-800 p-3.5 rounded-xl border border-slate-700">
-                    <span class="text-[10px] font-bold text-amber-400 block uppercase">${bk.b}</span>
-                    <h4 class="font-bold text-xs text-white mt-1">${bk.p}</h4>
-                    <p class="text-[10px] text-slate-400 mt-0.5">${bk.m}</p>
+                <div class="bg-slate-950 p-2.5 rounded-xl border border-slate-800">
+                    <span class="text-[9px] font-bold text-amber-400 uppercase">${bk.b}</span>
+                    <p class="font-bold text-white text-[11px] mt-0.5">${bk.p}</p>
                 </div>
             `).join('');
         }
 
-        function requestSpecSheet(productName) {
-            const msg = `Hola SOLUTION FACS (+51 901 742 151), solicito la Ficha Técnica / Hoja MSDS SENASA del producto: *${productName}*`;
-            const url = `https://wa.me/51901742151?text=${encodeURIComponent(msg)}`;
-            window.open(url, '_blank');
-        }
+        function addToCart(id) {
+            const prod = catalogProducts.find(p => p.id === id);
+            const variant = document.getElementById(`variant-${id}`).value;
+            const existing = currentCart.find(i => i.id === id && i.variante === variant);
 
-        function addToCart(productId) {
-            const product = catalogProducts.find(p => p.id === productId);
-            const variantSelect = document.getElementById(`variant-${productId}`);
-            const selectedVariant = variantSelect ? variantSelect.value : product.variantes[0];
-
-            const existingIndex = currentCart.findIndex(item => item.id === productId && item.variante === selectedVariant);
-
-            if (existingIndex > -1) {
-                currentCart[existingIndex].cantidad += 1;
-            } else {
-                currentCart.push({
-                    id: product.id,
-                    nombre: product.nombre,
-                    precio: product.precio,
-                    variante: selectedVariant,
-                    cantidad: 1
-                });
-            }
+            if (existing) { existing.cantidad += 1; } 
+            else { currentCart.push({ id: prod.id, nombre: prod.nombre, precio: prod.precio, variante: variant, cantidad: 1 }); }
 
             updateCartUI();
             openCart();
@@ -1298,52 +641,34 @@
 
         function updateCartUI() {
             const container = document.getElementById('cartItemsContainer');
-            const cartBadge = document.getElementById('cartBadge');
-            const cartTotal = document.getElementById('cartTotal');
+            const badge = document.getElementById('cartBadge');
+            const totalElem = document.getElementById('cartTotal');
 
-            const totalItems = currentCart.reduce((sum, item) => sum + item.cantidad, 0);
-            const totalPrice = currentCart.reduce((sum, item) => sum + (item.precio * item.cantidad), 0);
+            const totalItems = currentCart.reduce((sum, i) => sum + i.cantidad, 0);
+            const totalPrice = currentCart.reduce((sum, i) => sum + (i.precio * i.cantidad), 0);
 
-            if (totalItems > 0) {
-                cartBadge.innerText = totalItems;
-                cartBadge.classList.remove('hidden');
-            } else {
-                cartBadge.classList.add('hidden');
-            }
+            if (totalItems > 0) { badge.innerText = totalItems; badge.classList.remove('hidden'); }
+            else { badge.classList.add('hidden'); }
 
-            cartTotal.innerText = `S/ ${totalPrice.toFixed(2)}`;
+            totalElem.innerText = `S/ ${totalPrice.toFixed(2)}`;
 
             if (currentCart.length === 0) {
-                container.innerHTML = `<p class="text-center text-slate-500 text-sm py-8">Su carrito de cotización está vacío.</p>`;
+                container.innerHTML = `<p class="text-center text-slate-500 text-sm py-8">Su carrito está vacío.</p>`;
                 return;
             }
 
-            container.innerHTML = currentCart.map((item, index) => `
-                <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+            container.innerHTML = currentCart.map((item, idx) => `
+                <div class="flex items-center justify-between border-b border-slate-800 pb-3">
                     <div>
-                        <h4 class="font-bold text-sm text-slate-900 font-heading">${item.nombre}</h4>
-                        <p class="text-xs text-brand-700 font-semibold">${item.variante}</p>
-                        <p class="text-xs text-slate-500">S/ ${item.precio.toFixed(2)} c/u</p>
+                        <h4 class="font-bold text-xs text-white">${item.nombre}</h4>
+                        <p class="text-[10px] text-brand-400 font-semibold">${item.variante} (S/ ${item.precio.toFixed(2)})</p>
                     </div>
                     <div class="flex items-center gap-2">
-                        <input type="number" min="1" value="${item.cantidad}" onchange="changeQuantity(${index}, this.value)" class="w-12 text-center text-xs font-bold bg-slate-100 border border-slate-200 rounded-md py-1">
-                        <button onclick="removeItem(${index})" class="text-slate-400 hover:text-red-600"><i class="ph ph-trash text-lg"></i></button>
+                        <input type="number" min="1" value="${item.cantidad}" onchange="currentCart[${idx}].cantidad = parseInt(this.value); updateCartUI();" class="w-10 text-center text-xs bg-slate-950 border border-slate-800 rounded py-1 text-white font-bold">
+                        <button onclick="currentCart.splice(${idx}, 1); updateCartUI();" class="text-slate-500 hover:text-red-400"><i class="ph ph-trash text-base"></i></button>
                     </div>
                 </div>
             `).join('');
-        }
-
-        function changeQuantity(index, value) {
-            const val = parseInt(value);
-            if (val > 0) {
-                currentCart[index].cantidad = val;
-                updateCartUI();
-            }
-        }
-
-        function removeItem(index) {
-            currentCart.splice(index, 1);
-            updateCartUI();
         }
 
         function setupCartEventListeners() {
@@ -1352,21 +677,12 @@
             document.getElementById('closeCartOverlay').addEventListener('click', closeCart);
 
             document.getElementById('sendWhatsAppOrderBtn').addEventListener('click', () => {
-                if (currentCart.length === 0) {
-                    alert("Agregue productos al carrito antes de realizar el pedido.");
-                    return;
-                }
-
-                let msg = "Hola SOLUTION FACS (+51 901 742 151), deseo solicitar la siguiente cotización fitosanitaria/biológica:\n\n";
-                currentCart.forEach(item => {
-                    msg += `• *${item.nombre}* (${item.variante}) x${item.cantidad} - S/ ${(item.precio * item.cantidad).toFixed(2)}\n`;
-                });
-
-                const total = currentCart.reduce((sum, item) => sum + (item.precio * item.cantidad), 0);
-                msg += `\n*Monto Total Estimado: S/ ${total.toFixed(2)}*\n\nQuedo a la espera de la disponibilidad de stock y datos para transferencia.`;
-
-                const url = `https://wa.me/51901742151?text=${encodeURIComponent(msg)}`;
-                window.open(url, '_blank');
+                if (currentCart.length === 0) { alert("Agregue insumos al carrito."); return; }
+                let msg = "Hola SOLUTION FACS (+51 901 742 151), deseo solicitar la siguiente cotización:\n\n";
+                currentCart.forEach(i => { msg += `• *${i.nombre}* (${i.variante}) x${i.cantidad} - S/ ${(i.precio * i.cantidad).toFixed(2)}\n`; });
+                const total = currentCart.reduce((s, i) => s + (i.precio * i.cantidad), 0);
+                msg += `\n*Total Estimado: S/ ${total.toFixed(2)}*`;
+                window.open(`https://wa.me/51901742151?text=${encodeURIComponent(msg)}`, '_blank');
             });
         }
 
